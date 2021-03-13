@@ -1,4 +1,4 @@
-# FINAL PROJECT - PROPOSAL
+# Retail Machine Learning Proposal
 
 ## Team Members
 
