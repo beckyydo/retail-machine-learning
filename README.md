@@ -13,8 +13,8 @@
 For this project, we decided to build on our two previous projects (ETL Project and Project 2). We will be incorporating machine learning algorithms to:
 
 1. Predict Walmart's stock price
-2.
-3.
+2. Create a grocery recommendation system
+3. Forecast sales
 
 ## Projects
 
