@@ -49,7 +49,7 @@ A. Grocery List Recommendation:
 
 B. Other Product Recommendations:
 
-- Additional Feature: “People Who Bought ** Also Bought \_**”
+- Additional Feature: “People Who Bought... Also bought...”
 - Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions (Liz)
 
 ### Sales Forecasting
