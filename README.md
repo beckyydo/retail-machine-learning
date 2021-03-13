@@ -21,15 +21,17 @@ For this project, we decided to build on our two previous projects (ETL Project 
 ### Stock Price Prediction
 
 Members: May, Hanieh
+
 Data: https://www.kaggle.com/aayushkandpal/walmart-inc-stock-data-19722020-latest
-Facebook Prophet (May)
+
+A. Facebook Prophet (May)
 
 - run stock price vs date
 - run stock volume vs date
 - run (stock price vs volume) vs date
 - graph stock data, prediction (line, area graph)
 
-Reddit WMT Name Count (Hanieh)
+B. Reddit WMT Name Count (Hanieh)
 
 - webscrap reddit, chrome driver search WMT, sort by new, inspect (3 months), count
 - regression on count and stock price or volume to see if there’s a relationship
@@ -38,22 +40,31 @@ Reddit WMT Name Count (Hanieh)
 ### Grocery Basket Customer Recommendations
 
 Data: https://www.kaggle.com/heeraldedhia/groceries-dataset
-Grocery List Recommendation:
-Load csv file, build a clustering/classification model (Rebecca)
-Webscrap/API google images, use chrome driver searching the word/food item and just taking the copy link address of the first search results, adding the csv file (Rebecca)
-HTML, search a member number and the product suggestion will load (Rebecca)
-Other Product Recommendations:
-Additional Feature: “People Who Bought ** Also Bought \_**”
-Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions (Liz)
+
+A. Grocery List Recommendation:
+
+- Load csv file, build a clustering/classification model (Rebecca)
+- Webscrape/API google images, use chrome driver searching the word/food item and just taking the copy link address of the first search results, adding the csv file (Rebecca)
+- HTML, search a member number and the product suggestion will load (Rebecca)
+
+B. Other Product Recommendations:
+
+- Additional Feature: “People Who Bought ** Also Bought \_**”
+- Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions (Liz)
 
 ### Sales Forecasting
 
 Data: https://www.kaggle.com/naresh31/walmart-recruiting-store-sales-forecasting
+
 Member: Ron
-Sales vs. SocioEconomic Target
-Regression on Sales vs SocioEconomic Variables (No Date)
-Regression to see if there’s relationship between sales and socioeconomic variables
-Graph against the variables to see if there’s any relationship
-Facebook Prophet Sales vs Date
-If there’s no relationship above, you can use facebook prophet
-Graph a line/area graph with the sales and predictions
+
+A. Sales vs. SocioEconomic Target
+
+- Regression on Sales vs SocioEconomic Variables (No Date)
+- Regression to see if there’s relationship between sales and socioeconomic variables
+- Graph against the variables to see if there’s any relationship
+
+B. Facebook Prophet Sales vs Date
+
+- If there’s no relationship above, you can use facebook prophet
+- Graph a line/area graph with the sales and predictions
