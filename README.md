@@ -39,7 +39,7 @@ B. Reddit WMT Name Count (Hanieh)
 
 ### Grocery Basket Customer Recommendations
 
-Data: https://www.kaggle.com/heeraldedhia/groceries-dataset
+Data: https://www.kaggle.com/psparks/instacart-market-basket-analysis
 
 A. Grocery List Recommendation:
 
