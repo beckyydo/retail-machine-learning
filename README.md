@@ -33,7 +33,7 @@ A. Facebook Prophet (May)
 
 B. Reddit WMT Name Count (Hanieh)
 
-- webscrap reddit, chrome driver search WMT, sort by new, inspect (3 months), count
+- webscrape reddit, chrome driver search WMT, sort by new, inspect (3 months), count
 - regression on count and stock price or volume to see if there’s a relationship
 - exploratory analysis doing line graph of the count against the stock graph and see if there’s patterns
 
