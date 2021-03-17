@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Walmart Dashboard!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#" >
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+    <!-- Leaflet Script -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    
+    <!-- Leaflet Plugin Cluster -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css"/>    
+    <!-- Leaflet Providers -->
+    <script src="{{ url_for('static', filename='js/leaflet-providers.js') }}"></script>
+
+    <!-- Mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.css" rel="stylesheet">
+    
+    <!-- Leaflet Fullscreen -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    
+    <!-- Leaflet Zoomslider -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-zoomslider/v0.7.0/L.Control.Zoomslider.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-zoomslider/v0.7.0/L.Control.Zoomslider.css' rel='stylesheet' />  
+    
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="static/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/vendor/aos/aos.css" rel="stylesheet">
+</head>
+
+<body onload="init()">
+    <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="static/Logo.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="#hero">Walmart</a></h1>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#monthly"><i class="bx bx-coin-stack"></i> <span>Monthly Sales</span></a></li>
+          <li><a href="#weekly"><i class="bx bx-dollar-circle"></i> <span>Weekly Sales</span></a></li>
+          <li><a href="#stock"><i class="bx bx-line-chart"></i> Stock</a></li>
+          <li><a href="#share"><i class="bx bx-pie-chart"></i> Market Share</a></li>
+          <li><a href="#location"><i class="bx bx-store"></i> Store Location</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Home Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Walmart<img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" style ="width:80px;margin-bottom:15px;"></h1>
+      <p><span class="typed" data-typed-items="Sales Perspective"></span></p>
+      <h5 style="color:white;">Created By: Hanieh Babaee, May Lacdao, Elizabeth Salas Martinez</h5>
+      <h5 style="color:white;">            Ronald Clarke, Rebecca Pham</h5>
+    </div>
+  </section><!-- End Home -->
+
+  <main id="main">
+
+  <!-- ======= Monthly Sales Section ======= -->
+  <section id="monthly" class="about">
+      <div class = "container-fluid">
+        <div class = "market-banner">
+            <h1 style = "color:white;">Monthly Sales Across Years <img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+        </div>
+      </div>
+      <br><br>
+      <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-9">
+              <div id="linear"></div>
+            </div>  
+          </div>
+        </div>
+      </section>
+      <!-- Monthly Sales Summary -->
+      <section class = "testimonials section-bg">
+        <div class = "container-fluid">
+          <div class = "market-banner2">
+            <h2 style = "color:white;">Summary</h2>
+          </div>
+        </div>
+        <div class = "row" style = "margin-top:70px;">
+          <div class = "col-md-4">
+            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+              <p style = "height:270px;">
+                <i class="bx"></i><br>
+                <span style = "color:#0279E2;">&#8226;</span> Data pulled from a cloud-based PostgreSQL database using a query to group and sum 
+                the sales by year and month using a flask app route and the psycopg2 module in Python<br>
+                <span style = "color:#0279E2;">&#8226;</span> Data was jsonify and the JavaScript made use of d3.nest to group values on 
+                the keys and plot the separate line 
+                <i class="bx"></i>
+              </p>      
+              <img src ="{{ url_for('static', filename='img/Engineering_Icon.png') }}" class="testimonial-img">    
+              <h3>Engineering</h3>
+            </div>
+          </div>
+          <div class = "col-md-4">
+            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+              <p style = "height:270px;">
+                <i class="bx"></i>
+                <span style = "color:#0279E2;">&#8226;</span> Creating 3 separate fields for each line; in particular, 
+                adding a legend was difficult and could not be incorporated into the nested for loop <br>
+                <span style = "color:#0279E2;">&#8226;</span> Data is incomplete, missing some sales data <br>
+                <span style = "color:#0279E2;">&#8226;</span> Sampling methodology for the stores, departments and sales 
+                data is not known, so making inferences about all Walmart stores would be challenging
+                <i class="bx"></i>
+              </p>
+              <img src = "{{ url_for('static', filename='img/Error_Icon.png') }}" alt ="" class = "testimonial-img">
+              <h3>Issues & Limitations</h3>
+            </div>
+          </div>
+          <div class = "col-md-4">
+            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+              <p style = "height:270px;">
+                <i class="bx"></i><br><br>
+                <span style = "color:#0279E2;">&#8226;</span> Display multi-line graph to show 3 years of sales by month for a 
+                sample of Walmart stores to identify peak or low sales<br>
+                <span style = "color:#0279E2;">&#8226;</span> Future updates will make chart interactive and customize 
+                the SQL query in the app route with the dropdown menus
+                <i class="bx"></i>
+              </p>
+              <img src = "{{ url_for('static', filename='img/Function_Icon.png') }}" alt ="" class = "testimonial-img">
+              <h3>Functionality</h3>
+            </div>
+            </div>
+            </div>
+          </div>
+      </section>
+      <!-- End Weekly Sales (Month) Section -->
+
+    <!-- ======= Weekly Sales Section ======= -->
+    <section id="weekly" class="about">
+        <div class = "container-fluid">
+            <div class = "market-banner">
+                <h1 style = "color:white;">Weekly Sales <img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+            </div>
+        </div>
+      <br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="card bg-light border-secondary p-3" style = "text-align:center;">
+                <div>
+                <h5 style = "color:#0279E2;">Store ID No.:</h5>
+                  <select id="selDataset1"></select>
+              </div>
+              <div class="button">
+                <button type="button">Reset Chart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3" style = "text-align:center;">
+            <h5  style = "color:#0279E2;">Store Selected:</h5>
+            <div class="card bg-light border-secondary p-3">						
+              <h6 class="counter">All Stores</h6>	
+            </div>
+          </div>
+          <div class = "col-md-7"></div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-md-1"></div>
+        <div class = "col-md-10">
+          <div class="chart" style = "margin-top:30px;"></div>
+        </div>
+        <div class = "col-md-1"></div>
+      </div>
+    </section>
+    <!-- Weekly Sales Summary -->
+    <section class = "testimonials section-bg">
+      <div class = "container-fluid">
+        <div class = "market-banner2">
+          <h2 style = "color:white;">Summary</h2>
+        </div>
+      </div>
+      <div class = "row" style = "margin-top:70px;">
+        <div id="overlay1" onclick="off1()">
+          <div id="text" style = "text-align: center;">
+            Weekly Sales 
+            <h6>Javascript</h6>
+            <div>
+              <img src="{{ url_for('static', filename='weekly_code.png') }}" style ="width:600px;">
+            </div>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <p style = "height:270px;">
+              <i class="bx"></i>
+              <span style = "color:#0279E2;">&#8226;</span> Built using d3 in JavaScript. Data-bound circles with conditional attributes
+               on axes created by scaling functions<br>
+              <span style = "color:#0279E2;">&#8226;</span> Responsive labels that when selected will trigger transformations in the circles 
+              and axes relating to the different desired data <br>
+              <span style = "color:#0279E2;">&#8226;</span> Event listeners for changing dropdown or clicks on circles that filter 
+              individual store data
+              <i class="bx"></i>
+            </p>
+            <button id ="view-code" onclick="on1()" style = "padding:0%">
+              <img src ="{{ url_for('static', filename='img/Engineering_Icon.png') }}" class="testimonial-img">
+            </button>  
+            <h3>Engineering</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <p style = "height:270px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Isolating the circles by store number without filtering 
+              out the rest was challenging, this was solved by attributing ids to them based on their store number <br>
+              <span style = "color:#0279E2;">&#8226;</span> The sample size of only 45 stores over only 3 years from 
+              ten years ago
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Error_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Issues & Limitations</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <p style = "height:270px;">
+              <i class="bx"></i><br><br>
+              <span style = "color:#0279E2;">&#8226;</span> Visualize the strength of the relationship between weekly sales and the 4 
+              factors as a whole and at individual stores<br>
+              <span style = "color:#0279E2;">&#8226;</span> Compare the performances of different stores under different conditions
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Function_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Functionality</h3>
+          </div>
+          </div>
+          </div>
+        </div>
+    </section>
+    <!-- End Weekly Sales Section -->
+
+    <!-- ======= Stock Section ======= -->
+    <section id="stock" class="resume">
+        <div class = "container-fluid">
+            <div class = "market-banner">
+                <h1 style = "color:white;">Stock<img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+            </div>
+        </div>
+
+      <div class="container">
+          <div class="ml-1 row">
+            <div class="col-md-2">
+                <div class="panel-heading" ><h5 style = "margin-top:20px;color:#0279E2;">Filter Search</h5></div>
+                <br>
+            </div>
+          </div>
+          <form>
+            <div class="ml-1 form-group">
+              <div class="ml-1 row">
+                <div class="col-md-2">
+                  <label for="date" style ="color:#0279E2">Date (from)</label>
+                  <input class="form-control" id="datetime1" type="text" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="ml-1 col-md-2">
+                  <label for="date" style ="color:#0279E2">Date (to)</label>
+                  <input class="form-control" id="datetime2" type="text" placeholder="YYYY-MM-DD">
+                </div>
+              </div>      
+            </div>
+            <div class="ml-1 row">
+              <div class="ml-1 btn-group mr-2" role="group" aria-label="First group">
+                <button id="filter-btn" type="button" onclick = "runEnter()"class="btn-toolbar btn-secondary">Filter plot</button>
+              </div>
+              <div class="ml-1 btn-group mr-2" role="group" aria-label="Second group">
+                <button id="reset-btn" type="button" onclick = "init()" class="btn-toolbar btn-secondary">All</button>
+              </div>
+            </div>
+          </form>
+            <div id="plot"></div>
+      </div>
+    </section>
+    <!-- Stock Summary -->
+    <section class = "testimonials section-bg">
+      <div class = "container-fluid">
+        <div class = "market-banner2">
+          <h2 style = "color:white;">Summary</h2>
+        </div>
+      </div>
+      <div class = "row" style = "margin-top:70px;">
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <p style = "height:230px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Moving Average was calculated for the window of 180 days in 
+              order to reflect differences of open and close prices of stock for each day<br>
+              <span style = "color:#0279E2;">&#8226;</span> Using plotly in JavaScript to plot the stock candlestick.
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Engineering_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Engineering</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <p style = "height:230px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Difficulty to show the volume in the plot, but with some 
+              modification in the layout, the volume was included in the plot<br>
+              <span style = "color:#0279E2;">&#8226;</span> Data was restricted to 10 years for faster loading
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Error_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Issues & Limitations</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <p style = "height:230px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Visualize stock and volume prices of Walmart over time<br>
+              <span style = "color:#0279E2;">&#8226;</span> Picture the trend of moving average in order to smoothes 
+              out the price movements for showing a clearer path
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Function_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Functionality</h3>
+          </div>
+          </div>
+          </div>
+        </div>
+    </section>
+    <!-- End Stock Section -->
+
+    <!-- ======= Market Share Section ======= -->
+    <section id="share" class="portfolio">
+    <div class = "container-fluid">
+        <div class = "market-banner">
+            <h1 style = "color:white;">Market Share <img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+            <h5 style = "color:white;">Metro & Micro Region</h5>
+        </div>
+    </div>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-4" style = "text-align:center;" >
+                <div>
+                    <h5 id = "state-filter">State Filter</h5>
+                    <select id="selDataset"></select>
+                    <br><br>
+                </div>
+                <div id ="table-max" class="table-responsive">
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr style = "color:white;background-color:#0279E2;">
+                                <th scope = "col">City</th>
+                                <th scope = "col">State</th>
+                                <th scope = "col">Population</th>
+                                <th scope = "col">Market Share (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody style = "overflow-y:auto;"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class = "col-8" style = "text-align:right;">
+                <div id = "market-share"></div>
+            </div>
+        </div>
+    </div>  
+    </section>
+    <!-- Market Share Summary -->
+    <section class = "testimonials section-bg">
+      <div class = "container-fluid">
+        <div class = "market-banner2">
+          <h2 style = "color:white;">Summary</h2>
+        </div>
+      </div>
+      <div class = "row" style = "margin-top:70px;">
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <p style = "height:150px;">
+              <i class="bx"></i>
+              <span style = "color:#0279E2;">&#8226;</span> Data pulled from Postgres SQL. Used plotly and d3 in JavaScript 
+              to create map and update table<br>
+              <span style = "color:#0279E2;">&#8226;</span> Created a drop down menu using the select tag
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Engineering_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Engineering</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <p style = "height:150px;">
+              <i class="bx"></i>
+              <span style = "color:#0279E2;">&#8226;</span> Trouble updating the table with the filter drop down menu<br>
+              <span style = "color:#0279E2;">&#8226;</span> Cannot compare market share changes over time presently
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Error_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Issues & Limitations</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <p style = "height:150px;">
+              <i class="bx"></i>
+              <span style = "color:#0279E2;">&#8226;</span> Identify market share across the country in each state<br>
+              <span style = "color:#0279E2;">&#8226;</span> Can look to improve marketshare in regions where it is low
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Function_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Functionality</h3>
+          </div>
+          </div>
+          </div>
+        </div>
+    </section>
+    
+    <!-- End Market Share Section -->
+
+    <!-- ======= Store Location Section ======= -->
+    
+    <section id="location" class="services">
+        <div class = "container-fluid">
+            <div class = "market-banner">
+                <h1 style = "color:white;">Store Location<img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class = "col" style = "width:100%;">
+            <div id="map" class ="container"></div>
+          </div>
+      </div>
+      <br><br>
+    </section><!-- End Services Section -->
+    <!-- Store Location Summary -->
+    <section class = "testimonials section-bg">
+      <div class = "container-fluid">
+        <div class = "market-banner2">
+          <h2 style = "color:white;">Summary</h2>
+        </div>
+      </div>
+      <div class = "row" style = "margin-top:70px;">
+        <div id="overlay2" onclick="off2()">
+          <div id="text" style = "text-align:center;">
+            Store Location
+            <h6>Html & JavaScript</h6>
+            <div>
+              <img src="{{ url_for('static', filename='store_code.png') }}" style ="width:1150px;">
+            </div>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <p style = "height:150px;">
+              <i class="bx"></i>
+              <span style = "color:#0279E2;">&#8226;</span> Data pulled from Postgres SQL, and used 
+              leaflet, D3, mapbox and JavaScript to create map<br>
+              <span style = "color:#0279E2;">&#8226;</span>	Created a clustered map based on store locations
+              <i class="bx"></i>
+            </p>
+            <button id ="view-code" onclick="on2()" style = "padding:0%">
+              <img src ="{{ url_for('static', filename='img/Engineering_Icon.png') }}" class="testimonial-img">
+              </button>
+            <h3>Engineering</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <p style = "height:150px;">
+              <i class="bx"></i>
+              <span style = "color:#0279E2;">&#8226;</span> Styling and/or customizing requires various plugins<br>
+              <span style = "color:#0279E2;">&#8226;</span> Data was compiled in 2016 and does not include any 
+              recently closed or opened stores
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Error_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Issues & Limitations</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <p style = "height:150px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Map out store locations across USA<br>
+              <span style = "color:#0279E2;">&#8226;</span> Visualize store density in particular regions
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Function_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Functionality</h3>
+          </div>
+          </div>
+          </div>
+        </div>
+    </section>
+    <!-- End Store Location Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        Designed by <a href="https://bootstrapmade.com/" style="color:white;">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <script>
+    function on() {  document.getElementById("overlay").style.display = "block";}
+    function off() {  document.getElementById("overlay").style.display = "none";}
+    function on1() {  document.getElementById("overlay1").style.display = "block";}
+    function off1() {  document.getElementById("overlay1").style.display = "none";}
+    function on2() {  document.getElementById("overlay2").style.display = "block";}
+    function off2() {  document.getElementById("overlay2").style.display = "none";}
+    document.getElementById("filter-btn").disabled = false;
+    document.getElementById("reset-btn").disabled = false;
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        
+    
+    <!-- Marker Cluster JS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="static/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="static/vendor/php-email-form/validate.js"></script>
+    <script src="static/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="static/vendor/counterup/counterup.min.js"></script>
+    <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="static/vendor/venobox/venobox.min.js"></script>
+    <script src="static/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="static/vendor/typed.js/typed.min.js"></script>
+    <script src="static/vendor/aos/aos.js"></script>
+
+    
+    <!-- Local Scripts -->
+    <script src="{{ url_for('static', filename='js/leaflet-providers.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#overlay1 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#overlay2 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  font-size: 25px;
+  color: white;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+
+}
+button#view-code{
+	background-color: #f5f8fd;
+  border:none
+}
+
+#market-share {
+    width: 100%;
+    height:450px;
+}
+
+.well1 {
+    padding:40px;
+    background-color:#0279E2;
+}
+
+#table-max {
+    text-align: center; 
+    max-height: 330px;
+    font-size:12px;
+    width:380px;
+}
+
+.market-banner {
+    text-align:center;
+    background-color:#0279E2;
+    padding:35px;
+}
+.market-banner2 {
+    text-align:center;
+    background-color:#0279E2;
+    padding:15px;
+}
+#logo {
+    width:40px;
+    margin-bottom:10px;
+}
+#state-filter {
+    color:#0279E2;
+    margin-top:10px
+}
+
+/*Weekly Sales*/
+.tooltip {
+  position: absolute;
+  width: 155px;
+  height: 120px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #0f308a;
+  border: 0;
+  border-radius: 10px;
+}
+
+.axis-text {
+  font-family: serif;
+  font-weight: bold;
+  fill: #1a35af;
+  text-anchor: middle;
+}
+
+.active {
+  font-family: serif;
+  font-weight: bold;
+  fill: #000;
+  fill: #dda509;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-family: serif;
+  font-weight: lighter;
+  fill: #1a35af;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #f1410b;
+  cursor: pointer;
+}
+
+/**STORE LOCATION**/
+#map {
+  height: 500px;
+}
+
+/**MONTHLY SALES**/
+.iframeContainer {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+}
+path { 
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
