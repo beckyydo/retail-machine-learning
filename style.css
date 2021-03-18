@@ -1,9 +1,4 @@
-.two {
-    background-color: #34ADFF;
-    background-image: -webkit-linear-gradient(150deg, #34ADFF 35%, #4CBFFF 35%);
-    min-height: 400px;
-}
-
+/*Login Page*/
 .user_card {
         height: 400px;
         width: 350px;
