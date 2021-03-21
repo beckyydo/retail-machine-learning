@@ -39,6 +39,19 @@ store = Base.classes.store
 session = Session(engine)
 grocery_list = []
 
+# Grocery List Recommendations
+server = "grocery.cu51j1bqdgvr.us-east-2.rds.amazonaws.com"
+database = "postgres"
+port = "5432"
+username = "postgres"
+password = "postgres123"
+conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
+
+user_df = pd.read_sql_table("user_df", conn)
+grocery_df = pd.read_sql_table("grocery_df", conn)
+orders = pd.read_sql_table("order_df", conn)
+cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
+
 # Main route to render index.html
 @app.route("/")
 def login_page():
@@ -53,55 +66,58 @@ def grocery():
         email = str(user_email)
         
         # Convert e-mail to user_id
-        user_df = pd.read_csv("data/user_df.csv")
         user_id = int(user_df.loc[user_df['email'] == email, 'user_id'])
         
         # Grab past order from 
-        order = pd.read_csv("data/order_df.csv")
-        order = order[order['user_id'] == user_id].sort_values('add_to_cart_order')
+        order = orders[orders['user_id'] == user_id].sort_values('add_to_cart_order')
         # Spilt repeat orders and non-repeat orders
         repeat = order[order['reordered'] > 0]
         nonrepeat = order[order['reordered'] == 0]
         
         # Grab user past orders in kmean prediction format
-        grocery_df = pd.read_csv("data/grocery_df.csv")
+        grocery_df = pd.read_sql_table("grocery_df", conn)
         user_order = grocery_df[grocery_df['user_id'] == user_id].drop('user_id', axis = 1)
         
         # Fit user_id on model, return cluster 
         kmeans = load('data/kmeans.joblib') 
         cluster_num = kmeans.predict(user_order.to_numpy())[0]
-        cluster_top10 = pd.read_csv("data/cluster_top10_img.csv")
         top10 = cluster_top10[cluster_top10['cluster'] == cluster_num]
         
         # Set starting variables
-        # grocery_list = []
         n = 0
-        for product in top10['product_name']:
-            url_list = top10.loc[top10['product_name']==product, 'img_url']
-            repeat_check = repeat[repeat['product_name'] == product]
-            nonrepeat_check = nonrepeat[nonrepeat['product_name'] == product]
-            
-            if (n==3):
+        for product in repeat['product_name']:
+            top10_check = top10[top10['product_name'] == product]
+            if (n == 3):
                 break
-            elif (not repeat_check.empty):
-                grocery_list.append((product,url_list))
+            elif (not top10_check.empty):
+                url_list = top10.loc[top10['product_name'] == product].img_url.item()
+                grocery_list.append({'product': product, 'img': url_list})
                 n = n + 1
+        
+        for product in nonrepeat['product_name']:
+            nonrepeat_check = nonrepeat[nonrepeat['product_name'] == product]
+            if (n == 3):
+                break
             elif (not nonrepeat_check.empty):
-                grocery_list.append((product,url_list))
+                url_list = top10.loc[top10['product_name'] == product].img_url.item()
+                grocery_list.append({'product': product, 'img': url_list})
                 n = n + 1
+        
+        for product in repeat['product_name']:
+            if (n == 3):
+                break
             else:
-                grocery_list.append((product,url_list))
-                n = n + 1 
+                url_list = top10.loc[top10['product_name'] == product].img_url.item()
+                grocery_list.append({'product': product, 'img': url_list})
+                n = n + 1
         return grocery_list
-    # Function function
+    # Call function
     recommendations(user_email)
     # Render Landing Page
     return render_template("landing.html", grocery_list = grocery_list)
 
 @app.route("/cart")
 def shopping_cart():
-    print('test')
-    print(grocery_list)
     return render_template('cart.html', grocery_list = grocery_list)
 
 

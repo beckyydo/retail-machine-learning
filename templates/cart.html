@@ -12,7 +12,7 @@
 </head>
 <body style="background-color: white;">
 	<nav class="navbar navbar-expand-md" style ="background-color: #3773DA;height:60px;">
-        <a href="{{url_for('login_page')}}"><img src="./static/images/house-icon.png" style="width:30px;" alt= "main-page icon"></a>
+        <a href="{{url_for('login_page')}}"><img src="./static/images/house-icon.png" style="width:30px;" alt= "main-page icon" id="home-login"></a>
         <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -55,22 +55,24 @@
                                 <th>Remove</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="grocery-recommendations">
+                            {% for d in grocery_list: %}
                             <tr style="text-align:center;">
                                 <td class="thumbnail-img">
-                                    <a href="#">
-                                    <img class="img-fluid" src="images/vegevariety.png" alt="" style="width:90px;" >
-                                    </a>
+                                    <img class="img-fluid" src={{d.img}} alt="" style="width:120px;
+                                    height:120px;
+                                    border-radius: 25px;
+                                    border-color:#3773DA;
+                                    border-style: solid;
+                                    border-width: medium;">
                                 </td>
                                 <td class="name-pr">
-                                    <a href="#">
-                                Product Name
-                            </a>
+                                    {{d.product}}
                                 </td>
                                 <td class="price-pr">
                                     <p>$ 12.99</p>
                                 </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                                <td class="quantity-box"><input type="number" size="3" value="1" min="0" step="1" class="c-input-text qty text"></td>
                                 <td class="total-pr">
                                     <p>$ 12.99</p>
                                 </td>
@@ -80,6 +82,7 @@
                             </a>
                                 </td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -108,7 +111,14 @@
 
         <!--Total Summary-->
         <div class="row my-5">
-            <div class="col-lg-8 col-sm-12"></div>
+            <div class="col-lg-8 col-sm-12">
+                <h6>You May Also Like...</h6>
+                <div class = "row">
+                    <div class="col-md-4">Product 1 </div>
+                    <div class="col-md-4">Product 2 </div>
+                    <div class="col-md-4">Product 3 </div>
+                </div>
+            </div>
             <div class="col-lg-4 col-sm-12">
                 <div class="order-box">
                     <h5>Order Summary</h5>
