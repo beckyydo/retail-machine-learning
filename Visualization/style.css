@@ -1,0 +1,42 @@
+.tooltip {
+  position: absolute;
+  width: 155px;
+  height: 100px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #0f308a;
+  border: 0;
+  border-radius: 10px;
+}
+
+.axis-text {
+  font-family: serif;
+  font-weight: bold;
+  fill: #1a29af;
+  text-anchor: middle;
+}
+
+.active {
+  font-family: serif;
+  font-weight: bold;
+  fill: #000;
+  fill: #dda509;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-family: serif;
+  font-weight: lighter;
+  fill: #1a35af;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #f1410b;
+  cursor: pointer;
+}
