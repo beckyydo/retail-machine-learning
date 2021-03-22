@@ -40,6 +40,8 @@ grocery_df = pd.read_sql_table("grocery_df", conn)
 orders = pd.read_sql_table("order_df", conn)
 cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
 
+grocery_list = []
+
 # Main route to render index.html
 @app.route("/")
 def login_page():
@@ -72,7 +74,6 @@ def grocery():
         top10 = cluster_top10[cluster_top10['cluster'] == cluster_num]
         
         # Set starting variables
-        grocery_list = []
         n = 0
         for product in top10['product_name']:
             url_list = top10.loc[top10['product_name'] == product].img_url.item()
@@ -92,7 +93,7 @@ def grocery():
                 n = n + 1 
         return grocery_list
     # Call function
-    grocery_list = recommendations(user_email)
+    recommendations(user_email)
     # Render Landing Page
     return render_template("landing.html", grocery_list = grocery_list)
 
