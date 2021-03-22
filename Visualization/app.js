@@ -81,7 +81,7 @@ function updateChart() {
       })
     }
     else if (seldataset  === "2012 Real") {
-      d3.csv("final_comparison.csv").then(data => {
+      d3.csv("finalcomparison.csv").then(data => {
         var dropDown = d3.select("#selectDataset").node().value;
         console.log(dropDown)
         d3.select(".chart").html("");
@@ -456,7 +456,7 @@ function initReal2012(walData) {
     sample.Fuel_Price = +sample.Fuel_Price;
     sample.Temperature_C = +sample.Temperature_C;
     sample.Unemployment = +sample.Unemployment;
-    sample.Weekly_Sales = +Math.round(sample.Weekly_Sales);
+    sample.Weekly_Sales = +Math.round(sample.Weekly_Sales * 100) / 100;
     sample.CPI = +sample.CPI;
     sample.Store = +sample.Store
   }); 
@@ -493,13 +493,15 @@ function initReal2012(walData) {
     var chartGroup = svg.append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    svg.append("circle").attr("cx",width).attr("cy",30).attr("r", 6).style("fill", "orange")
-    svg.append("circle").attr("cx",width).attr("cy",60).attr("r", 6).style("fill", "blue")
-    svg.append("circle").attr("cx",width).attr("cy",90).attr("r", 6).style("fill", "black")
-    svg.append("text").attr("x", (width +10)).attr("y", 35).text("Average").style("font-size", "15px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", (width + 10)).attr("y", 65).text("Above Average").style("font-size", "15px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", (width + 10)).attr("y", 95).text("Below").style("font-size", "15px").attr("alignment-baseline","middle")
-            
+    svg.append("rect").attr('x', width-45).attr('y', 20).attr('width', 183).attr('height', 110).attr('stroke', 'black').attr('fill', 'white').attr('opacity', 0.5);
+    svg.append("circle").attr("cx",width-35).attr("cy",30).attr("r", 6).style("fill", "orange")
+    svg.append("circle").attr("cx",width-35).attr("cy",60).attr("r", 6).style("fill", "blue")
+    svg.append("circle").attr("cx",width-35).attr("cy",90).attr("r", 6).style("fill", "green")
+    svg.append("circle").attr("cx",width-35).attr("cy",120).attr("r", 6).style("fill", "black")
+    svg.append("text").attr("x", (width -25)).attr("y", 35).text("Model Correct: Average").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 25)).attr("y", 65).text("Model Correct: Above").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 25)).attr("y", 95).text("Model Correct: Below").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 25)).attr("y", 125).text("Model Incorrect").style("font-size", "15px").attr("alignment-baseline","middle")            
 
     // Initial Params
     var chosenXAxis = "Fuel_Price";
@@ -547,9 +549,9 @@ function initReal2012(walData) {
 
         var toolTip = d3.tip()
             .attr("class", "tooltip")
-            .offset([100, -80])
+            .offset([100, 80])
             .html(function(d) {
-            return (`Week Date: ${d.Date}<br>${label} ${d[chosenXAxis]}<br>Weekly Sale: $${(d.Weekly_Sales)}<br> Store: ${d.Store}`);
+            return (`Week Date: ${d.Date}<br>${label} ${d[chosenXAxis]}<br>Weekly Sale: $${(d.Weekly_Sales)}<br> Store: ${d.Store}<br>Model: ${(d.Model_Label_Real)}<br>FBProphet: ${(d.Proph_Label)}<br>Real: ${(d.Real_Label)}`);
             });
 
         circlesGroup.call(toolTip);
@@ -619,14 +621,17 @@ function initReal2012(walData) {
       })
       .attr("stroke", "black")
       .attr("fill", function(d) {
-        if (d.Model_Label_Pred == "Average") {
+        if (d.Model_Label_Real == "Average" && d.Model_Label_Real == d.Real_Label) {
           return "orange";
         }
-        else if (d.Model_Label_Pred === "Above") {
+        else if (d.Model_Label_Real == "Above" && d.Model_Label_Real == d.Real_Label) {
           return "blue";
         }
+        else if (d.Model_Label_Real == "Below" && d.Model_Label_Real == d.Real_Label){
+          return "green"
+        }
         else {
-          return "black"
+          return 'black'
         }
       }) 
       .on('click', function(d) {
@@ -790,11 +795,11 @@ function initReal2012(walData) {
 } 
 function init2012(walData) {
   walData.forEach(function(sample) {
-    sample.Pred_Fuel_Pric = +sample.Pred_Fuel_Pric;
-    sample.Pred_Temp = +sample.Pred_Temp;
-    sample.Pred_Unem = +sample.Pred_Unem;
-    sample.Pred_Week_Sales = +Math.round(sample.Pred_Week_Sales);
-    sample.Pred_CPI = +sample.Pred_CPI;
+    sample.Pred_Fuel_Pric = +Math.round(sample.Pred_Fuel_Pric * 100) / 100;
+    sample.Pred_Temp = +Math.round(sample.Pred_Temp * 100) / 100;
+    sample.Pred_Unem = +Math.round(sample.Pred_Unem * 100) / 100;
+    sample.Pred_Week_Sales = +Math.round(sample.Pred_Week_Sales * 100) / 100;
+    sample.Pred_CPI = +Math.round(sample.Pred_CPI * 100) / 100;
     sample.Store = +sample.Store
   }); 
 
@@ -830,13 +835,16 @@ function init2012(walData) {
     var chartGroup = svg.append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    svg.append("circle").attr("cx",width).attr("cy",30).attr("r", 6).style("fill", "orange")
-    svg.append("circle").attr("cx",width).attr("cy",60).attr("r", 6).style("fill", "blue")
-    svg.append("circle").attr("cx",width).attr("cy",90).attr("r", 6).style("fill", "black")
-    svg.append("text").attr("x", (width +10)).attr("y", 35).text("Average").style("font-size", "15px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", (width + 10)).attr("y", 65).text("Above Average").style("font-size", "15px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", (width + 10)).attr("y", 95).text("Below").style("font-size", "15px").attr("alignment-baseline","middle")
-            
+    svg.append("rect").attr('x', width-55).attr('y', 20).attr('width', 192).attr('height', 110).attr('stroke', 'black').attr('fill', 'white').attr('opacity', 0.5);
+    svg.append("circle").attr("cx",width-45).attr("cy",30).attr("r", 6).style("fill", "orange")
+    svg.append("circle").attr("cx",width-45).attr("cy",60).attr("r", 6).style("fill", "blue")
+    svg.append("circle").attr("cx",width-45).attr("cy",90).attr("r", 6).style("fill", "green")
+    svg.append("circle").attr("cx",width-45).attr("cy",120).attr("r", 6).style("fill", "black")
+    svg.append("text").attr("x", (width -35)).attr("y", 35).text("Prophet Correct: Average").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 35)).attr("y", 65).text("Prophet Correct: Above").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 35)).attr("y", 95).text("Prophet Correct: Below").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 35)).attr("y", 125).text("Prophet Incorrect").style("font-size", "15px").attr("alignment-baseline","middle")            
+                
 
     // Initial Params
     var chosenXAxis = "Pred_Fuel_Pric";
@@ -883,9 +891,9 @@ function init2012(walData) {
 
         var toolTip = d3.tip()
             .attr("class", "tooltip")
-            .offset([100, -80])
+            .offset([100, 80])
             .html(function(d) {
-            return (`Week Date: ${d.Date}<br>${label} ${d[chosenXAxis]}<br>Weekly Sale: $${(d.Pred_Week_Sales)}<br> Store: ${d.Store}`);
+            return (`Week Date: ${d.Date}<br>${label} ${d[chosenXAxis]}<br>Weekly Sale: $${(d.Pred_Week_Sales)}<br> Store: ${d.Store}<br>Model: ${(d.Model_Label_Real)}<br>FBProphet: ${(d.Proph_Label)}<br>Real: ${(d.Real_Label)}`);
             });
 
         circlesGroup.call(toolTip);
@@ -957,14 +965,17 @@ function init2012(walData) {
       })
       .attr("stroke", "black")
       .attr("fill", function(d) {
-        if (d.Model_Label_Pred == "Average") {
+        if (d.Proph_Label == "Average" && d.Proph_Label == d.Real_Label) {
           return "orange";
         }
-        else if (d.Model_Label_Pred === "Above") {
+        else if (d.Proph_Label == "Above" && d.Proph_Label == d.Real_Label) {
           return "blue";
         }
+        else if (d.Proph_Label == "Below" && d.Proph_Label == d.Real_Label){
+          return "green"
+        }
         else {
-          return "black"
+          return 'black'
         }
       }) 
       .on('click', function(d) {
@@ -1129,11 +1140,11 @@ function init2012(walData) {
 
 function init2013(walData) {
   walData.forEach(function(sample) {
-    sample.Fuel_Price = +sample.Fuel_Price;
-    sample.Temperature_C = +sample.Temperature_C;
-    sample.Unemployment = +sample.Unemployment;
-    sample.Weekly_Sales = +Math.round(sample.Weekly_Sales);
-    sample.CPI = +sample.CPI;
+    sample.Fuel_Price = +Math.round(sample.Fuel_Price * 100) / 100;
+    sample.Temperature_C = +Math.round(sample.Temperature_C * 100) / 100;
+    sample.Unemployment = +Math.round(sample.Unemployment * 100) / 100;
+    sample.Weekly_Sales = +Math.round(sample.Weekly_Sales * 100) / 100;
+    sample.CPI = +Math.round(sample.CPI * 100) / 100;
     sample.Store = +sample.Store
   }); 
 
@@ -1169,13 +1180,16 @@ function init2013(walData) {
     var chartGroup = svg.append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    svg.append("circle").attr("cx",width).attr("cy",30).attr("r", 6).style("fill", "orange")
-    svg.append("circle").attr("cx",width).attr("cy",60).attr("r", 6).style("fill", "blue")
-    svg.append("circle").attr("cx",width).attr("cy",90).attr("r", 6).style("fill", "black")
-    svg.append("text").attr("x", (width +10)).attr("y", 35).text("Average").style("font-size", "15px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", (width + 10)).attr("y", 65).text("Above Average").style("font-size", "15px").attr("alignment-baseline","middle")
-    svg.append("text").attr("x", (width + 10)).attr("y", 95).text("Below").style("font-size", "15px").attr("alignment-baseline","middle")
-            
+    svg.append("rect").attr('x', width-55).attr('y', 20).attr('width', 192).attr('height', 110).attr('stroke', 'black').attr('fill', 'white').attr('opacity', 0.5);
+    svg.append("circle").attr("cx",width-45).attr("cy",30).attr("r", 6).style("fill", "orange")
+    svg.append("circle").attr("cx",width-45).attr("cy",60).attr("r", 6).style("fill", "blue")
+    svg.append("circle").attr("cx",width-45).attr("cy",90).attr("r", 6).style("fill", "green")
+    svg.append("circle").attr("cx",width-45).attr("cy",120).attr("r", 6).style("fill", "black")
+    svg.append("text").attr("x", (width -35)).attr("y", 35).text("Agree: Average").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 35)).attr("y", 65).text("Agree: Above").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 35)).attr("y", 95).text("Agreee: Below").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", (width - 35)).attr("y", 125).text("Disagree").style("font-size", "15px").attr("alignment-baseline","middle")            
+                
 
     // Initial Params
     var chosenXAxis = "Fuel_Price";
@@ -1223,9 +1237,9 @@ function init2013(walData) {
 
         var toolTip = d3.tip()
             .attr("class", "tooltip")
-            .offset([100, -80])
+            .offset([100, 80])
             .html(function(d) {
-            return (`Week Date: ${d.Date}<br>${label} ${d[chosenXAxis]}<br>Weekly Sale: $${(d.Weekly_Sales)}<br> Store: ${d.Store}`);
+            return (`Week Date: ${d.Date}<br>${label} ${d[chosenXAxis]}<br>Weekly Sale: $${(d.Weekly_Sales)}<br> Store: ${d.Store}<br>Model: ${(d.Label)}<br>FBProphet: ${(d.Proph_Label)}`);
             });
 
         circlesGroup.call(toolTip);
@@ -1295,14 +1309,17 @@ function init2013(walData) {
       })
       .attr("stroke", "black")
       .attr("fill", function(d) {
-        if (d.Label == "Average") {
+        if (d.Proph_Label == "Average" && d.Proph_Label == d.Label) {
           return "orange";
         }
-        else if (d.Label === "Above") {
+        else if (d.Proph_Label == "Above" && d.Proph_Label == d.Label) {
           return "blue";
         }
+        else if (d.Proph_Label == "Below" && d.Proph_Label == d.Label){
+          return "green"
+        }
         else {
-          return "black"
+          return 'black'
         }
       }) 
       .on('click', function(d) {
