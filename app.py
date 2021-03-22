@@ -26,18 +26,6 @@ app = Flask(__name__)
 #################################################
 
 from flask_sqlalchemy import SQLAlchemy
-engine = create_engine("postgres://ofiglsqd:vVojrG9_zzJZCOLXz8rhKWXk6ivvYqAe@otto.db.elephantsql.com:5432/ofiglsqd", echo=False)
-
-Base = automap_base()
-Base.prepare(engine, reflect=True)
-
-walmart = Base.classes.walmart
-market_share = Base.classes.market_share
-stock = Base.classes.stock
-store = Base.classes.store
-
-session = Session(engine)
-grocery_list = []
 
 # Grocery List Recommendations
 server = "grocery.cu51j1bqdgvr.us-east-2.rds.amazonaws.com"
@@ -84,35 +72,27 @@ def grocery():
         top10 = cluster_top10[cluster_top10['cluster'] == cluster_num]
         
         # Set starting variables
+        grocery_list = []
         n = 0
-        for product in repeat['product_name']:
-            top10_check = top10[top10['product_name'] == product]
-            if (n == 3):
-                break
-            elif (not top10_check.empty):
-                url_list = top10.loc[top10['product_name'] == product].img_url.item()
-                grocery_list.append({'product': product, 'img': url_list})
-                n = n + 1
-        
-        for product in nonrepeat['product_name']:
+        for product in top10['product_name']:
+            url_list = top10.loc[top10['product_name'] == product].img_url.item()
+            repeat_check = repeat[repeat['product_name'] == product]
             nonrepeat_check = nonrepeat[nonrepeat['product_name'] == product]
-            if (n == 3):
+
+            if (n==3):
                 break
+            elif (not repeat_check.empty):
+                grocery_list.append({'product': product, 'img': url_list})
+                n = n + 1
             elif (not nonrepeat_check.empty):
-                url_list = top10.loc[top10['product_name'] == product].img_url.item()
                 grocery_list.append({'product': product, 'img': url_list})
                 n = n + 1
-        
-        for product in repeat['product_name']:
-            if (n == 3):
-                break
             else:
-                url_list = top10.loc[top10['product_name'] == product].img_url.item()
                 grocery_list.append({'product': product, 'img': url_list})
-                n = n + 1
+                n = n + 1 
         return grocery_list
     # Call function
-    recommendations(user_email)
+    grocery_list = recommendations(user_email)
     # Render Landing Page
     return render_template("landing.html", grocery_list = grocery_list)
 

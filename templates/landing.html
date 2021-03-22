@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" src="static/css/style.css">
+    <link rel="stylesheet" src="./static/css/style.css">
 </head>
 <body style="background-color: white;">
 	<nav class="navbar navbar-expand-md" style ="background-color: #3773da;height:60px;">
@@ -39,6 +39,16 @@
             </ul>
         </div>
     </nav>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert" 
+    style="text-align:center;background-color:#b0d1f6;color:#3773da;z-index:5;position:fixed;
+    border-color:#3773da;border-style:solid;border-width:medium;right:0;margin-top:10px;border-radius:15px;">
+		<strong>Grocery List Generated</strong><div>
+			<a href="#">Go to Cart</a>
+		</div>
+		<button type="button" class="close" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
     <div class="container-fluid">
         <div class="row">
             <img src="./static/images/Banner.PNG" class="img-fluid">
@@ -99,12 +109,29 @@
                 <div>
                     <img src="./static/images/down-arrow.png" class="img-fluid" style="width:50%;padding:20px;">
                 </div>
-                <img src="./static/images/cluster.png" class="img-fluid">
-                <img src="./static/images/H2O.png" class="img-fluid">
+                <img src="./static/images/vegevariety.png" class="img-fluid">
             </div>
             <div class="col-md-5"></div>
         </div>
-        <div class="row" style="height:100px;">
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2" style="text-align: center;">
+                <img src="./static/images/down-arrow.png" class="img-fluid" style="width:50%;padding:20px;">
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="text-align: center;">
+                <img src="./static/images/Top10_Blue.png" class="img-fluid" style="padding:15px;">
+            </div>
+            <div class="col-md-4" style="text-align: center;">
+                <img src="./static/images/Past_Orders_Blue.png" class="img-fluid" style="padding-top:50px;">
+            </div>
+            <div class="col-md-4" style="text-align: center;padding-top:20px;">
+                <img src="./static/images/Recommendations_Blue.png" class="img-fluid" style="padding:15px;">
+            </div>
+        </div>
+        <div class="row" style="height:70px;">
 
         </div>
     </div>
@@ -112,5 +139,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
