@@ -1,19 +1,31 @@
 #################################################
 # Import Dependencies
 #################################################
+# Flask
 from flask_sqlalchemy import SQLAlchemy
-import os
 from flask import (
     Flask,
     render_template,
     jsonify,
     request,
     redirect)
+
+# OS, Pandas
+import os
+import pandas as pd
+import numpy as np
+import datetime
+import requests
+
+# SQLAlchemy
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from sqlalchemy import func
+
+# FB Prophet
+from fbprophet import Prophet
 
 #################################################
 # Flask Setup
