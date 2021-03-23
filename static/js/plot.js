@@ -24,7 +24,7 @@ function init(){
      
     console.log(volumeClose)
     var trace1 = {
-      name: 'Walmart Close price vs. sum of upvotes', 
+      name: 'Sum of Upvotes Vs. Close price', 
       type: 'scatter', 
       x: score, 
       y: adjustClosing, 
@@ -39,13 +39,40 @@ function init(){
     };
     
 
-    data = [trace1, trace2];
-  
-
+    var data = [trace1, trace2];
+    var layout = {
+      title: {
+        text:'Walmart Sum of Upvotes Vs. Close price',
+        font: {
+          family: 'Courier New, monospace',
+          size: 24
+        },
+        xref: 'paper',
+        x: 0.05,
+      },
+      xaxis: {
+        title: {
+          text: 'Sum of Upvotes',
+          font: {
+            family: 'Courier New, monospace',
+            size: 18,
+            color: '#7f7f7f'
+          }
+        },
+      },
+      yaxis: {
+        title: {
+          text: 'Close Price',
+          font: {
+            family: 'Courier New, monospace',
+            size: 18,
+            color: '#7f7f7f'
+          }
+        }
+      }
+    };
     
-    Plotly.newPlot('plot', data);
-
-
+    Plotly.newPlot('plot', data, layout);
   });
 };
 
