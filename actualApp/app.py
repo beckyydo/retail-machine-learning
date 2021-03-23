@@ -33,6 +33,8 @@ walmart = Base.classes.walmart
 market_share = Base.classes.market_share
 stock = Base.classes.stock
 store = Base.classes.store
+comparison = Base.classes.comparison
+predictions = Base.classes.predictions
 
 session = Session(engine)
 
@@ -128,7 +130,43 @@ def store_route():
             'Address': row[0], 'City': row[1], 'Latitude': row[2], 'Longitude': row[3]}
         location.append(locationDict)
     return jsonify(location)
-    
+
+@app.route("/api/predictions")
+def predict_route():
+    data = session.query(predictions.Store, predictions.Fuel_Price, 
+                        predictions.Temperature_C, predictions.Unemployment,
+                        predictions.CPI, predictions.Weekly_Sales, predictions.Ave_Sales,
+                        predictions.Date, predictions.Proph_Label, predictions.Label).all()
+    # Create dictionary from pulled data
+    predict_df = []
+    for row in data:
+        predict_dict = {'Store': row[0],'Fuel_Price': row[1], 
+        'Temperature_C': row[2], 'Unemployment': row[3], 'CPI': row[4],
+        'Weekly_Sales': row[5], 'Ave_Sales': row[6], 'Date': row[7], 
+        'Proph_Label': row[8], 'Label': row[9]}
+        predict_df.append(predict_dict)
+    return jsonify(predict_df)
+
+@app.route("/api/comparison")
+def compare_route():
+    data = session.query(comparison.Store, comparison.Fuel_Price, 
+                        comparison.Temperature_C, comparison.Unemployment,
+                        comparison.CPI, comparison.Weekly_Sales, comparison.Ave_Sales,
+                        comparison.Date, comparison.Proph_Label, comparison.Real_Label,
+                        comparison.Pred_Fuel_Pric, comparison.Pred_CPI, comparison.Pred_Temp, 
+                        comparison.Pred_Unem, comparison.Pred_Week_Sales, 
+                        comparison.Model_Label_Pred, comparison.Model_Label_Real).all()
+    # Create dictionary from pulled data
+    comparison_df = []
+    for row in data:
+        comparison_dict = {'Store': row[0],'Fuel_Price': row[1], 
+        'Temperature_C': row[2], 'Unemployment': row[3], 'CPI': row[4],
+        'Weekly_Sales': row[5], 'Ave_Sales': row[6], 'Date': row[7], 
+        'Proph_Label': row[8], 'Real_Label': row[9], 'Pred_Fuel_Pric': row[10], 
+        'Pred_CPI': row[11], 'Pred_Temp': row[12], 'Pred_Unem': row[13], 
+        'Pred_Week_Sales': row[14], 'Model_Label_Pred': row[15], 'Model_Label_Real': row[16]}
+        comparison_df.append(comparison_dict)
+    return jsonify(comparison_df)
 
 if __name__ == "__main__":
     app.run()
