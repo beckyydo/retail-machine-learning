@@ -39,7 +39,7 @@ def stock_route():
 
     data= session.query(stock.Date,stock.score, stock.num_comments, stock.Open , stock.High,stock.Low,
     stock.Close,stock.Adj_Close, stock.Volume,stock.High_Low_pct, stock.ewm_5, stock.price_std_5, 
-    stock.volume_Change, stock.volume_avg_5, stock.volume_Close).all()
+    stock.volume_Change, stock.volume_avg_5, stock.volume_Close, stock.y).all()
  
     stock_df=[]
     for row in data:
@@ -58,7 +58,8 @@ def stock_route():
             "priceStdv5": row[11],
             "volumeChange":row[12],
             "volumeAvg5":row[13],
-            "volumeClose":row[14]
+            "volumeClose":row[14], 
+            "equation": row [15]
             }
         stock_df.append(output)
         
