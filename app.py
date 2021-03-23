@@ -9,7 +9,7 @@ from flask import (
     jsonify,
     request,
     redirect)
-# from flask_cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 
 # OS, Pandas
 import os
@@ -44,7 +44,7 @@ engine = create_engine(
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
-store = Base.classes.store
+stock = Base.classes.stock
 session = Session(engine)
 
 
@@ -54,17 +54,25 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/api/store")
-def store_route():
-    locationData = session.query(
-        store.address1, store.city, store.latitude, store.longitude).all()
-    session.close()
-    location = []
-    for row in locationData:
-        locationDict = {
-            'Address': row[0], 'City': row[1], 'Latitude': row[2], 'Longitude': row[3]}
-        location.append(locationDict)
-    return jsonify(location)
+@app.route("/api/stock")
+def stock_route():
+
+    data= session.query(stock.Date, stock.Open , stock.High,stock.Low,stock.Close,stock.Volume,stock.Color,stock.MovingAvg).all()
+ 
+    stock_df=[]
+    for row in data:
+        output = {
+            "dates" : row[0],
+            "openingPrices":row[1],
+            "highPrices": row[2],
+            "lowPrices": row[3],
+            "closingPrices": row[4],
+            "volume":row[5],
+            "colors": row[6],
+            "movingAvg": row[7]}
+        stock_df.append(output)
+        
+    return jsonify(stock_df)
 
 
 if __name__ == "__main__":
