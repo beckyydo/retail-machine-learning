@@ -140,6 +140,7 @@ function init(walData) {
         year = d[3];
     return [month, day, year].join('-');
     }
+  
     var svgWidth = 960;
     var svgHeight = 500;
 
@@ -472,6 +473,17 @@ function initReal2012(walData) {
         year = d[3];
     return [month, day, year].join('-');
     }
+
+  var correct = 0; 
+  var total = 0;
+  walData.forEach(function(sample) {
+    if (sample.Model_Label_Real == sample.Real_Label) {
+        correct += 1
+    }
+      total += 1
+  })
+  d3.select(".counter2").text(`Model Correct: ` + (Math.round((correct/total)*100)/100) + "%")
+  
     var svgWidth = 960;
     var svgHeight = 500;
 
@@ -815,6 +827,18 @@ function init2012(walData) {
         year = d[3];
     return [month, day, year].join('-');
     }
+
+  var correct = 0; 
+  var total = 0;  
+  walData.forEach(function(sample) {
+    if (sample.Proph_Label == sample.Real_Label) {
+        correct += 1
+    }
+        total += 1
+    })
+  d3.select(".counter2").text(`FBProphet Correct: ` + (Math.round((correct/total)*100)/100) + "%")
+  
+
     var svgWidth = 960;
     var svgHeight = 500;
 
@@ -1159,7 +1183,18 @@ function init2013(walData) {
         day = d[2],
         year = d[3];
     return [month, day, year].join('-');
-    }
+  }
+
+  var correct = 0; 
+  var total = 0;  
+  walData.forEach(function(sample) {
+      if (sample.Proph_Label == sample.Label) {
+        correct += 1
+      }
+        total += 1
+  })
+  d3.select(".counter2").text(`FBProphet & Model Agree: ` + (Math.round((correct/total)*100)/100) + "%")
+
     var svgWidth = 960;
     var svgHeight = 500;
 
