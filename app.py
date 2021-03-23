@@ -9,7 +9,7 @@ from flask import (
     jsonify,
     request,
     redirect)
-from flask_cors import CORS, cross_origin
+# from flask_cors import CORS, cross_origin
 
 # OS, Pandas
 import os
