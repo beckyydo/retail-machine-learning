@@ -9,6 +9,7 @@ from flask import (
     jsonify,
     request,
     redirect)
+from flask_cors import CORS, cross_origin
 
 # OS, Pandas
 import os
@@ -16,6 +17,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import requests
+import matplotlib.pyplot as plt
 
 # SQLAlchemy
 import sqlalchemy
