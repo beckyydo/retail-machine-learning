@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SocioEconomic Factors and Weekly Sales</title>
+		<link rel="stylesheet" href="/static/css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class = "container-fluid">
+			<div class = "banner">
+				<h1 style = "color:blue;">Socioeconomic Effect on Sales Predictions By Store</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<div class="well">
+			  		<div>
+						<h5>Store ID No.:</h5>
+				  		<select id="selectDataset"></select>
+					</div>
+					<div class="button">
+						<button type="button">Reset Chart</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2" style = "text-align:center;">
+				<div class="well">
+					<div>
+					  <h5>Select Predictions</h5>
+						<select id="selPreDataset"></select>
+				  </div>
+			  </div>
+			</div>
+			<div class="col-md-2" style = "text-align:center;">
+				<h4>Store Selected:</h4>
+				<div class="well">						
+					<h4 class="counter">All Stores</h3>	
+				</div>
+			</div>
+		</div>	
+		<div class="chart">
+		</div>
+
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+		<script src="/static/js/app.js"></script>
+  </body>
+</html>
