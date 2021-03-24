@@ -46,10 +46,14 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 stock = Base.classes.stock
-priceMetrics = Base.classes.priceMetrics
-actualPrice = Base.classes.actual_stock_price
-stockPredictions = Base.classes.stockPredictions
-priceCV = Base.classes.priceCrossVal
+
+metrics = Base.classes.price_metrics
+
+price = Base.classes.actual_stock_price
+
+stockpredictions = Base.classes.stock_predictions
+
+pricecrossval = Base.classes.price_cross_val
 
 session = Session(engine)
 
@@ -74,9 +78,23 @@ def stock_route():
         
     return jsonify(stock_df)
 
-@app.route("/api/priceMetrics")
+# @app.route("/api/actual_stock_price")
+# def actualprice_route():
+
+#     data = session.query(actual_stock_price.Date, actual_stock_price.Close).all()
+ 
+#     actualPrice_df=[]
+#     for row in data:
+#         output = {
+#             "closingPrice" : row[1],
+#             "date":row[0]}
+#         stock_df.append(output)
+        
+#     return jsonify(stock_df)
+
+@app.route("/api/metrics")
 def metrics_route():
-    data = session.query(priceMetrics.horizon, priceMetrics.mse, priceMetrics.rmse, priceMetrics.mae, priceMetrics.mape, priceMetrics.mdape, priceMetrics.coverage)
+    data = session.query(price_metrics.horizon, price_metrics.mse, price_metrics.rmse, price_metrics.mae, price_metrics.mape, price_metrics.mdape, price_metrics.coverage).all()
 
     price_metrics = []
     for row in data:
