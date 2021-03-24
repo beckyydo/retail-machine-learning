@@ -1,3 +1,94 @@
+/*Cart Page*/
+.cart-img{
+  width:120px;
+  height:120px;
+  border-radius: 25px;
+  border-color:#3773DA;
+  border-width: medium;
+}
+
+/*Landing Page*/
+.alert {
+  position:fixed !important;
+  z-index: 10 !important;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+/*Login Page*/
+.user_card {
+      height: 400px;
+      width: 350px;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: #f39c12;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+}
+.brand_logo_container {
+      position: absolute;
+      height: 170px;
+      width: 170px;
+      top: -75px;
+      border-radius: 50%;
+      background: #60a3bc;
+      padding: 10px;
+      text-align: center;
+  }
+  .form_container {
+      margin-top: 100px;
+  }
+  .login_btn {
+      width: 100%;
+      background: #c0392b !important;
+      color: white !important;
+  }
+  .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+  }
+  .login_container {
+      padding: 0 2rem;
+  }
+  .input-group-text {
+      background: #c0392b !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+  }
+  .input_user,
+  .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+  }
+  .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+      background-color: #c0392b !important;
+  }
+
 #overlay {
   position: fixed;
   display: none;

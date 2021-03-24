@@ -13,6 +13,10 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from sqlalchemy import func
 import psycopg2
+import pandas as pd
+import pickle
+from joblib import dump, load
+from flask_sqlalchemy import SQLAlchemy
 
 #################################################
 # Flask Setup
@@ -22,48 +26,38 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-
-from flask_sqlalchemy import SQLAlchemy
 engine = create_engine("postgres://ofiglsqd:vVojrG9_zzJZCOLXz8rhKWXk6ivvYqAe@otto.db.elephantsql.com:5432/ofiglsqd", echo=False)
 
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 walmart = Base.classes.walmart
-market_share = Base.classes.market_share
-stock = Base.classes.stock
-store = Base.classes.store
 comparison = Base.classes.comparison
 predictions = Base.classes.predictions
 
 session = Session(engine)
+
+# Grocery List Recommendations
+server = "grocery.cu51j1bqdgvr.us-east-2.rds.amazonaws.com"
+database = "postgres"
+port = "5432"
+username = "postgres"
+password = "postgres123"
+conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
+
+#path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/"
+#kmeans= load(path+"kmeans.joblib")
+user_df = pd.read_sql_table("user_df", conn)
+grocery_df = pd.read_sql_table("grocery_df", conn)
+orders = pd.read_sql_table("order_df", conn)
+cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
 
 # Main route to render index.html
 @app.route("/")
 def home():
     return render_template("index.html")
 
-# Monthly Sales Service Routes
-@app.route('/api/monthly')
-def send_data():
-    conn = psycopg2.connect(host='otto.db.elephantsql.com', port='5432', dbname='ofiglsqd', user='ofiglsqd', password='vVojrG9_zzJZCOLXz8rhKWXk6ivvYqAe')
-
-    cur = conn.cursor()
-    cur.execute("select year, month, sales::float from public.sales_by_period;")
-        
-    tmp_data = cur.fetchall()
-    payload = []
-    content = {}
-    for result in tmp_data:
-        content = {'year': result[0], 'month': result[1], 'sales': result[2]}
-        payload.append(content)
-        content = {}
-
-    cur.close()
-
-    return jsonify(payload)
-
-# Weekly Sales Variable Interactive Service Route
+# **************************************** Weekly Sales Variable Interactive Service Route ****************************************
 @app.route("/api/walmart")
 def factor_route():
     data = session.query(walmart.Store, walmart.Fuel_Price, 
@@ -78,58 +72,6 @@ def factor_route():
         'Weekly_Sales': row[5], 'Holiday_Name': row[6], 'Week_Date': row[7]}
         factor_df.append(factor_dict)
     return jsonify(factor_df)
-
-# Stock Service Route
-@app.route("/api/stock")
-def stock_route():
-
-    data= session.query(stock.Date, stock.Open, stock.High, stock.Low, stock.Close, 
-    stock.Volume, stock.Color, stock.MovingAvg).all()
- 
-    stock_df=[]
-    for row in data:
-        output = {
-            "dates" : row[0],
-            "openingPrices":row[1],
-            "highPrices": row[2],
-            "lowPrices": row[3],
-            "closingPrices": row[4],
-            "volume":row[5],
-            "colors": row[6],
-            "movingAvg": row[7]}
-        stock_df.append(output)
-        
-    return jsonify(stock_df)
-
-# Market Share Service Route
-@app.route("/api/market_share")
-def market_route():
-    data = session.query(market_share.CITY, market_share.STATE, market_share.Latitude, 
-                        market_share.Longitude, market_share.POPULATION,
-                        market_share.MARKET_SHARE).all()
-    # Create dictionary from pulled data
-    market_df = []
-    for row in data:
-        market_dict = {'City': row[0],'State': row[1], 
-        'Lat': row[2], 'Lon': row[3], 'Population': row[4],
-        'Share': row[5]}
-        market_df.append(market_dict)
-    # Sort list of dictionary by key City then State
-    market_df = sorted(market_df, key=lambda k: k['City']) 
-    market_df = sorted(market_df, key=lambda k: k['State']) 
-    return jsonify(market_df)
-
-@app.route("/api/store")
-def store_route():
-    locationData = session.query(
-        store.address1, store.city, store.latitude, store.longitude).all()
-    session.close()
-    location = []
-    for row in locationData:
-        locationDict = {
-            'Address': row[0], 'City': row[1], 'Latitude': row[2], 'Longitude': row[3]}
-        location.append(locationDict)
-    return jsonify(location)
 
 @app.route("/api/predictions")
 def predict_route():
@@ -167,6 +109,70 @@ def compare_route():
         'Pred_Week_Sales': row[14], 'Model_Label_Pred': row[15], 'Model_Label_Real': row[16]}
         comparison_df.append(comparison_dict)
     return jsonify(comparison_df)
+
+
+# **************************************** Grocery List Recommendation Service Route ****************************************
+grocery_list = []
+
+# Main route to render index.html
+@app.route("/login")
+def login_page():
+    return render_template("login.html")
+
+@app.route("/recommendations", methods = ['POST'])
+def grocery():
+    # Retrieve e-mail from login
+    user_email = request.form['user_email']
+    # Create recommendation function
+    def recommendations(user_email):
+        email = str(user_email)
+        
+        # Convert e-mail to user_id
+        user_id = int(user_df.loc[user_df['email'] == email, 'user_id'])
+        
+        # Grab past order from 
+        order = orders[orders['user_id'] == user_id].sort_values('add_to_cart_order')
+        # Spilt repeat orders and non-repeat orders
+        repeat = order[order['reordered'] > 0]
+        nonrepeat = order[order['reordered'] == 0]
+        
+        # Grab user past orders in kmean prediction format
+        grocery_df = pd.read_sql_table("grocery_df", conn)
+        user_order = grocery_df[grocery_df['user_id'] == user_id].drop('user_id', axis = 1)
+        
+        # Fit user_id on model, return cluster 
+        cluster_num = kmeans.predict(user_order.to_numpy())[0]
+        top10 = cluster_top10[cluster_top10['cluster'] == cluster_num]
+        
+        # Set starting variables
+        n = 0
+        for product in top10['product_name']:
+            url_list = top10.loc[top10['product_name'] == product].img_url.item()
+            repeat_check = repeat[repeat['product_name'] == product]
+            nonrepeat_check = nonrepeat[nonrepeat['product_name'] == product]
+
+            if (n==3):
+                break
+            elif (not repeat_check.empty):
+                grocery_list.append({'product': product, 'img': url_list})
+                n = n + 1
+            elif (not nonrepeat_check.empty):
+                grocery_list.append({'product': product, 'img': url_list})
+                n = n + 1
+            else:
+                grocery_list.append({'product': product, 'img': url_list})
+                n = n + 1 
+        return grocery_list
+    # Call function
+    recommendations(user_email)
+    # Render Landing Page
+    return render_template("landing.html", grocery_list = grocery_list)
+
+@app.route("/cart")
+def shopping_cart():
+    return render_template('cart.html', grocery_list = grocery_list)
+
+
 
 if __name__ == "__main__":
     app.run()
