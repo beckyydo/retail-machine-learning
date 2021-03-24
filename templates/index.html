@@ -29,6 +29,14 @@
       crossorigin="anonymous"
     ></script>
     <!-- Local JS -->
-    <script src="/assets/js/logic.js"></script>
+    <script>
+      const url = "api/stock";
+
+      // <!-- Load data -->
+
+      d3.json("url").then(function (data) {
+        console.log(data);
+      });
+    </script>
   </body>
 </html>
