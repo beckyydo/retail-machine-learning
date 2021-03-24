@@ -46,14 +46,14 @@ username = "postgres"
 password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
-path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/data/"
-kmeans = load(path + "kmeans.joblib")
+#path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/data/"
+#kmeans = load(path + "kmeans.joblib")
+#feature2 = pd.read_csv(path+"recommendations.csv")
 
 user_df = pd.read_sql_table("user_df", conn)
 grocery_df = pd.read_sql_table("grocery_df", conn)
 orders = pd.read_sql_table("order_df", conn)
 cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
-feature2 = pd.read_csv(path+"recommendations.csv")
 
 # Main route to render index.html
 @app.route("/")
