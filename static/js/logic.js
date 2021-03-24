@@ -71,7 +71,7 @@ d3.json(url).then(function(data){
     mode:'markers',
     marker: {
       color: 'black',
-      size: 10
+      size: 30
     },
     name:'actual price',
     type:'scatter',
