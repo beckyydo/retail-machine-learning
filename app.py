@@ -46,6 +46,11 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 stock = Base.classes.stock
+priceMetrics = Base.classes.priceMetrics
+actualPrice = Base.classes.actual_stock_price
+stockPredictions = Base.classes.stockPredictions
+priceCV = Base.classes.priceCrossVal
+
 session = Session(engine)
 
 
@@ -69,9 +74,24 @@ def stock_route():
         
     return jsonify(stock_df)
 
-# @app.route("/api/forecast")
-# def forecast_route():
+@app.route("/api/priceMetrics")
+def metrics_route():
+    data = session.query(priceMetrics.horizon, priceMetrics.mse, priceMetrics.rmse, priceMetrics.mae, priceMetrics.mape, priceMetrics.mdape, priceMetrics.coverage)
 
+    price_metrics = []
+    for row in data:
+        output = {
+            "horizon":row[0],
+            "mse":row[1],
+            "rmse":row[2],
+            "mae":row[3],
+            "mape":row[4],
+            "mdape":row[5],
+            "coverage":row[6]
+        }
+        price_metrics.append(output)
+
+    return jsonify(price_metrics)
 
 
 if __name__ == "__main__":
