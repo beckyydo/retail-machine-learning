@@ -1,0 +1,1001 @@
+,user_id,product_id,product_name,model_rating
+0,7,43394,Organic Lactose Free Whole Milk,4.926598758
+1,7,4210,Whole Milk,4.670515627
+2,7,24852,Banana,4.608021184
+3,7,26165,Electrolyte Enhanced Water,4.305517709
+4,7,44799,Fresh CA Grown Eggs,4.211653912
+5,7,38928,0% Greek Strained Yogurt,3.963667592
+6,7,48857,Authentic French Brioche,3.939450002
+7,7,19894,Enlightened Organic Raw Kombucha,3.933028249
+8,7,25931,Organic Baby Spinach Salad,3.842903425
+9,7,42450,Macaroni & Cheese,3.829305192
+0,15,10957,Fridge Pack Cola,4.287296428
+1,15,38689,Organic Reduced Fat Milk,4.286542393
+2,15,1069,100% Oatnut Bread,4.283842396
+3,15,15424,Purified Water,4.060429577
+4,15,31651,Extra Fancy Unsalted Mixed Nuts,4.009587734
+5,15,43394,Organic Lactose Free Whole Milk,3.989409127
+6,15,34217,Pesto Tortellini  Bowls,3.965817794
+7,15,11520,Large Alfresco Eggs,3.945921864
+8,15,12427,Original Beef Jerky,3.925250382
+9,15,29509,80  Vodka Holiday Edition,3.918777075
+0,17,18534,Grade A Extra Large Eggs,4.452438705
+1,17,13176,Bag of Organic Bananas,4.256073941
+2,17,32478,Reduced Fat 2% Milk,4.201307807
+3,17,14947,Pure Sparkling Water,4.101380391
+4,17,22610,Reduced Fat 2% Lactose-Free Milk,4.083871012
+5,17,41131,India Pale Ale,4.005509792
+6,17,36865,Non Fat Raspberry Yogurt,3.82390229
+7,17,44570,Kale Greens,3.683629047
+8,17,49235,Organic Half & Half,3.67794989
+9,17,10957,Fridge Pack Cola,3.646506242
+0,21,24838,Unsweetened Almondmilk,3.977919501
+1,21,5785,Organic Reduced Fat 2% Milk,3.902440785
+2,21,27086,Half & Half,3.382319985
+3,21,44632,Sparkling Water Grapefruit,3.252747257
+4,21,24852,Banana,3.236126245
+5,21,117,Petit Suisse Fruit,3.136265718
+6,21,19875,Organic Yogurt Original Plain,3.132202127
+7,21,5115,Organic Medium Brown Eggs,3.129559638
+8,21,47877,Coke Zero,3.072644727
+9,21,45603,Trilogy Kombucha Drink,3.022132978
+0,24,20940,Organic Low Fat Milk,3.901390734
+1,24,8859,Natural Spring Water,3.42223982
+2,24,13176,Bag of Organic Bananas,3.286880519
+3,24,6052,Eggo Chocolate Chip Waffles,3.24833603
+4,24,4472,Toasted Coconut Almondmilk Blend,3.23741967
+5,24,44177,Large Grade A Eggs,3.198562944
+6,24,29373,Nonfat Probiotic Drinks,3.194792312
+7,24,17638,Vanilla Coffee Concentrate,3.180368364
+8,24,29615,"Bread, Country Buttermilk",3.161432066
+9,24,30597,French Vanilla Coffee Creamer,3.149586208
+0,27,1463,Organic Milk,5
+1,27,4957,Total 2% Lowfat Greek Strained Yogurt With Blueberry,4.771324793
+2,27,6287,Organic & Raw Strawberry Serenity Kombucha,4.717780566
+3,27,27086,Half & Half,4.655748429
+4,27,22959,Reduced Fat Milk 100% Lactose Free,4.602329715
+5,27,19660,Spring Water,4.352991761
+6,27,5161,Dried Mango,4.313840976
+7,27,1069,100% Oatnut Bread,4.273729214
+8,27,14218,Grade A Large Eggs Cage Free Omega 3,4.132742296
+9,27,35504,Real Coconut Water,4.127748978
+0,28,4210,Whole Milk,3.617835793
+1,28,44632,Sparkling Water Grapefruit,3.250088106
+2,28,34217,Pesto Tortellini  Bowls,3.190417056
+3,28,12384,Organic Lactose Free 1% Lowfat Milk,3.118646747
+4,28,24852,Banana,3.11245337
+5,28,31651,Extra Fancy Unsalted Mixed Nuts,3.090906511
+6,28,25890,Boneless Skinless Chicken Breasts,2.981493055
+7,28,8490,Strawberry Rhubarb Yogurt,2.963652035
+8,28,44799,Fresh CA Grown Eggs,2.921296751
+9,28,8048,Packaged Grape Tomatoes,2.898237758
+0,29,38689,Organic Reduced Fat Milk,4.8132194
+1,29,45603,Trilogy Kombucha Drink,3.976265948
+2,29,6948,Organic Original Almond Milk,3.963024453
+3,29,27985,Smartwater Electrolyte Enhanced Water,3.880043194
+4,29,30233,Organic Large Brown Grade AA Cage Free Eggs,3.829571577
+5,29,24852,Banana,3.815109467
+6,29,8048,Packaged Grape Tomatoes,3.79582938
+7,29,27086,Half & Half,3.78598719
+8,29,38544,Organic Whole Milk Strawberry Beet Berry Yogurt Pouch,3.73283004
+9,29,45064,Honey Wheat Bread,3.663890322
+0,31,14947,Pure Sparkling Water,3.342574833
+1,31,20940,Organic Low Fat Milk,3.332942191
+2,31,43394,Organic Lactose Free Whole Milk,3.330294477
+3,31,24852,Banana,3.245004604
+4,31,42244,Total 2% All Natural Low Fat 2% Milkfat Greek Strained Yogurt,3.188487918
+5,31,44799,Fresh CA Grown Eggs,3.130405989
+6,31,21903,Organic Baby Spinach,3.016457802
+7,31,28745,Oven Roasted Turkey,3.015876874
+8,31,30440,Chocolate Crepes,2.917548796
+9,31,27086,Half & Half,2.796221483
+0,36,29447,"Milk, Organic, Vitamin D",4.58166845
+1,36,44632,Sparkling Water Grapefruit,4.049085922
+2,36,11576,Corn Chips,3.805837249
+3,36,32740,Cold-Brew Black Coffee,3.654904109
+4,36,12935,Organic Pasture Raised Brown Eggs,3.633726655
+5,36,49235,Organic Half & Half,3.597888982
+6,36,21903,Organic Baby Spinach,3.564719158
+7,36,24852,Banana,3.549664105
+8,36,22610,Reduced Fat 2% Lactose-Free Milk,3.496248612
+9,36,38928,0% Greek Strained Yogurt,3.484584357
+0,37,44799,Fresh CA Grown Eggs,3.574776009
+1,37,38689,Organic Reduced Fat Milk,3.349443773
+2,37,5640,Vanilla Soy Creamer,3.331921349
+3,37,14947,Pure Sparkling Water,3.294751621
+4,37,31651,Extra Fancy Unsalted Mixed Nuts,3.196715606
+5,37,45123,Organic 21 Grain Thin Sliced Bread,3.177803748
+6,37,47626,Large Lemon,3.023748748
+7,37,17429,Jalapeno Hummus,2.958957229
+8,37,47912,Vanilla Skyr Style Yogurt,2.934322272
+9,37,45763,Mini Seedless Cucumbers,2.925534977
+0,42,9292,Half And Half Ultra Pasteurized,4.379343025
+1,42,14947,Pure Sparkling Water,4.277846363
+2,42,24852,Banana,3.677766447
+3,42,49235,Organic Half & Half,3.666284463
+4,42,14218,Grade A Large Eggs Cage Free Omega 3,3.61991859
+5,42,22610,Reduced Fat 2% Lactose-Free Milk,3.519031049
+6,42,34050,Orange Juice,3.430952009
+7,42,21903,Organic Baby Spinach,3.378276468
+8,42,27726,Lemon Seltzer Water,3.375908713
+9,42,12099,Honey Greek Yogurt,3.366178787
+0,46,24852,Banana,4.426382046
+1,46,5077,100% Whole Wheat Bread,4.018558678
+2,46,24024,1% Lowfat Milk,3.896732309
+3,46,22610,Reduced Fat 2% Lactose-Free Milk,3.612851964
+4,46,15424,Purified Water,3.581124292
+5,46,35921,Organic Large Grade A Brown Eggs,3.48172906
+6,46,14702,Maple Honey Ham,3.460769317
+7,46,29373,Nonfat Probiotic Drinks,3.269739624
+8,46,18564,Diet Ginger Ale All Natural Soda,3.236744769
+9,46,9964,Superfood Dark Chocolate and Peanut Butter Seedbar,3.182053505
+0,50,45763,Mini Seedless Cucumbers,5
+1,50,4793,Wild Berry Smoothie,4.97446778
+2,50,47209,Organic Hass Avocado,4.565570178
+3,50,196,Soda,4.525073208
+4,50,21709,Sparkling Lemon Water,4.434429451
+5,50,32478,Reduced Fat 2% Milk,4.42588411
+6,50,7781,Organic Sticks Low Moisture Part Skim Mozzarella String Cheese,4.359206051
+7,50,29615,"Bread, Country Buttermilk",4.344072571
+8,50,6286,Half and Half,4.27479589
+9,50,1402,Plain Soymilk Creamer,4.201218854
+0,52,12341,Hass Avocados,4.369740569
+1,52,14233,Natural Artesian Water,4.287293676
+2,52,46149,Zero Calorie Cola,4.1354174
+3,52,45190,Vodka,3.809936536
+4,52,4962,Yotoddler Organic Pear Spinach Mango Yogurt,3.720224589
+5,52,36011,Organic Fat Free Milk,3.701351008
+6,52,28058,Gluten Free Sliced Mountain White Bread,3.669714443
+7,52,40852,Lactose Free Fat Free Milk,3.647079521
+8,52,3298,Mozzarella String Cheese,3.62465645
+9,52,5115,Organic Medium Brown Eggs,3.583120323
+0,54,24852,Banana,4.208695284
+1,54,4210,Whole Milk,3.993647696
+2,54,43154,Sparkling Mineral Water,3.84489836
+3,54,35951,Organic Unsweetened Almond Milk,3.807597264
+4,54,24964,Organic Garlic,3.704876756
+5,54,10673,Original Nooks & Crannies English Muffins,3.625954407
+6,54,11712,Cage Free Large White Eggs,3.528405283
+7,54,40571,Total 2% Greek Strained Yogurt with Cherry 5.3 oz,3.461928993
+8,54,44980,The Original Multi Grain Bread,3.409307478
+9,54,4289,15 Calories Light Lemonade,3.384516952
+0,63,10831,Yobaby Organic Plain Yogurt,4.556554104
+1,63,13176,Bag of Organic Bananas,4.538972514
+2,63,1463,Organic Milk,4.070802069
+3,63,44799,Fresh CA Grown Eggs,3.753632199
+4,63,49235,Organic Half & Half,3.695551963
+5,63,12069,Organic Campari Cocktail Tomatoes,3.687410158
+6,63,45051,Pub Mix,3.671027961
+7,63,196,Soda,3.626553675
+8,63,21386,Smartwater,3.561710271
+9,63,5077,100% Whole Wheat Bread,3.514652605
+0,67,13176,Bag of Organic Bananas,4.326384906
+1,67,196,Soda,4.066758863
+2,67,39180,Organic Lowfat 1% Milk,3.634213445
+3,67,30233,Organic Large Brown Grade AA Cage Free Eggs,3.470900775
+4,67,40571,Total 2% Greek Strained Yogurt with Cherry 5.3 oz,3.289461661
+5,67,1194,Natural Artisan Water,3.187405518
+6,67,17469,Lo-Carb Energy Drink,3.168400988
+7,67,34789,Light Vanilla Soymilk,3.070213135
+8,67,31651,Extra Fancy Unsalted Mixed Nuts,3.068129356
+9,67,49235,Organic Half & Half,3.049900491
+0,71,43394,Organic Lactose Free Whole Milk,5
+1,71,5479,Italian Sparkling Mineral Water,4.949543704
+2,71,5785,Organic Reduced Fat 2% Milk,4.940041437
+3,71,117,Petit Suisse Fruit,4.522628199
+4,71,30233,Organic Large Brown Grade AA Cage Free Eggs,4.517599283
+5,71,10831,Yobaby Organic Plain Yogurt,4.457628655
+6,71,47877,Coke Zero,4.451848338
+7,71,48857,Authentic French Brioche,4.337362549
+8,71,28080,Sugar Free Italian Sweet Creme Coffee Creamer,4.260746725
+9,71,5161,Dried Mango,4.214604584
+0,75,35914,Dha Omega 3 Reduced Fat 2% Milk,4.583218656
+1,75,10957,Fridge Pack Cola,4.170730088
+2,75,11576,Corn Chips,4.043020695
+3,75,6182,Natural Artesian Bottled Water,3.946054151
+4,75,22610,Reduced Fat 2% Lactose-Free Milk,3.847946308
+5,75,5161,Dried Mango,3.767048107
+6,75,14870,Icelandic Style Fat Free Plain Yogurt,3.757634879
+7,75,38768,Sweet Kale Salad Mix,3.716943179
+8,75,13176,Bag of Organic Bananas,3.713666721
+9,75,16083,Organic Large Brown Eggs,3.65907032
+0,82,49235,Organic Half & Half,4.710514661
+1,82,15424,Purified Water,4.487823234
+2,82,13176,Bag of Organic Bananas,4.28063832
+3,82,27845,Organic Whole Milk,4.231251861
+4,82,43394,Organic Lactose Free Whole Milk,3.951323502
+5,82,38928,0% Greek Strained Yogurt,3.907141612
+6,82,27966,Organic Raspberries,3.853039966
+7,82,196,Soda,3.822095266
+8,82,5115,Organic Medium Brown Eggs,3.808610592
+9,82,12341,Hass Avocados,3.752482851
+0,86,13176,Bag of Organic Bananas,3.984647543
+1,86,35914,Dha Omega 3 Reduced Fat 2% Milk,3.7610735
+2,86,21903,Organic Baby Spinach,3.474723717
+3,86,14947,Pure Sparkling Water,3.274200286
+4,86,24964,Organic Garlic,3.201511306
+5,86,11712,Cage Free Large White Eggs,3.193758604
+6,86,31717,Organic Cilantro,3.019289483
+7,86,25332,Unsweetened Coconut Water,2.94483405
+8,86,22610,Reduced Fat 2% Lactose-Free Milk,2.923954928
+9,86,3957,100% Raw Coconut Water,2.813685364
+0,87,29447,"Milk, Organic, Vitamin D",4.74328804
+1,87,12384,Organic Lactose Free 1% Lowfat Milk,4.087906332
+2,87,29615,"Bread, Country Buttermilk",3.950407504
+3,87,12341,Hass Avocados,3.774430721
+4,87,41131,India Pale Ale,3.720757343
+5,87,41276,Energy Drink,3.633100852
+6,87,21137,Organic Strawberries,3.535828727
+7,87,34050,Orange Juice,3.52493518
+8,87,44799,Fresh CA Grown Eggs,3.488976022
+9,87,38544,Organic Whole Milk Strawberry Beet Berry Yogurt Pouch,3.459844155
+0,89,2962,"Milk, Reduced Fat, 2% Milkfat",4.285299097
+1,89,10957,Fridge Pack Cola,4.228470053
+2,89,45763,Mini Seedless Cucumbers,4.114938731
+3,89,26209,Limes,3.929241782
+4,89,2210,Large Brown Grade AA Eggs,3.920910984
+5,89,6052,Eggo Chocolate Chip Waffles,3.771725853
+6,89,37710,Trail Mix,3.751423545
+7,89,19511,Half And Half,3.709780382
+8,89,48988,Unsweetened Premium Iced Tea,3.709289985
+9,89,22025,YoBaby Blueberry Apple Yogurt,3.69957344
+0,90,4945,Large Pineapple Chunks,5
+1,90,16589,Plantain Chips,5
+2,90,4472,Toasted Coconut Almondmilk Blend,5
+3,90,36127,Freshly Squeezed Orange Juice,5
+4,90,39409,"Ginger Root Beer, Naturally Flavored Zero Calorie Soda, Caffeine Free",5
+5,90,41131,India Pale Ale,5
+6,90,20082,Organic Whole Milk with DHA Omega-3,5
+7,90,10761,Organic Yokids Lemonade/Blueberry Variety Pack Yogurt Squeezers Tubes,5
+8,90,49235,Organic Half & Half,5
+9,90,29615,"Bread, Country Buttermilk",5
+0,91,6532,Organic YoKids Very Berry Smoothies,4.303576184
+1,91,43394,Organic Lactose Free Whole Milk,4.020089684
+2,91,12606,100% Natural Spring Water,3.980122737
+3,91,13176,Bag of Organic Bananas,3.930182061
+4,91,18362,Organic Bread with 21 Whole Grains,3.893206389
+5,91,1463,Organic Milk,3.853059875
+6,91,27086,Half & Half,3.614988781
+7,91,3389,Diet Dr.Pepper Soda Pack,3.474753693
+8,91,44177,Large Grade A Eggs,3.447582393
+9,91,19731,Organic Orange Juice With Calcium & Vitamin D,3.381030986
+0,96,24852,Banana,4.545232437
+1,96,25466,Water,4.164373542
+2,96,20082,Organic Whole Milk with DHA Omega-3,3.94832659
+3,96,14084,Organic Unsweetened Vanilla Almond Milk,3.649652672
+4,96,42445,Organic Plain Whole Milk Yogurt,3.615660504
+5,96,14702,Maple Honey Ham,3.577809269
+6,96,44980,The Original Multi Grain Bread,3.401702993
+7,96,49235,Organic Half & Half,3.393526401
+8,96,2210,Large Brown Grade AA Eggs,3.357554065
+9,96,48370,Sensitive Toilet Paper,3.269903205
+0,99,20082,Organic Whole Milk with DHA Omega-3,3.40225797
+1,99,13176,Bag of Organic Bananas,3.398331451
+2,99,15424,Purified Water,3.373215225
+3,99,30024,Cage Free Grade AA Large White Eggs,3.322314837
+4,99,3896,Organic Honey Sweet Whole Wheat Bread,3.167330871
+5,99,13646,Lemon Hummus,3.140591826
+6,99,11576,Corn Chips,3.129884405
+7,99,6347,Unsweetened Almond Milk,3.066259531
+8,99,46932,All Natural Coconut Water,3.049787171
+9,99,4962,Yotoddler Organic Pear Spinach Mango Yogurt,3.034364173
+0,101,35914,Dha Omega 3 Reduced Fat 2% Milk,3.900108844
+1,101,14947,Pure Sparkling Water,3.511778749
+2,101,32655,Organic Large Grade AA Brown Eggs,3.483799718
+3,101,40852,Lactose Free Fat Free Milk,3.373190773
+4,101,21137,Organic Strawberries,3.312649159
+5,101,41131,India Pale Ale,3.282780357
+6,101,18362,Organic Bread with 21 Whole Grains,3.231090309
+7,101,38768,Sweet Kale Salad Mix,3.214532201
+8,101,26047,Tuna Salad,3.170865324
+9,101,21903,Organic Baby Spinach,3.163303272
+0,103,14947,Pure Sparkling Water,3.287810925
+1,103,29118,French Vanilla Soy Creamer,3.219495841
+2,103,43631,Diet Coke,3.198061307
+3,103,24852,Banana,3.160672074
+4,103,44177,Large Grade A Eggs,3.130191912
+5,103,13806,1% Milkfat Low Fat Vitamin A & D Milk,3.10791629
+6,103,5077,100% Whole Wheat Bread,2.975594694
+7,103,19875,Organic Yogurt Original Plain,2.959590894
+8,103,45036,Organic Half Tea & Half Lemonade,2.88307578
+9,103,30440,Chocolate Crepes,2.872703905
+0,110,8571,Baby Cucumbers,3.781487098
+1,110,10473,Half And Half Cream,3.675205398
+2,110,14947,Pure Sparkling Water,3.623407751
+3,110,39180,Organic Lowfat 1% Milk,3.62207142
+4,110,37710,Trail Mix,3.560459493
+5,110,24852,Banana,3.495057822
+6,110,43209,Large Eggs,3.463495505
+7,110,29615,"Bread, Country Buttermilk",3.377291367
+8,110,38544,Organic Whole Milk Strawberry Beet Berry Yogurt Pouch,3.244394106
+9,110,45763,Mini Seedless Cucumbers,3.218619335
+0,112,13176,Bag of Organic Bananas,4.256603298
+1,112,15424,Purified Water,3.872858833
+2,112,39180,Organic Lowfat 1% Milk,3.607565924
+3,112,29615,"Bread, Country Buttermilk",3.480623715
+4,112,44177,Large Grade A Eggs,3.459022481
+5,112,35842,Organic Lemon Cayenne Sparkling Probiotic Drink,3.150263101
+6,112,17469,Lo-Carb Energy Drink,3.102807812
+7,112,12341,Hass Avocados,3.080394895
+8,112,19875,Organic Yogurt Original Plain,3.062347198
+9,112,46149,Zero Calorie Cola,3.033973323
+0,118,38689,Organic Reduced Fat Milk,4.724839766
+1,118,13176,Bag of Organic Bananas,3.924360968
+2,118,22124,Total 0% Raspberry Yogurt,3.826830674
+3,118,38768,Sweet Kale Salad Mix,3.708055259
+4,118,14947,Pure Sparkling Water,3.684277896
+5,118,27695,Natural Chicken & Sage Breakfast Sausage,3.683126121
+6,118,30776,Organic Raw Kombucha Gingerade,3.633936134
+7,118,36036,Organic Orange Fruit Juice,3.574968597
+8,118,11520,Large Alfresco Eggs,3.564074128
+9,118,2855,Organic Good Seed Bread,3.521765844
+0,122,38928,0% Greek Strained Yogurt,4.184024294
+1,122,31808,Lemon-Lime 12 Pack Soda,3.855900063
+2,122,1402,Plain Soymilk Creamer,3.584514654
+3,122,4451,Organic Skim Milk with DHA Omega-3,3.549981668
+4,122,13176,Bag of Organic Bananas,3.258935253
+5,122,33120,Organic Egg Whites,3.242078076
+6,122,3957,100% Raw Coconut Water,3.144635203
+7,122,10851,Natural Alpine Spring Water,3.021913679
+8,122,6184,Clementines,2.922183299
+9,122,27695,Natural Chicken & Sage Breakfast Sausage,2.913147865
+0,127,24852,Banana,3.762016057
+1,127,19677,Original Pure Creamy Almond Milk,3.637351399
+2,127,20082,Organic Whole Milk with DHA Omega-3,3.550643429
+3,127,44177,Large Grade A Eggs,3.435270382
+4,127,19660,Spring Water,3.175034484
+5,127,30949,Organic YoKids Smoothie Strawberry Banana Lowfat Yogurt,3.148594663
+6,127,31231,Vitamin Water Zero Rise Orange,3.033228809
+7,127,3896,Organic Honey Sweet Whole Wheat Bread,3.023846422
+8,127,46061,Popcorn,2.992320992
+9,127,10957,Fridge Pack Cola,2.95439882
+0,132,27845,Organic Whole Milk,4.305233402
+1,132,24852,Banana,3.978275922
+2,132,49235,Organic Half & Half,3.541552968
+3,132,42445,Organic Plain Whole Milk Yogurt,3.514881604
+4,132,14702,Maple Honey Ham,3.430821623
+5,132,42450,Macaroni & Cheese,3.376522352
+6,132,48857,Authentic French Brioche,3.258781892
+7,132,25804,Original Soy Milk,3.202025583
+8,132,39947,Blackberry Cucumber Sparkling Water,3.161138548
+9,132,44799,Fresh CA Grown Eggs,3.147689245
+0,133,35951,Organic Unsweetened Almond Milk,3.849844363
+1,133,4210,Whole Milk,3.839038109
+2,133,49235,Organic Half & Half,3.733085027
+3,133,43643,Organic Strawana Probugs Kefir,3.689126081
+4,133,41131,India Pale Ale,3.475381951
+5,133,6774,Brown Fertile Large Grade AA Eggs,3.395779867
+6,133,17924,Seltzer Water,3.383896328
+7,133,1069,100% Oatnut Bread,3.224921183
+8,133,21038,Organic Spelt Tortillas,3.218248812
+9,133,21903,Organic Baby Spinach,3.149125257
+0,138,10473,Half And Half Cream,4.275551529
+1,138,23909,2% Reduced Fat Milk,4.131776964
+2,138,5479,Italian Sparkling Mineral Water,3.61389482
+3,138,6347,Unsweetened Almond Milk,3.613737959
+4,138,11712,Cage Free Large White Eggs,3.535656144
+5,138,38768,Sweet Kale Salad Mix,3.340282933
+6,138,21267,Sourdough Bread,3.31877959
+7,138,13541,100% Whole Wheat Bagels,3.286981728
+8,138,10957,Fridge Pack Cola,3.245724221
+9,138,36036,Organic Orange Fruit Juice,3.221704434
+0,140,1511,2% Reduced Fat DHA Omega-3 Reduced Fat Milk,5
+1,140,13176,Bag of Organic Bananas,5
+2,140,11520,Large Alfresco Eggs,4.707195556
+3,140,1069,100% Oatnut Bread,4.615962392
+4,140,4793,Wild Berry Smoothie,4.469427148
+5,140,21903,Organic Baby Spinach,4.285774273
+6,140,12384,Organic Lactose Free 1% Lowfat Milk,4.274231581
+7,140,49609,Very Berry Flavor Sparking Mineral Water,4.167150856
+8,140,30776,Organic Raw Kombucha Gingerade,4.128130289
+9,140,30827,Seedless Cucumbers,4.036078446
+0,142,32566,Dha Omega 3 Vitamin D Milk,5
+1,142,35951,Organic Unsweetened Almond Milk,5
+2,142,13176,Bag of Organic Bananas,4.961512682
+3,142,7521,New Orleans Iced Coffee,4.796110631
+4,142,25133,Organic String Cheese,4.718129606
+5,142,48857,Authentic French Brioche,4.472108244
+6,142,27966,Organic Raspberries,4.362963552
+7,142,1069,100% Oatnut Bread,4.357044465
+8,142,19875,Organic Yogurt Original Plain,4.32498188
+9,142,41131,India Pale Ale,4.284541329
+0,146,3957,100% Raw Coconut Water,4.602211104
+1,146,10032,Cola Soft Drink,4.517805366
+2,146,35951,Organic Unsweetened Almond Milk,4.416165082
+3,146,19348,Fat Free Milk,4.329613977
+4,146,41131,India Pale Ale,4.274862672
+5,146,44008,Organic Greek Whole Milk Blended Vanilla Bean Yogurt,4.273090902
+6,146,44632,Sparkling Water Grapefruit,4.272382662
+7,146,24852,Banana,4.119258159
+8,146,10753,Peanut Butter Bar,4.117536776
+9,146,38768,Sweet Kale Salad Mix,4.057592681
+0,150,4210,Whole Milk,4.000824171
+1,150,14999,Grade A Large Brown Eggs,3.941951045
+2,150,21903,Organic Baby Spinach,3.73438481
+3,150,6631,No Pulp Calcium & Vitamin D Pure Orange Juice,3.664217865
+4,150,47144,Unsweetened Original Almond Breeze Almond Milk,3.659315248
+5,150,10132,Organic American Cheese Singles,3.643124146
+6,150,20574,Roasted Turkey,3.63924159
+7,150,43643,Organic Strawana Probugs Kefir,3.579756618
+8,150,14947,Pure Sparkling Water,3.501235084
+9,150,28058,Gluten Free Sliced Mountain White Bread,3.40842273
+0,152,5479,Italian Sparkling Mineral Water,5
+1,152,20940,Organic Low Fat Milk,5
+2,152,5161,Dried Mango,5
+3,152,432,Vanilla Almond Breeze Almond Milk,4.827848014
+4,152,45064,Honey Wheat Bread,4.724258787
+5,152,43279,Non-Fat Greek Yogurt With Strawberries on the Bottom,4.487835142
+6,152,14218,Grade A Large Eggs Cage Free Omega 3,4.464651143
+7,152,37158,Chicken & Maple Breakfast Sausage,4.371954566
+8,152,10473,Half And Half Cream,4.365537619
+9,152,38768,Sweet Kale Salad Mix,4.328813294
+0,153,32403,Fat Free Skim Milk,4.386486667
+1,153,21137,Organic Strawberries,4.231777348
+2,153,12384,Organic Lactose Free 1% Lowfat Milk,4.164372838
+3,153,49235,Organic Half & Half,4.126773347
+4,153,8859,Natural Spring Water,4.074594994
+5,153,21903,Organic Baby Spinach,3.866029647
+6,153,32655,Organic Large Grade AA Brown Eggs,3.705182703
+7,153,32211,Whole Grains Oatnut Bread,3.455665839
+8,153,41276,Energy Drink,3.373746771
+9,153,20682,Cinnamon Raisin Swirl Pre-Sliced Bagels,3.371472051
+0,154,35914,Dha Omega 3 Reduced Fat 2% Milk,4.412398547
+1,154,27086,Half & Half,4.315158171
+2,154,10761,Organic Yokids Lemonade/Blueberry Variety Pack Yogurt Squeezers Tubes,4.231290185
+3,154,45190,Vodka,4.209324127
+4,154,37646,Organic Gala Apples,4.171302883
+5,154,14702,Maple Honey Ham,4.164340678
+6,154,5479,Italian Sparkling Mineral Water,4.154451087
+7,154,29118,French Vanilla Soy Creamer,4.123801533
+8,154,45603,Trilogy Kombucha Drink,4.112763708
+9,154,43631,Diet Coke,4.102657075
+0,155,20082,Organic Whole Milk with DHA Omega-3,4.842765058
+1,155,2120,Sauvignon Blanc,4.832864216
+2,155,9411,Unsweetened Iced Coffee,4.573445498
+3,155,30233,Organic Large Brown Grade AA Cage Free Eggs,4.566678792
+4,155,43643,Organic Strawana Probugs Kefir,4.554771093
+5,155,43394,Organic Lactose Free Whole Milk,4.291859329
+6,155,24852,Banana,4.268958098
+7,155,25146,Original Orange Juice,4.143533724
+8,155,29615,"Bread, Country Buttermilk",4.067766676
+9,155,31808,Lemon-Lime 12 Pack Soda,4.057933786
+0,161,13176,Bag of Organic Bananas,3.924030737
+1,161,29447,"Milk, Organic, Vitamin D",3.759156527
+2,161,196,Soda,3.464853349
+3,161,1402,Plain Soymilk Creamer,3.447352783
+4,161,11422,Plain Greek Yogurt,3.35007348
+5,161,49235,Organic Half & Half,3.268541411
+6,161,43154,Sparkling Mineral Water,3.248445619
+7,161,27966,Organic Raspberries,3.171348763
+8,161,35921,Organic Large Grade A Brown Eggs,3.118258251
+9,161,45190,Vodka,3.096696562
+0,168,4210,Whole Milk,3.479744363
+1,168,14947,Pure Sparkling Water,3.256118851
+2,168,6347,Unsweetened Almond Milk,3.234677194
+3,168,48186,Lactose Free Half & Half,3.139273563
+4,168,44177,Large Grade A Eggs,3.119571911
+5,168,42813,Smoked Maple Ham,2.971544492
+6,168,18362,Organic Bread with 21 Whole Grains,2.936782398
+7,168,47611,M&M's Vanilla Lowfat Yogurt,2.8924006
+8,168,21903,Organic Baby Spinach,2.844690032
+9,168,26209,Limes,2.804223071
+0,173,14947,Pure Sparkling Water,4.175127697
+1,173,4210,Whole Milk,4.110107019
+2,173,21903,Organic Baby Spinach,3.721064496
+3,173,24852,Banana,3.575220931
+4,173,35951,Organic Unsweetened Almond Milk,3.525591165
+5,173,44799,Fresh CA Grown Eggs,3.292690005
+6,173,117,Petit Suisse Fruit,3.137528765
+7,173,20842,Total 0% Greek Yogurt,3.082016916
+8,173,49683,Cucumber Kirby,3.063266817
+9,173,1069,100% Oatnut Bread,3.004267552
+0,174,29447,"Milk, Organic, Vitamin D",3.982223708
+1,174,43631,Diet Coke,3.54150096
+2,174,27086,Half & Half,3.509056192
+3,174,19660,Spring Water,3.273177702
+4,174,44177,Large Grade A Eggs,3.235646725
+5,174,22959,Reduced Fat Milk 100% Lactose Free,3.133801861
+6,174,47611,M&M's Vanilla Lowfat Yogurt,3.085546084
+7,174,11576,Corn Chips,3.072572658
+8,174,4462,Pink Lady Apple Kombucha,3.049386862
+9,174,13176,Bag of Organic Bananas,2.939214801
+0,175,44177,Large Grade A Eggs,3.13064177
+1,175,39180,Organic Lowfat 1% Milk,2.955750754
+2,175,13176,Bag of Organic Bananas,2.876966317
+3,175,22610,Reduced Fat 2% Lactose-Free Milk,2.790401008
+4,175,10473,Half And Half Cream,2.773296989
+5,175,8859,Natural Spring Water,2.766837355
+6,175,27726,Lemon Seltzer Water,2.72140495
+7,175,27237,Butter Top Wheat Bread,2.713425019
+8,175,19875,Organic Yogurt Original Plain,2.661006612
+9,175,4289,15 Calories Light Lemonade,2.648991937
+0,182,3957,100% Raw Coconut Water,4.573465398
+1,182,15424,Purified Water,4.219374505
+2,182,20899,Goo Berry Pie Probugs Kefir,4.046065219
+3,182,27845,Organic Whole Milk,4.00616578
+4,182,39276,Bananas,3.951833146
+5,182,49610,100% Lactose Free Fat Free Milk,3.910492161
+6,182,49235,Organic Half & Half,3.782379662
+7,182,30233,Organic Large Brown Grade AA Cage Free Eggs,3.762943143
+8,182,31651,Extra Fancy Unsalted Mixed Nuts,3.61939817
+9,182,43631,Diet Coke,3.481554447
+0,187,27325,Alpine Spring Water,4.604947628
+1,187,23909,2% Reduced Fat Milk,4.215350233
+2,187,3957,100% Raw Coconut Water,4.204845642
+3,187,11520,Large Alfresco Eggs,3.68994424
+4,187,37718,Blueberry Whole Milk Yogurt Pouch,3.479088911
+5,187,39276,Bananas,3.334556915
+6,187,13560,A+ Cinnamon Sweet Potato Pancakes,3.29884203
+7,187,46149,Zero Calorie Cola,3.272664192
+8,187,1402,Plain Soymilk Creamer,3.243438152
+9,187,8898,Little Bites Chocolate Chip Muffins,3.089937339
+0,190,24852,Banana,3.772403685
+1,190,1463,Organic Milk,3.491453208
+2,190,43154,Sparkling Mineral Water,3.356083259
+3,190,49198,Zero Soda,3.339205709
+4,190,37710,Trail Mix,3.254011418
+5,190,38444,Chardonnay,3.222789138
+6,190,36186,Large Grade AA Organic Eggs,3.195077857
+7,190,40852,Lactose Free Fat Free Milk,3.144917128
+8,190,28985,Michigan Organic Kale,2.95405224
+9,190,6286,Half and Half,2.918887595
+0,195,196,Soda,4.881289123
+1,195,22802,Mineral Water,4.787091702
+2,195,1463,Organic Milk,4.524999541
+3,195,24852,Banana,4.266472519
+4,195,31651,Extra Fancy Unsalted Mixed Nuts,4.177355455
+5,195,28309,Gourmet Pizza Three Cheese Gluten Free,4.131969708
+6,195,26131,Mixed Berries Whole Milk Icelandic Style Skyr Yogurt,4.054803804
+7,195,24838,Unsweetened Almondmilk,4.046902629
+8,195,34217,Pesto Tortellini  Bowls,4.032985609
+9,195,15649,Baby Seedless Cucumbers,3.982622821
+0,197,24852,Banana,4.410218494
+1,197,33754,Total 2% with Strawberry Lowfat Greek Strained Yogurt,4.300152001
+2,197,5785,Organic Reduced Fat 2% Milk,4.199371476
+3,197,19660,Spring Water,4.119297911
+4,197,21903,Organic Baby Spinach,3.784226939
+5,197,2210,Large Brown Grade AA Eggs,3.770050684
+6,197,3896,Organic Honey Sweet Whole Wheat Bread,3.768325267
+7,197,30776,Organic Raw Kombucha Gingerade,3.703745167
+8,197,45223,Just Green Unsweetened Tea,3.603268204
+9,197,35951,Organic Unsweetened Almond Milk,3.485101185
+0,204,38312,Almond Milk Strawberry Yogurt,5
+1,204,329,Organic Whole Grassmilk Milk,4.807490036
+2,204,14218,Grade A Large Eggs Cage Free Omega 3,4.580613526
+3,204,13176,Bag of Organic Bananas,4.519405396
+4,204,12341,Hass Avocados,4.240297389
+5,204,46149,Zero Calorie Cola,4.13125929
+6,204,21267,Sourdough Bread,4.031275446
+7,204,23288,Distilled Water,3.994373875
+8,204,10673,Original Nooks & Crannies English Muffins,3.910017474
+9,204,21903,Organic Baby Spinach,3.778227606
+0,206,13176,Bag of Organic Bananas,4.177872502
+1,206,13166,"Organic Milk Reduced Fat, 2% Milkfat",3.524043838
+2,206,38768,Sweet Kale Salad Mix,3.414896279
+3,206,22610,Reduced Fat 2% Lactose-Free Milk,3.268770946
+4,206,19660,Spring Water,3.2142464
+5,206,117,Petit Suisse Fruit,3.135299917
+6,206,47611,M&M's Vanilla Lowfat Yogurt,3.095800931
+7,206,30233,Organic Large Brown Grade AA Cage Free Eggs,3.088885142
+8,206,21903,Organic Baby Spinach,3.059630257
+9,206,6046,Boneless Skinless Chicken Breast,3.05413138
+0,208,27845,Organic Whole Milk,4.009336293
+1,208,117,Petit Suisse Fruit,3.539418737
+2,208,14947,Pure Sparkling Water,3.503818417
+3,208,43394,Organic Lactose Free Whole Milk,3.415583305
+4,208,45223,Just Green Unsweetened Tea,3.401282575
+5,208,30440,Chocolate Crepes,3.388929124
+6,208,13176,Bag of Organic Bananas,3.37622127
+7,208,19875,Organic Yogurt Original Plain,3.320536584
+8,208,17638,Vanilla Coffee Concentrate,3.218276779
+9,208,44177,Large Grade A Eggs,3.153954809
+0,209,24852,Banana,5
+1,209,43394,Organic Lactose Free Whole Milk,4.969453214
+2,209,31720,Organic  Whole Milk,4.735021935
+3,209,23543,Organic Extra Large Brown Eggs,4.700631408
+4,209,1069,100% Oatnut Bread,4.644066497
+5,209,7916,Grilled Chicken Breast,4.432372923
+6,209,29373,Nonfat Probiotic Drinks,4.414184905
+7,209,25466,Water,4.37941826
+8,209,22472,Mesquite Smoked Turkey,4.346522524
+9,209,17794,Carrots,4.317007427
+0,210,3765,Original Whole Fat Lactose Free Milk,5
+1,210,19348,Fat Free Milk,5
+2,210,35842,Organic Lemon Cayenne Sparkling Probiotic Drink,5
+3,210,24852,Banana,5
+4,210,20899,Goo Berry Pie Probugs Kefir,4.885458069
+5,210,27325,Alpine Spring Water,4.786865799
+6,210,47185,Spreadable Butter with Canola Oil,4.693202606
+7,210,9175,Diet Coke Caffeine Free Soda,4.665347273
+8,210,33452,Fruit Punch Sports Drink,4.639681297
+9,210,11576,Corn Chips,4.568307025
+0,214,13176,Bag of Organic Bananas,4.319874708
+1,214,21903,Organic Baby Spinach,4.316402416
+2,214,29447,"Milk, Organic, Vitamin D",4.131843374
+3,214,38544,Organic Whole Milk Strawberry Beet Berry Yogurt Pouch,3.74362152
+4,214,49235,Organic Half & Half,3.721808914
+5,214,14999,Grade A Large Brown Eggs,3.623400874
+6,214,47977,Grapefruit Sparkling Water,3.437892674
+7,214,117,Petit Suisse Fruit,3.366941347
+8,214,14702,Maple Honey Ham,3.361041232
+9,214,20682,Cinnamon Raisin Swirl Pre-Sliced Bagels,3.260499254
+0,216,36011,Organic Fat Free Milk,4.357367638
+1,216,47766,Organic Avocado,4.275567454
+2,216,9405,Calcium Enriched 100% Lactose Free Fat Free Milk,4.138254918
+3,216,14947,Pure Sparkling Water,4.108988318
+4,216,13517,Whole Wheat Bread,4.067808802
+5,216,27086,Half & Half,4.060395259
+6,216,11266,Dried Mangos,3.997083847
+7,216,21572,Cheez-It Cheddar Cracker,3.986056928
+8,216,14218,Grade A Large Eggs Cage Free Omega 3,3.962364403
+9,216,29509,80  Vodka Holiday Edition,3.867387683
+0,219,20463,Organic Fat-Free Milk,4.300323051
+1,219,6532,Organic YoKids Very Berry Smoothies,4.121775754
+2,219,19894,Enlightened Organic Raw Kombucha,4.088481106
+3,219,49610,100% Lactose Free Fat Free Milk,4.022431606
+4,219,5212,Watermelon Chunks,3.986831161
+5,219,14233,Natural Artesian Water,3.899275824
+6,219,12341,Hass Avocados,3.768793826
+7,219,44177,Large Grade A Eggs,3.723960848
+8,219,48988,Unsweetened Premium Iced Tea,3.65358892
+9,219,17638,Vanilla Coffee Concentrate,3.53346154
+0,220,32566,Dha Omega 3 Vitamin D Milk,4.331137608
+1,220,21137,Organic Strawberries,4.136450307
+2,220,27966,Organic Raspberries,3.776424738
+3,220,44799,Fresh CA Grown Eggs,3.735377793
+4,220,43394,Organic Lactose Free Whole Milk,3.657146418
+5,220,5479,Italian Sparkling Mineral Water,3.496520466
+6,220,42445,Organic Plain Whole Milk Yogurt,3.491818398
+7,220,1069,100% Oatnut Bread,3.388042822
+8,220,42803,Organic Apple Slices,3.165138082
+9,220,13629,Organic Snipped Green Beans,3.150246177
+0,221,38689,Organic Reduced Fat Milk,4.546244803
+1,221,11520,Large Alfresco Eggs,4.366343462
+2,221,10957,Fridge Pack Cola,4.144182707
+3,221,27514,Maple Glazed Honey Ham,4.019809186
+4,221,5479,Italian Sparkling Mineral Water,4.005503929
+5,221,14111,"Light, Very Vanilla",3.983775572
+6,221,21903,Organic Baby Spinach,3.914564828
+7,221,35503,Organic Vanilla Almond Milk,3.885207463
+8,221,38944,Seven Grain Crispy Tenders,3.746440971
+9,221,14127,Tesora Medium Roast,3.703781187
+0,222,3957,100% Raw Coconut Water,4.446144709
+1,222,45763,Mini Seedless Cucumbers,4.331027537
+2,222,7916,Grilled Chicken Breast,4.311759932
+3,222,40852,Lactose Free Fat Free Milk,4.268406071
+4,222,8571,Baby Cucumbers,4.263352622
+5,222,20940,Organic Low Fat Milk,4.235062038
+6,222,12606,100% Natural Spring Water,4.19650627
+7,222,7781,Organic Sticks Low Moisture Part Skim Mozzarella String Cheese,4.183569819
+8,222,34487,Hass Avocado Bag,4.050865585
+9,222,47611,M&M's Vanilla Lowfat Yogurt,4.043824155
+0,223,43394,Organic Lactose Free Whole Milk,5
+1,223,44632,Sparkling Water Grapefruit,5
+2,223,5785,Organic Reduced Fat 2% Milk,5
+3,223,36127,Freshly Squeezed Orange Juice,4.53665708
+4,223,24852,Banana,4.532187841
+5,223,44765,Colby Cheese Sticks,4.386531766
+6,223,12341,Hass Avocados,4.352166606
+7,223,8309,Nonfat Icelandic Style Strawberry Yogurt,4.272981374
+8,223,5782,Grade A Large White Eggs,4.232558597
+9,223,6286,Half and Half,4.183430836
+0,226,14947,Pure Sparkling Water,4.21598759
+1,226,31981,1% Low Fat Milk,4.02421141
+2,226,44799,Fresh CA Grown Eggs,3.908138525
+3,226,24852,Banana,3.695270111
+4,226,27237,Butter Top Wheat Bread,3.596932538
+5,226,38544,Organic Whole Milk Strawberry Beet Berry Yogurt Pouch,3.463049616
+6,226,3765,Original Whole Fat Lactose Free Milk,3.305055116
+7,226,9411,Unsweetened Iced Coffee,3.283908057
+8,226,3957,100% Raw Coconut Water,3.28327931
+9,226,9964,Superfood Dark Chocolate and Peanut Butter Seedbar,3.282731057
+0,227,29447,"Milk, Organic, Vitamin D",4.358603251
+1,227,21137,Organic Strawberries,4.335611767
+2,227,29373,Nonfat Probiotic Drinks,3.885398713
+3,227,43154,Sparkling Mineral Water,3.826660583
+4,227,12341,Hass Avocados,3.795613423
+5,227,43394,Organic Lactose Free Whole Milk,3.672177165
+6,227,49235,Organic Half & Half,3.640221143
+7,227,30024,Cage Free Grade AA Large White Eggs,3.616371851
+8,227,28985,Michigan Organic Kale,3.586949367
+9,227,25931,Organic Baby Spinach Salad,3.574060039
+0,229,33754,Total 2% with Strawberry Lowfat Greek Strained Yogurt,4.681105846
+1,229,39180,Organic Lowfat 1% Milk,4.478918501
+2,229,13176,Bag of Organic Bananas,4.047612089
+3,229,5428,1 Liter,3.961520812
+4,229,11520,Large Alfresco Eggs,3.920079144
+5,229,7521,New Orleans Iced Coffee,3.883003866
+6,229,27086,Half & Half,3.865676394
+7,229,3896,Organic Honey Sweet Whole Wheat Bread,3.819792305
+8,229,27726,Lemon Seltzer Water,3.771027797
+9,229,31960,Eggo Pancakes Minis,3.739491767
+0,232,29447,"Milk, Organic, Vitamin D",5
+1,232,6948,Organic Original Almond Milk,4.711575875
+2,232,43086,Super Greens Salad,4.581283282
+3,232,26047,Tuna Salad,4.553306258
+4,232,1398,Ice Bag,4.484004147
+5,232,14874,Organic Eggs Large,4.465127717
+6,232,25133,Organic String Cheese,4.405136235
+7,232,23233,California Sourdough Bread,4.337421021
+8,232,29373,Nonfat Probiotic Drinks,4.311021721
+9,232,49198,Zero Soda,4.310551426
+0,233,1463,Organic Milk,5
+1,233,46149,Zero Calorie Cola,4.855359826
+2,233,15693,Organic Peach Oo La Long Tea,4.630014859
+3,233,32211,Whole Grains Oatnut Bread,4.627533844
+4,233,27325,Alpine Spring Water,4.497010975
+5,233,39276,Bananas,4.467979979
+6,233,17630,YoKids Squeeze! Organic Strawberry Flavor Yogurt,4.448184932
+7,233,30024,Cage Free Grade AA Large White Eggs,4.384842131
+8,233,10132,Organic American Cheese Singles,4.380938529
+9,233,31651,Extra Fancy Unsalted Mixed Nuts,4.344940304
+0,234,32478,Reduced Fat 2% Milk,4.042116108
+1,234,24852,Banana,3.876034385
+2,234,1069,100% Oatnut Bread,3.777777654
+3,234,44008,Organic Greek Whole Milk Blended Vanilla Bean Yogurt,3.61221959
+4,234,26620,Peach Pear Flavored Sparkling Water,3.570801022
+5,234,11520,Large Alfresco Eggs,3.532552347
+6,234,45763,Mini Seedless Cucumbers,3.503033921
+7,234,49235,Organic Half & Half,3.478202789
+8,234,38444,Chardonnay,3.472148274
+9,234,22610,Reduced Fat 2% Lactose-Free Milk,3.435865402
+0,235,20940,Organic Low Fat Milk,4.206892989
+1,235,14233,Natural Artesian Water,4.09201997
+2,235,13176,Bag of Organic Bananas,3.772645524
+3,235,38928,0% Greek Strained Yogurt,3.673502846
+4,235,7521,New Orleans Iced Coffee,3.485255867
+5,235,31651,Extra Fancy Unsalted Mixed Nuts,3.433125613
+6,235,37158,Chicken & Maple Breakfast Sausage,3.332768735
+7,235,35951,Organic Unsweetened Almond Milk,3.300964508
+8,235,44177,Large Grade A Eggs,3.241880171
+9,235,16696,Coke Classic,3.133613311
+0,236,10473,Half And Half Cream,3.416730824
+1,236,10957,Fridge Pack Cola,3.362376377
+2,236,6347,Unsweetened Almond Milk,3.265869497
+3,236,35914,Dha Omega 3 Reduced Fat 2% Milk,3.256061966
+4,236,12341,Hass Avocados,3.244026601
+5,236,5535,Large Brown Free Range Eggs Grade A,3.221569808
+6,236,42244,Total 2% All Natural Low Fat 2% Milkfat Greek Strained Yogurt,3.175862764
+7,236,36691,Purified Drinking Water,3.121254569
+8,236,46842,Plain Pre-Sliced Bagels,2.9269484
+9,236,46061,Popcorn,2.910270349
+0,242,34197,Goat Milk,3.731722798
+1,242,13176,Bag of Organic Bananas,3.409278727
+2,242,28058,Gluten Free Sliced Mountain White Bread,3.284367223
+3,242,22610,Reduced Fat 2% Lactose-Free Milk,3.223034971
+4,242,3957,100% Raw Coconut Water,3.204059408
+5,242,12935,Organic Pasture Raised Brown Eggs,3.091545303
+6,242,39475,Total Greek Strained Yogurt,3.087301763
+7,242,27086,Half & Half,2.969383507
+8,242,6184,Clementines,2.897618812
+9,242,35470,Water Mineral,2.879331676
+0,243,44799,Fresh CA Grown Eggs,4.551461699
+1,243,32566,Dha Omega 3 Vitamin D Milk,4.280798766
+2,243,12614,Yellow Grape Tomatoes,4.026897103
+3,243,49610,100% Lactose Free Fat Free Milk,3.98957149
+4,243,41276,Energy Drink,3.683269285
+5,243,10473,Half And Half Cream,3.645219126
+6,243,47209,Organic Hass Avocado,3.566134529
+7,243,20015,Grandma's Hummus,3.550549952
+8,243,31651,Extra Fancy Unsalted Mixed Nuts,3.533679191
+9,243,14947,Pure Sparkling Water,3.518337309
+0,248,45948,Gluten Free 7 Grain Bread,4.457080483
+1,248,21903,Organic Baby Spinach,4.425817241
+2,248,31720,Organic  Whole Milk,4.35220322
+3,248,22610,Reduced Fat 2% Lactose-Free Milk,4.314970845
+4,248,10749,Organic Red Bell Pepper,4.283067007
+5,248,8571,Baby Cucumbers,4.261338611
+6,248,3798,Pink Lady Apples,4.06399538
+7,248,33198,Sparkling Natural Mineral Water,3.997203556
+8,248,43209,Large Eggs,3.903353957
+9,248,31102,Sugar Free Energy Drink,3.848035515
+0,256,432,Vanilla Almond Breeze Almond Milk,3.967406144
+1,256,30233,Organic Large Brown Grade AA Cage Free Eggs,3.839563666
+2,256,33198,Sparkling Natural Mineral Water,3.767593441
+3,256,31651,Extra Fancy Unsalted Mixed Nuts,3.752428157
+4,256,36127,Freshly Squeezed Orange Juice,3.618275031
+5,256,117,Petit Suisse Fruit,3.607913193
+6,256,46149,Zero Calorie Cola,3.521340646
+7,256,17316,Vitamin D Organic Whole Milk,3.463153369
+8,256,39475,Total Greek Strained Yogurt,3.422484748
+9,256,27086,Half & Half,3.277040819
+0,257,20940,Organic Low Fat Milk,4.186141024
+1,257,22610,Reduced Fat 2% Lactose-Free Milk,3.928180887
+2,257,8571,Baby Cucumbers,3.884057596
+3,257,44292,Premium Unsweetened Iced Tea,3.773446672
+4,257,44799,Fresh CA Grown Eggs,3.683072693
+5,257,47877,Coke Zero,3.582624014
+6,257,5479,Italian Sparkling Mineral Water,3.517302834
+7,257,21903,Organic Baby Spinach,3.488737435
+8,257,31651,Extra Fancy Unsalted Mixed Nuts,3.384709574
+9,257,29373,Nonfat Probiotic Drinks,3.35093114
+0,258,20940,Organic Low Fat Milk,4.265694356
+1,258,47231,Ultra-Purified Water,3.728862614
+2,258,29373,Nonfat Probiotic Drinks,3.66107768
+3,258,44177,Large Grade A Eggs,3.473216692
+4,258,47141,Cola,3.447160689
+5,258,11576,Corn Chips,3.306170262
+6,258,16768,100% Lactose Free Reduced Fat Calcium Enriched Milk,3.294977553
+7,258,3298,Mozzarella String Cheese,3.191371454
+8,258,13560,A+ Cinnamon Sweet Potato Pancakes,3.187254271
+9,258,24852,Banana,3.179593388
+0,260,27845,Organic Whole Milk,3.991248995
+1,260,44799,Fresh CA Grown Eggs,3.92918472
+2,260,10831,Yobaby Organic Plain Yogurt,3.837938523
+3,260,8048,Packaged Grape Tomatoes,3.779144139
+4,260,24852,Banana,3.634957641
+5,260,21903,Organic Baby Spinach,3.510906283
+6,260,22959,Reduced Fat Milk 100% Lactose Free,3.490047748
+7,260,5385,Country White Bread,3.472807182
+8,260,26094,Krave Cereal Chocolate,3.453637155
+9,260,5479,Italian Sparkling Mineral Water,3.404790388
+0,262,2962,"Milk, Reduced Fat, 2% Milkfat",3.746860497
+1,262,44177,Large Grade A Eggs,3.658062822
+2,262,12341,Hass Avocados,3.560047618
+3,262,12384,Organic Lactose Free 1% Lowfat Milk,3.304355367
+4,262,43154,Sparkling Mineral Water,3.262805728
+5,262,7806,Soft Pretzel Burger Buns,3.212687639
+6,262,43631,Diet Coke,3.204353612
+7,262,48988,Unsweetened Premium Iced Tea,3.146075119
+8,262,25965,Santa Fe Fiesta Salad,3.058374833
+9,262,41131,India Pale Ale,3.026305786
+0,264,14947,Pure Sparkling Water,4.812130988
+1,264,24852,Banana,4.756640296
+2,264,39180,Organic Lowfat 1% Milk,4.560011421
+3,264,27730,Almond Breeze Original Almond Milk,4.518468038
+4,264,5212,Watermelon Chunks,4.20756267
+5,264,5782,Grade A Large White Eggs,3.802823522
+6,264,45603,Trilogy Kombucha Drink,3.784746841
+7,264,42445,Organic Plain Whole Milk Yogurt,3.768364744
+8,264,34027,Crispix Rice & Corn Cereal,3.766177323
+9,264,49235,Organic Half & Half,3.73831912
+0,270,45504,Whole Organic Omega 3 Milk,4.049523754
+1,270,16083,Organic Large Brown Eggs,3.726470793
+2,270,3298,Mozzarella String Cheese,3.574934983
+3,270,26131,Mixed Berries Whole Milk Icelandic Style Skyr Yogurt,3.456740558
+4,270,18023,Organic Coconut Water,3.427964524
+5,270,29615,"Bread, Country Buttermilk",3.367633654
+6,270,8048,Packaged Grape Tomatoes,3.36736255
+7,270,1402,Plain Soymilk Creamer,3.32158676
+8,270,21038,Organic Spelt Tortillas,3.234373008
+9,270,14127,Tesora Medium Roast,3.223210846
+0,271,45504,Whole Organic Omega 3 Milk,3.812509035
+1,271,38928,0% Greek Strained Yogurt,3.811053708
+2,271,43394,Organic Lactose Free Whole Milk,3.608545752
+3,271,24852,Banana,3.551959971
+4,271,14874,Organic Eggs Large,3.415001234
+5,271,47231,Ultra-Purified Water,3.404259058
+6,271,46149,Zero Calorie Cola,3.331023564
+7,271,5077,100% Whole Wheat Bread,3.3306554
+8,271,117,Petit Suisse Fruit,3.289341652
+9,271,17949,Mild Cheddar Cheese Sticks,3.271724415
+0,273,13176,Bag of Organic Bananas,3.398796136
+1,273,29447,"Milk, Organic, Vitamin D",3.347533952
+2,273,5077,100% Whole Wheat Bread,3.286910065
+3,273,26165,Electrolyte Enhanced Water,3.045880776
+4,273,6774,Brown Fertile Large Grade AA Eggs,3.015610447
+5,273,22610,Reduced Fat 2% Lactose-Free Milk,2.910902437
+6,273,37158,Chicken & Maple Breakfast Sausage,2.829863069
+7,273,12099,Honey Greek Yogurt,2.787099389
+8,273,27726,Lemon Seltzer Water,2.722572372
+9,273,11266,Dried Mangos,2.70866181
+0,278,27086,Half & Half,4.346692321
+1,278,24852,Banana,4.140681485
+2,278,29447,"Milk, Organic, Vitamin D",4.027916734
+3,278,6184,Clementines,3.66279931
+4,278,11576,Corn Chips,3.652252355
+5,278,43631,Diet Coke,3.627366867
+6,278,49610,100% Lactose Free Fat Free Milk,3.579786948
+7,278,49683,Cucumber Kirby,3.559060383
+8,278,44177,Large Grade A Eggs,3.523993453
+9,278,3896,Organic Honey Sweet Whole Wheat Bread,3.518029024
+0,280,21903,Organic Baby Spinach,5
+1,280,41148,Hard Cooked Eggs,4.774116423
+2,280,36011,Organic Fat Free Milk,4.600854346
+3,280,38928,0% Greek Strained Yogurt,4.554478277
+4,280,24852,Banana,4.453732143
+5,280,1402,Plain Soymilk Creamer,4.254112851
+6,280,26790,Organic AppleApple,4.230821891
+7,280,49235,Organic Half & Half,4.182285284
+8,280,10851,Natural Alpine Spring Water,4.155262237
+9,280,14702,Maple Honey Ham,4.115539557
+0,281,24852,Banana,4.623591227
+1,281,27845,Organic Whole Milk,4.222107633
+2,281,26165,Electrolyte Enhanced Water,3.927942007
+3,281,43643,Organic Strawana Probugs Kefir,3.70690751
+4,281,21903,Organic Baby Spinach,3.524374697
+5,281,6286,Half and Half,3.362835695
+6,281,43394,Organic Lactose Free Whole Milk,3.352682835
+7,281,27726,Lemon Seltzer Water,3.339793633
+8,281,11576,Corn Chips,3.333642031
+9,281,34358,Garlic,3.333176962
+0,284,20940,Organic Low Fat Milk,5
+1,284,38928,0% Greek Strained Yogurt,4.643297239
+2,284,5479,Italian Sparkling Mineral Water,4.639951242
+3,284,16696,Coke Classic,4.521621051
+4,284,13560,A+ Cinnamon Sweet Potato Pancakes,4.205382057
+5,284,13176,Bag of Organic Bananas,4.098043069
+6,284,12935,Organic Pasture Raised Brown Eggs,4.061538844
+7,284,29118,French Vanilla Soy Creamer,4.060095263
+8,284,26047,Tuna Salad,4.048168356
+9,284,4812,Stage 1 Apples & Strawberries Organic Pureed Baby Food,4.045466481
+0,289,13176,Bag of Organic Bananas,5
+1,289,18465,Organic Grade A Free Range Large Brown Eggs,5
+2,289,5479,Italian Sparkling Mineral Water,5
+3,289,38689,Organic Reduced Fat Milk,5
+4,289,21903,Organic Baby Spinach,4.849031712
+5,289,46990,Ground Buffalo,4.67169761
+6,289,1069,100% Oatnut Bread,4.592635975
+7,289,35503,Organic Vanilla Almond Milk,4.563709634
+8,289,10957,Fridge Pack Cola,4.544213185
+9,289,30442,Low Fat Vanilla Yogurt,4.539442142
+0,290,5479,Italian Sparkling Mineral Water,5
+1,290,4451,Organic Skim Milk with DHA Omega-3,4.842037756
+2,290,43394,Organic Lactose Free Whole Milk,4.183903649
+3,290,11712,Cage Free Large White Eggs,4.059073009
+4,290,46088,Beer,3.917349533
+5,290,10957,Fridge Pack Cola,3.906982934
+6,290,18362,Organic Bread with 21 Whole Grains,3.904830547
+7,290,24852,Banana,3.880171985
+8,290,2078,Unsalted Pure Irish Butter,3.790794222
+9,290,46061,Popcorn,3.729016334
+0,294,29447,"Milk, Organic, Vitamin D",4.185434286
+1,294,24852,Banana,3.593779211
+2,294,22610,Reduced Fat 2% Lactose-Free Milk,3.472977814
+3,294,17949,Mild Cheddar Cheese Sticks,3.330901846
+4,294,44799,Fresh CA Grown Eggs,3.279458736
+5,294,38928,0% Greek Strained Yogurt,3.201158809
+6,294,11576,Corn Chips,3.13517036
+7,294,27086,Half & Half,3.129750844
+8,294,5479,Italian Sparkling Mineral Water,3.043558035
+9,294,21903,Organic Baby Spinach,3.029457503
+0,295,3957,100% Raw Coconut Water,4.892981856
+1,295,5785,Organic Reduced Fat 2% Milk,4.729240955
+2,295,24838,Unsweetened Almondmilk,4.648170177
+3,295,44008,Organic Greek Whole Milk Blended Vanilla Bean Yogurt,4.489642921
+4,295,9411,Unsweetened Iced Coffee,4.433287173
+5,295,36316,Lemon Sparkling Water,4.261594966
+6,295,46088,Beer,4.249182473
+7,295,2120,Sauvignon Blanc,4.194556456
+8,295,46061,Popcorn,4.189251283
+9,295,5115,Organic Medium Brown Eggs,4.183018381
+0,300,21903,Organic Baby Spinach,3.953218398
+1,300,24852,Banana,3.821146208
+2,300,44799,Fresh CA Grown Eggs,3.617403859
+3,300,36011,Organic Fat Free Milk,3.567447545
+4,300,6361,Soft Potato Bread,3.334835358
+5,300,38928,0% Greek Strained Yogurt,3.281062827
+6,300,9411,Unsweetened Iced Coffee,3.139359963
+7,300,11187,Revel Berry Yerba Mate,3.004918598
+8,300,5479,Italian Sparkling Mineral Water,2.988882751
+9,300,8571,Baby Cucumbers,2.909069405
+0,301,12384,Organic Lactose Free 1% Lowfat Milk,2.997513558
+1,301,35914,Dha Omega 3 Reduced Fat 2% Milk,2.983029845
+2,301,29848,Diet Peach Tea,2.911179932
+3,301,11520,Large Alfresco Eggs,2.869843205
+4,301,19057,Organic Large Extra Fancy Fuji Apple,2.824879954
+5,301,6182,Natural Artesian Bottled Water,2.769999567
+6,301,1069,100% Oatnut Bread,2.696322875
+7,301,13560,A+ Cinnamon Sweet Potato Pancakes,2.671602203
+8,301,3957,100% Raw Coconut Water,2.642442806
+9,301,47611,M&M's Vanilla Lowfat Yogurt,2.605875668
+0,304,12606,100% Natural Spring Water,4.210242086
+1,304,10753,Peanut Butter Bar,4.162731284
+2,304,47611,M&M's Vanilla Lowfat Yogurt,4.135142022
+3,304,29447,"Milk, Organic, Vitamin D",4.094092768
+4,304,33572,Lactose Free 2% Reduced Fat Milk,4.002920094
+5,304,25332,Unsweetened Coconut Water,3.993174263
+6,304,27086,Half & Half,3.924825311
+7,304,30233,Organic Large Brown Grade AA Cage Free Eggs,3.85923525
+8,304,21497,White Sandwich Bread,3.800428118
+9,304,42828,Whipped Cream Cheese,3.672230232
+0,306,24852,Banana,3.936136735
+1,306,8571,Baby Cucumbers,3.662378227
+2,306,20940,Organic Low Fat Milk,3.649732479
+3,306,6774,Brown Fertile Large Grade AA Eggs,3.471783711
+4,306,22959,Reduced Fat Milk 100% Lactose Free,3.339834696
+5,306,30597,French Vanilla Coffee Creamer,3.311163825
+6,306,45763,Mini Seedless Cucumbers,3.271537173
+7,306,45064,Honey Wheat Bread,3.240171083
+8,306,30489,Original Hummus,3.231626069
+9,306,42731,Original Citrus Sparkling Flavored Soda,3.206941331
