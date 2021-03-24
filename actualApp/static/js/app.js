@@ -1522,7 +1522,7 @@ function init2013(walData) {
       });
 } 
 // ******************************** Stock close price vs. number of upvotes ********************************
-function init(){
+function stock_init(){
   d3.json("/api/stock").then(function(data){
     console.log(data);
     // Assign the data from `data.js` to a descriptive variable
@@ -1597,6 +1597,7 @@ function init(){
     Plotly.newPlot('plot', data, layout);
   });
 };
+stock_init();
 
 // ******************************** Stock close price vs. number of upvotes ********************************
 // Actual and Forecast Compared
