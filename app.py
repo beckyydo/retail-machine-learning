@@ -46,15 +46,7 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 stock = Base.classes.stock
-
-metrics = Base.classes.metrics
-
-price = Base.classes.realstockprice
-
-forecast = Base.classes.stockforecast
-
-pricecrossval = Base.classes.pricecross
-
+prophet = Base.classes.prophet
 session = Session(engine)
 
 
@@ -78,46 +70,30 @@ def stock_route():
         
     return jsonify(stock_df)
 
-@app.route("/api/realstockprice")
-def realstockprice_route():
-    data = session.query(price.ds, price.y).all()
-
-    realstockprice_df = []
-    for row in data:
-        output={
-            "date":row[0],
-            "price":row[1]
-        }
-        realstockprice_df.append(output)
-
-    return jsonify(realstockprice_df)
-
-@app.route("/api/stockforecast")
-def stockforecast_route():
-    data = session.query(forecast.ds, 
-        forecast.trend,
-        forecast.yhat_lower,
-        forecast.yhat_upper,
-        forecast.trend_lower,
-        forecast.trend_upper,
-        forecast.additive_terms,
-        forecast.additive_terms_lower,
-        forecast.additive_terms_upper,
-        forecast.daily,
-        forecast.daily_lower,
-        forecast.daily_upper,
-        forecast.weekly,
-        forecast.weekly_lower,
-        forecast.weekly_upper,
-        forecast.yearly,
-        forecast.yearly_lower,
-        forecast.yearly_upper,
-        forecast.multiplicative_terms,
-        forecast.multiplicative_terms_lower,
-        forecast.multiplicative_terms_upper,
-        forecast.yhat).all()
+@app.route("/api/prophet")
+def prophet_route():
+    data = session.query(prophet.ds, 
+        prophet.trend,
+        prophet.yhat_lower,
+        prophet.yhat_upper,
+        prophet.trend_lower,
+        prophet.trend_upper,
+        prophet.additive_terms,
+        prophet.additive_terms_lower,
+        prophet.additive_terms_upper,
+        prophet.daily,
+        prophet.daily_lower,
+        prophet.daily_upper,
+        prophet.weekly,
+        prophet.weekly_lower,
+        prophet.weekly_upper,
+        prophet.yearly,
+        prophet.yearly_lower,
+        prophet.yearly_upper,
+        prophet.yhat,
+        prophet.y).all()
  
-    stockforecast_df = []
+    prophet_df = []
     for row in data:
         output={
              'ds':row[0],
@@ -138,14 +114,12 @@ def stockforecast_route():
             'yearly':row[15],
             'yearly_lower':row[16],
             'yearly_upper':row[17],
-            'multiplicative_terms':row[18],
-            'multiplicative_terms_lower':row[19],
-            'multiplicative_terms_upper':row[20],
-            'yhat':row[20]
+            'yhat':row[18],
+            'y':row[19]
         }
-        stockforecast_df.append(output)
+        prophet_df.append(output)
 
-    return jsonify(stockforecast_df)
+    return jsonify(prophet_df)
 
 
 # @app.route("/api/price_metrics")
