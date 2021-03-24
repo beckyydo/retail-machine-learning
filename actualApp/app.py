@@ -34,6 +34,7 @@ Base.prepare(engine, reflect=True)
 walmart = Base.classes.walmart
 comparison = Base.classes.comparison
 predictions = Base.classes.predictions
+stock = Base.classes.stock2020
 
 session = Session(engine)
 
@@ -172,6 +173,37 @@ def grocery():
 def shopping_cart():
     return render_template('cart.html', grocery_list = grocery_list)
 
+# ****************************************Stock Close Price and Upvotes Service Route ****************************************
+@app.route("/api/stock")
+def stock_route():
+
+    data= session.query(stock.Date,stock.score, stock.num_comments, stock.Open , stock.High,stock.Low,
+    stock.Close,stock.Adj_Close, stock.Volume,stock.High_Low_pct, stock.ewm_5, stock.price_std_5, 
+    stock.volume_Change, stock.volume_avg_5, stock.volume_Close, stock.y).all()
+ 
+    stock_df=[]
+    for row in data:
+        output = {
+            "dates" : row[0],
+            "score":row[1],
+            "comments":row[2],
+            "openingPrices":row[3],
+            "highPrices": row[4],
+            "lowPrices": row[5],
+            "closingPrices": row[6],
+            "adjustClosing":row[7],
+            "volume":row[8],
+            "percentChange": row[9],
+            "movingAvg": row[10],
+            "priceStdv5": row[11],
+            "volumeChange":row[12],
+            "volumeAvg5":row[13],
+            "volumeClose":row[14], 
+            "equation": row [15]
+            }
+        stock_df.append(output)
+        
+    return jsonify(stock_df)
 
 
 if __name__ == "__main__":
