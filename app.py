@@ -58,19 +58,13 @@ def home():
 @app.route("/api/stock")
 def stock_route():
 
-    data= session.query(stock.Date, stock.Open , stock.High,stock.Low,stock.Close,stock.Volume,stock.Color,stock.MovingAvg).all()
+    data= session.query(stock.Date, stock.Close).all()
  
     stock_df=[]
     for row in data:
         output = {
-            "dates" : row[0],
-            "openingPrices":row[1],
-            "highPrices": row[2],
-            "lowPrices": row[3],
-            "closingPrices": row[4],
-            "volume":row[5],
-            "colors": row[6],
-            "movingAvg": row[7]}
+            "closingPrice" : row[1],
+            "date":row[0]}
         stock_df.append(output)
         
     return jsonify(stock_df)
