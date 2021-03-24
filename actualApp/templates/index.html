@@ -51,6 +51,12 @@
     <link href="static/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="static/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="static/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -373,6 +379,98 @@
         </div>
     </section>
     <!-- End Stock Section -->
+
+  <!-- ======= Forecast Section ======= -->
+    <section id="stock-forecast" class="resume">
+        <div class = "container-fluid">
+            <div class = "market-banner">
+                <h1 style = "color:white;">Stock<img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+            </div>
+        </div>
+
+      <div class="container">
+          <div class="ml-1 row">
+            <div class="col-md-2">
+                <div class="panel-heading" ><h5 style = "margin-top:20px;color:#0279E2;">Filter Search</h5></div>
+                <br>
+            </div>
+          </div>
+          <!-- <form>
+            <div class="ml-1 form-group">
+              <div class="ml-1 row">
+                <div class="col-md-2">
+                  <label for="date" style ="color:#0279E2">Date (from)</label>
+                  <input class="form-control" id="datetime1" type="text" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="ml-1 col-md-2">
+                  <label for="date" style ="color:#0279E2">Date (to)</label>
+                  <input class="form-control" id="datetime2" type="text" placeholder="YYYY-MM-DD">
+                </div>
+              </div>      
+            </div>
+            <div class="ml-1 row">
+              <div class="ml-1 btn-group mr-2" role="group" aria-label="First group">
+                <button id="filter-btn" type="button" onclick = "runEnter()"class="btn-toolbar btn-secondary">Filter plot</button>
+              </div>
+              <div class="ml-1 btn-group mr-2" role="group" aria-label="Second group">
+                <button id="reset-btn" type="button" onclick = "init()" class="btn-toolbar btn-secondary">All</button>
+              </div>
+            </div>
+          </form> -->
+            <div id="plot-forecast"></div>
+      </div>
+    </section>
+    <!-- Stock Summary -->
+    <section class = "testimonials section-bg">
+      <div class = "container-fluid">
+        <div class = "market-banner2">
+          <h2 style = "color:white;">Summary</h2>
+        </div>
+      </div>
+      <div class = "row" style = "margin-top:70px;">
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <p style = "height:230px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Moving Average was calculated for the window of 180 days in 
+              order to reflect differences of open and close prices of stock for each day<br>
+              <span style = "color:#0279E2;">&#8226;</span> Using plotly in JavaScript to plot the stock candlestick.
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Engineering_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Engineering</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <p style = "height:230px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Difficulty to show the volume in the plot, but with some 
+              modification in the layout, the volume was included in the plot<br>
+              <span style = "color:#0279E2;">&#8226;</span> Data was restricted to 10 years for faster loading
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Error_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Issues & Limitations</h3>
+          </div>
+        </div>
+        <div class = "col-md-4">
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <p style = "height:230px;">
+              <i class="bx"></i><br>
+              <span style = "color:#0279E2;">&#8226;</span> Visualize stock and volume prices of Walmart over time<br>
+              <span style = "color:#0279E2;">&#8226;</span> Picture the trend of moving average in order to smoothes 
+              out the price movements for showing a clearer path
+              <i class="bx"></i>
+            </p>
+            <img src = "{{ url_for('static', filename='img/Function_Icon.png') }}" alt ="" id class = "testimonial-img">
+            <h3>Functionality</h3>
+          </div>
+          </div>
+          </div>
+        </div>
+    </section>
+    <!-- End Forecast Section -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
