@@ -47,13 +47,13 @@ Base.prepare(engine, reflect=True)
 
 stock = Base.classes.stock
 
-# price_metrics = Base.classes.price_metrics
+metrics = Base.classes.price_metrics
 
-actual_stock_price = Base.classes.actual_stock_price
+price = Base.classes.actual_stock_price
 
-stock_predictions = Base.classes.stock_predictions
+prediction = Base.classes.stock_predictions
 
-price_cross_val = Base.classes.price_cross_val
+crossvalidation = Base.classes.price_cross_val
 
 session = Session(engine)
 
