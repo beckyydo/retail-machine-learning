@@ -46,8 +46,8 @@ username = "postgres"
 password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
-path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/"
-kmeans = load(path + "kmeans.joblib")
+#path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/"
+kmeans = load("data/kmeans.joblib")
 
 user_df = pd.read_sql_table("user_df", conn)
 grocery_df = pd.read_sql_table("grocery_df", conn)
