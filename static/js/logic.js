@@ -1,3 +1,4 @@
+// Actual and Forecast Compared
 const url = "/api/prophet";
 
 d3.json(url).then(function(data){
@@ -104,3 +105,4 @@ Plotly.newPlot('plot', traceData, layout);
 
 
 });
+
