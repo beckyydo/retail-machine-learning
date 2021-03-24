@@ -47,13 +47,13 @@ Base.prepare(engine, reflect=True)
 
 stock = Base.classes.stock
 
-metrics = Base.classes.price_metrics
+metrics = Base.classes.metrics
 
-price = Base.classes.actual_stock_price
+price = Base.classes.realstockprice
 
-prediction = Base.classes.stock_predictions
+forecast = Base.classes.stockforecast
 
-crossvalidation = Base.classes.price_cross_val
+pricecrossval = Base.classes.pricecross
 
 session = Session(engine)
 
@@ -77,6 +77,76 @@ def stock_route():
         stock_df.append(output)
         
     return jsonify(stock_df)
+
+@app.route("/api/realstockprice")
+def realstockprice_route():
+    data = session.query(price.ds, price.y).all()
+
+    realstockprice_df = []
+    for row in data:
+        output={
+            "date":row[0],
+            "price":row[1]
+        }
+        realstockprice_df.append(output)
+
+    return jsonify(realstockprice_df)
+
+@app.route("/api/stockforecast")
+def stockforecast_route():
+    data = session.query(forecast.ds, 
+        forecast.trend,
+        forecast.yhat_lower,
+        forecast.yhat_upper,
+        forecast.trend_lower,
+        forecast.trend_upper,
+        forecast.additive_terms,
+        forecast.additive_terms_lower,
+        forecast.additive_terms_upper,
+        forecast.daily,
+        forecast.daily_lower,
+        forecast.daily_upper,
+        forecast.weekly,
+        forecast.weekly_lower,
+        forecast.weekly_upper,
+        forecast.yearly,
+        forecast.yearly_lower,
+        forecast.yearly_upper,
+        forecast.multiplicative_terms,
+        forecast.multiplicative_terms_lower,
+        forecast.multiplicative_terms_upper,
+        forecast.yhat).all()
+ 
+    stockforecast_df = []
+    for row in data:
+        output={
+             'ds':row[0],
+            'trend':row[1],
+            'yhat_lower':row[2],
+            'yhat_upper':row[3],
+            'trend_lower':row[4],
+            'trend_upper':row[5],
+            'additive_terms':row[6],
+            'additive_terms_lower':row[7],
+            'additive_terms_upper':row[8],
+            'daily':row[9],
+            'daily_lower':row[10],
+            'daily_upper':row[11],
+            'weekly':row[12],
+            'weekly_lower':row[13],
+            'weekly_upper':row[14],
+            'yearly':row[15],
+            'yearly_lower':row[16],
+            'yearly_upper':row[17],
+            'multiplicative_terms':row[18],
+            'multiplicative_terms_lower':row[19],
+            'multiplicative_terms_upper':row[20],
+            'yhat':row[20]
+        }
+        stockforecast_df.append(output)
+
+    return jsonify(stockforecast_df)
+
 
 # @app.route("/api/price_metrics")
 # def metrics_route():
