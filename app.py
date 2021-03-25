@@ -16,7 +16,7 @@ import os
 import pandas as pd
 import numpy as np
 import datetime
-import requests
+import requests 
 import matplotlib.pyplot as plt
 import time
 
@@ -166,10 +166,7 @@ def stockforecast_route():
             'yearly':row[15],
             'yearly_lower':row[16],
             'yearly_upper':row[17],
-            'multiplicative_terms':row[18],
-            'multiplicative_terms_lower':row[19],
-            'multiplicative_terms_upper':row[20],
-            'yhat':row[21]
+            'yhat':row[18]
         }
         stockforecast_df.append(output)
 

@@ -1,10 +1,8 @@
 // Actual and Forecast Compared
-const url = "/api/prophet";
+const forecastURL = '/api/stockforecast'
 
-d3.json(url).then(function(data){
+d3.json(forecastURL).then(function(data) {
   console.log(data);
-
-  let tableData = data;
 
   var dates = data.map(record => record.ds);
   var trend = data.map(record => record.trend);
@@ -25,10 +23,7 @@ d3.json(url).then(function(data){
   var yearly_lower = data.map(record => record.yearly_lower);
   var yearly_upper = data.map(record => record.yearly_upper);
   var yhat = data.map(record => record.yhat);
-  var y = data.map(record => record.y);
-  console.log(yhat);
-  console.log(y);
-  
+
   var trace1 = {
     fill: null,
     mode:'markers',
@@ -67,25 +62,14 @@ d3.json(url).then(function(data){
     y: trend
   };
 
-  var trace5 = {
-    mode:'markers',
-    marker: {
-      color: 'black',
-      size: 30
-    },
-    name:'actual price',
-    type:'scatter',
-    x: dates,
-    y: y 
-
-  }
-  var traceData = [trace1,trace2, trace3, trace4,trace5];
+  var traceData = [trace1,trace2,trace3,trace4];
 
   var layout = {
     title: 'WMT Times Series Forecast', 
     xaxis: {
       title: 'Dates', 
-      ticklen: 5, 
+      ticklen: 5,
+      showticklabels: false, 
       gridcolor: 'rgb(255, 255, 255)', 
       gridwidth: 2, 
       zerolinewidth: 1
@@ -101,8 +85,5 @@ d3.json(url).then(function(data){
     paper_bgcolor: 'rgb(243, 243, 243)'
   };
 
-Plotly.newPlot('plot', traceData, layout);
-
-
+Plotly.newPlot('plot-forecast2', traceData, layout);
 });
-
