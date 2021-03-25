@@ -50,8 +50,8 @@ conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
 #path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/data/"
 kmeans = load("./static/data/kmeans.joblib")
-feature2 = pd.read_csv("./static/data/recommendations.csv")
 
+feature2 = pd.read_sql_table("recommendations", conn)
 user_df = pd.read_sql_table("user_df", conn)
 grocery_df = pd.read_sql_table("grocery_df", conn)
 orders = pd.read_sql_table("order_df", conn)
