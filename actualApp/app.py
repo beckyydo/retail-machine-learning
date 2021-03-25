@@ -56,6 +56,7 @@ user_df = pd.read_sql_table("user_df", conn)
 grocery_df = pd.read_sql_table("grocery_df", conn)
 orders = pd.read_sql_table("order_df", conn)
 cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
+img_product = pd.read_sql_table("product", conn)
 
 # Main route to render index.html
 @app.route("/")
@@ -142,22 +143,31 @@ def recommendations(user_email):
     
     # Set starting variables
     n = 0
-    for product in top10['product_name']:
-        url_list = top10.loc[top10['product_name'] == product].img_url.item()
-        repeat_check = repeat[repeat['product_name'] == product]
-        nonrepeat_check = nonrepeat[nonrepeat['product_name'] == product]
-
-        if (n==3):
+    for product in repeat['product_name']:
+        top10_check = top10[top10['product_name'] == product]
+        if (n == 3):
             break
-        elif (not repeat_check.empty):
+        elif (not top10_check.empty):
+            url_list = img_product.loc[img_product['product'] == product].img_url.item()
             grocery_list.append({'product': product, 'img': url_list})
             n = n + 1
+
+    for product in nonrepeat['product_name']:
+        nonrepeat_check = nonrepeat[nonrepeat['product_name'] == product]
+        if (n == 3):
+            break
         elif (not nonrepeat_check.empty):
+            url_list = img_product.loc[img_product['product'] == product].img_url.item()
             grocery_list.append({'product': product, 'img': url_list})
             n = n + 1
+
+    for product in repeat['product_name']:
+        if (n == 3):
+            break
         else:
+            url_list = img_product.loc[img_product['product'] == product].img_url.item()
             grocery_list.append({'product': product, 'img': url_list})
-            n = n + 1 
+            n = n + 1
 #    return grocery_list
 
 def feature_2(user_email, user_df):
@@ -173,7 +183,8 @@ def feature_2(user_email, user_df):
         if (k==3):
             break
         elif product not in grocery_check:
-            feature_list.append({'product':product})
+            url_list = img_product.loc[img_product['product'] == product].img_url.item()
+            feature_list.append({'product':product,'img':url_list})
             k=k+1
 #return feature_list
 

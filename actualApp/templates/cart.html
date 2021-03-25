@@ -70,11 +70,11 @@
                                     {{d.product}}
                                 </td>
                                 <td class="price-pr">
-                                    <p>$ 12.99</p>
+                                    <p>$ 9.99</p>
                                 </td>
                                 <td class="quantity-box"><input type="number" size="3" value="1" min="0" step="1" class="c-input-text qty text"></td>
                                 <td class="total-pr">
-                                    <p>$ 12.99</p>
+                                    <p>$ 9.99</p>
                                 </td>
                                 <td class="remove-pr">
                                     <a href="#">
@@ -115,8 +115,15 @@
                 <h6>You May Also Like...</h6>
                 <div class = "row">
                     {% for item in feature_list: %}
-                    <div class="col-md-4">
-                        {{item.product}}
+                    <div class="col-md-4" style="text-align:center;">
+                        <img class="img-fluid" src={{item.img}} alt="" style="width:120px;
+                                    height:120px;
+                                    border-radius: 25px;
+                                    border-color:#3773DA;
+                                    border-style: solid;
+                                    border-width: medium;">
+                        <div>{{item.product}}</div>
+                        
                     </div>
                     {% endfor %}
                 </div>
@@ -126,11 +133,11 @@
                     <h5>Order Summary</h5>
                     <div class="d-flex">
                         <h6>Sub Total</h6>
-                        <div class="ml-auto"> $ 130 </div>
+                        <div class="ml-auto"> $ 29.97 </div>
                     </div>
                     <div class="d-flex">
                         <h6>Discount</h6>
-                        <div class="ml-auto"> $ 40 </div>
+                        <div class="ml-auto"> $ 0 </div>
                     </div>
                     <hr class="my-1">
                     <div class="d-flex">
@@ -138,8 +145,8 @@
                         <div class="ml-auto"> $ 10 </div>
                     </div>
                     <div class="d-flex">
-                        <h6>Tax</h6>
-                        <div class="ml-auto"> $ 2 </div>
+                        <h6>Tax 13%</h6>
+                        <div class="ml-auto"> $ 3.90 </div>
                     </div>
                     <div class="d-flex">
                         <h6>Shipping Cost</h6>
@@ -148,7 +155,7 @@
                     <hr>
                     <div class="d-flex gr-total">
                         <h6>Grand Total</h6>
-                        <div class="ml-auto h6"> $ 388 </div>
+                        <div class="ml-auto h6"> $ 33.87 </div>
                     </div>
                     <hr> 
                 </div>
