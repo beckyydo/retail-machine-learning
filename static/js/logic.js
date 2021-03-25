@@ -1,4 +1,4 @@
-// Actual and Forecast Compared
+// Forecast Chart
 const forecastURL = '/api/stockforecast'
 
 d3.json(forecastURL).then(function(data) {
@@ -30,7 +30,7 @@ d3.json(forecastURL).then(function(data) {
     name:'predicted price',
     type:'scatter',
     x: dates,
-    y: yhat 
+    y: yhat
   };
 
   var trace2 = {
@@ -85,5 +85,5 @@ d3.json(forecastURL).then(function(data) {
     paper_bgcolor: 'rgb(243, 243, 243)'
   };
 
-Plotly.newPlot('plot-forecast2', traceData, layout);
+Plotly.newPlot('plot-forecast', traceData, layout);
 });
