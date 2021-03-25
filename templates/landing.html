@@ -43,12 +43,15 @@
     style="text-align:center;background-color:#b0d1f6;color:#3773da;z-index:5;position:fixed;
     border-color:#3773da;border-style:solid;border-width:medium;right:0;margin-top:15px;border-radius:10px;">
 		<strong>Grocery List Generated</strong><div>
-			<a href="#">Go to Cart</a>
+			<a href="{{url_for('shopping_cart')}}">Go to Cart</a>
 		</div>
 		<button type="button" class="close" aria-label="Close">
 		  <span aria-hidden="true">&times;</span>
 		</button>
 	</div>
+    <div class="toggle-up">
+
+    </div>
     <div class="container-fluid">
         <div class="row">
             <img src="./static/images/Banner_2.PNG" class="img-fluid">
@@ -162,6 +165,10 @@
         <div class="row" style="height:70px;">
 
         </div>
+    </div>
+
+    <div class="back-to-top">
+        <img src="./static/images/Toggle_Up.png" style="width:40px;position:fixed;z-index:10;">
     </div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

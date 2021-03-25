@@ -85,7 +85,6 @@ def recommendations(user_email):
             n = n + 1 
 #    return grocery_list
 
-print(grocery_list, user_df)
 
 def feature_2(user_email, user_df):
     email = str(user_email)
@@ -109,7 +108,7 @@ def feature_2(user_email, user_df):
 # Main route to render index.html
 @app.route("/")
 def login_page():
-    return render_template("login.html")
+    return render_template("landing.html")
 
 @app.route("/recommendations", methods = ['POST'])
 def grocery():
