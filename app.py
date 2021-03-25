@@ -35,16 +35,16 @@ username = "postgres"
 password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
-user_df = pd.read_sql_table("user_df", conn)
-grocery_df = pd.read_sql_table("grocery_df", conn)
-orders = pd.read_sql_table("order_df", conn)
-cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
-feature2 = pd.read_csv("data/recommendations.csv")
+#user_df = pd.read_sql_table("user_df", conn)
+#grocery_df = pd.read_sql_table("grocery_df", conn)
+#orders = pd.read_sql_table("order_df", conn)
+#cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
+#feature2 = pd.read_csv("data/recommendations.csv")
 
-grocery_list = []
 feature_list = []
 # Grocery List Recommendation
 def recommendations(user_email):
+    grocery_list = []
     email = str(user_email)
     
     # Convert e-mail to user_id

@@ -36,7 +36,7 @@ session = Session(engine)
 # Main route to render index.html
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("landing.html")
 
 # Weekly Sales Variable Interactive Service Route
 @app.route("/api/walmart")

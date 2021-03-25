@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" src="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/style1.css">
 </head>
 <body style="background-color: white;">
 	<nav class="navbar navbar-expand-md" style ="background-color: #3773da;height:60px;">
@@ -33,7 +33,8 @@
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-light" href="{{url_for('shopping_cart')}}">
-                        <img src="./static/images/Shopping Cart.png" style="width:25px">  Cart
+                        <img src="./static/images/Shopping Cart.png" style="width:25px">Cart
+                        <span style="font-size:10px;font-weight:bold;vertical-align:top;">3</span>
                     </a>
                 </li>
             </ul>
@@ -49,8 +50,11 @@
 		  <span aria-hidden="true">&times;</span>
 		</button>
 	</div>
-    <div class="toggle-up">
-
+    <div>
+        <a href="#">
+            <img src="./static/images/Toggle_Up.png" class="img-fluid" style="width:50px;position:fixed;right:0;bottom:0;
+            z-index:10;margin-bottom:25px;margin-right:25px;">    
+        </a>
     </div>
     <div class="container-fluid">
         <div class="row">
@@ -165,10 +169,6 @@
         <div class="row" style="height:70px;">
 
         </div>
-    </div>
-
-    <div class="back-to-top">
-        <img src="./static/images/Toggle_Up.png" style="width:40px;position:fixed;z-index:10;">
     </div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
