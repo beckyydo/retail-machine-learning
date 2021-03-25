@@ -149,7 +149,7 @@
         <div class = "col-md-1"></div>
       </div>
     </section>
-    <!-- Weekly Sales Summary -->
+    <!-- Weekly Sales Summary
     <section class = "testimonials section-bg">
       <div class = "container-fluid">
         <div class = "market-banner2">
@@ -213,7 +213,7 @@
           </div>
           </div>
         </div>
-    </section>
+    </section> -->
     <!-- End Weekly Sales Section -->
 
     <!-- ======= Stock Section ======= -->
@@ -227,7 +227,7 @@
       <div class="container">
           <div class="ml-1 row">
             <div class="col-md-2">
-                <div class="panel-heading" ><h5 style = "margin-top:20px;color:#0279E2;">Filter Search</h5></div>
+                <div class="panel-heading" ><h5 style = "margin-top:20px;color:#0279E2;"></h5></div>
                 <br>
             </div>
           </div>
@@ -257,7 +257,7 @@
       </div>
     </section>
     <!-- Stock Summary -->
-    <section class = "testimonials section-bg">
+    <!-- <section class = "testimonials section-bg">
       <div class = "container-fluid">
         <div class = "market-banner2">
           <h2 style = "color:white;">Summary</h2>
@@ -305,21 +305,21 @@
           </div>
           </div>
         </div>
-    </section>
+    </section> -->
     <!-- End Stock Section -->
 
   <!-- ======= Forecast Section ======= -->
     <section id="stock-forecast" class="resume">
         <div class = "container-fluid">
             <div class = "market-banner">
-                <h1 style = "color:white;">Stock<img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
+                <h1 style = "color:white;">Stock Forecast<img src = "{{ url_for('static', filename='Logo.png') }}" alt ="Walmart Logo" id = "logo"></h1>
             </div>
         </div>
 
       <div class="container">
           <div class="ml-1 row">
             <div class="col-md-2">
-                <div class="panel-heading" ><h5 style = "margin-top:20px;color:#0279E2;">Filter Search</h5></div>
+                <div class="panel-heading" ><h5 style = "margin-top:20px;color:#0279E2;">Walmart Stock</h5></div>
                 <br>
             </div>
           </div>
@@ -350,12 +350,19 @@
     </section>
     <!-- Stock Summary -->
     <section class = "testimonials section-bg">
-      <div class = "container-fluid">
-        <div class = "market-banner2">
-          <h2 style = "color:white;">Summary</h2>
+      <div id="overlay" onclick="off()">
+        <div style="margin-top: 50px;">
+          <img id="image-forecast" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/006/002/original/recentforecast.png?1616653077"  
+              class="rounded mx-auto d-block" style="width: 950px;"/>
         </div>
       </div>
-      <div class = "row" style = "margin-top:70px;">
+      <div class = "container-fluid">
+        <div class = "market-banner2">
+          <!-- <h2 style = "color:white;">Summary</h2> -->
+          <button id="recent-forecast" onclick="on()">Recent</button>
+        </div>
+      </div>
+      <!-- <div class = "row" style = "margin-top:70px;">
         <div class = "col-md-4">
           <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
             <p style = "height:230px;">
@@ -396,7 +403,7 @@
           </div>
           </div>
           </div>
-        </div>
+        </div> -->
     </section>
     <!-- End Forecast Section -->
 
