@@ -31,7 +31,8 @@ engine = create_engine("postgres://ofiglsqd:vVojrG9_zzJZCOLXz8rhKWXk6ivvYqAe@ott
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 
-# walmart = Base.classes.walmart
+walmart = Base.classes.walmart
+market_share = Base.classes.market_share
 # comparison = Base.classes.comparison
 # predictions = Base.classes.predictions
 # stock = Base.classes.stock2020
@@ -59,6 +60,24 @@ session = Session(engine)
 # img_product = pd.read_sql_table("product", conn)
 
 # Main route to render index.html
+@app.route("/overview/metric")
+def overview_metric():
+    # Aggregate last 2 weeks of sales
+    query = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+                        .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(2)  
+    # Convert query into dataframe 
+    sls_2wks = pd.read_sql(query.statement, query.session.bind)
+    # Calculate increase/decrease percentage of most recent weekly sale
+    margin = (sls_2wks.iloc[0,1]-sls_2wks.iloc[1,1])/sls_2wks.iloc[1,1]*100
+    # Retrieve recent week date
+    last_wk = sls_2wks.iloc[0,0]
+    # Retrieve recent total sales
+    last_sales = sls_2wks.iloc[0,1]
+    # Overview Metric Dict.
+    metric = ({'Margin': margin, 'Week': last_wk, 'Sales':last_sales})
+    return jsonify(metric)
+
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -78,6 +97,23 @@ def stock_forecast():
     return render_template("stock_forecast.html")   
 
 #****************************************MARKETSHARE****************************************
+@app.route("/api/marketshare")
+def share_api():
+    data = session.query(market_share.CITY, market_share.STATE, market_share.Latitude, 
+                        market_share.Longitude, market_share.POPULATION,
+                        market_share.MARKET_SHARE).all()
+    # Create dictionary from pulled data
+    market_df = []
+    for row in data:
+        market_dict = {'City': row[0],'State': row[1], 
+        'Lat': row[2], 'Lon': row[3], 'Population': row[4],
+        'Share': row[5]}
+        market_df.append(market_dict)
+    # Sort list of dictionary by key City then State
+    market_df = sorted(market_df, key=lambda k: k['City']) 
+    market_df = sorted(market_df, key=lambda k: k['State']) 
+    return jsonify(market_df)
+
 @app.route("/marketshare")
 def share():
     return render_template("marketshare.html") 
