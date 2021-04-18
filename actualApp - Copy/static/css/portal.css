@@ -39,7 +39,7 @@
     text-align:center;
     border: 4px solid #f0ad4e
 }
-.app-card-stat .stats-type{font-size:.875rem;color:#828d9f;text-transform:uppercase}
+.app-card-stat .stats-type{font-size:.875rem;color:#f0ad4e;;text-transform:uppercase}
 .app-card-stat .stats-figure{font-size:2rem;color:#252930}
 .app-card-stat .stats-meta{font-size:.875rem;color:#828d9f}
 .app-card-progress-list .item{position:relative;border-bottom:1px solid #e7e9ed}
