@@ -38,7 +38,7 @@ walmart = Base.classes.walmart
 market_share = Base.classes.market_share
 comparison = Base.classes.comparison
 predictions = Base.classes.predictions
-# stock = Base.classes.stock2020
+stock = Base.classes.stock
 prophet = Base.classes.prophet
 # stockforecast = Base.classes.stockforecast
 
@@ -53,7 +53,7 @@ password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
 # K Means Model
-kmeans = load("./static/data/kmeans.joblib")
+kmeans = load("actualApp/static/data/kmeans.joblib")
 
 # Main route to render index.html
 @app.route("/overview/metric")
@@ -392,6 +392,32 @@ def compare_route():
         'Pred_Week_Sales': row[14], 'Model_Label_Pred': row[15], 'Model_Label_Real': row[16]}
         comparison_df.append(comparison_dict)
     return jsonify(comparison_df)
+
+#******************************************** Stock Service Route ********************************************
+@app.route("/api/stock")
+def stock_route():
+
+    last_row = session.query(stock.Date, stock.Open, stock.High, stock.Low, stock.Close, 
+        stock.Volume, stock.Color, stock.MovingAvg).order_by(stock.Date.desc()).limit(1)
+    year = pd.read_sql(last_row.statement, last_row.session.bind).iloc[0,0][0:4]
+    start_date = f"{int(year)-1}-01-01"
+    data = session.query(stock.Date, stock.Open, stock.High, stock.Low, stock.Close, 
+    stock.Volume, stock.Color, stock.MovingAvg).filter(stock.Date>=start_date).all()
+ 
+    stock_df=[]
+    for row in data:
+        output = {
+            "dates" : row[0],
+            "openingPrices":row[1],
+            "highPrices": row[2],
+            "lowPrices": row[3],
+            "closingPrices": row[4],
+            "volume":row[5],
+            "colors": row[6],
+            "movingAvg": row[7]}
+        stock_df.append(output)
+        
+    return jsonify(stock_df)
 
 if __name__ == "__main__":
     app.run()
