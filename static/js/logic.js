@@ -4,7 +4,22 @@ const url = '/api/prophet'
 d3.json(url).then(function(data) {
   console.log(data);
 
-  var dates = data.map(record => record.ds);
+  var dates = [];
+  
+  var initDates = data.map(record => record.ds);
+  console.log(initDates);
+
+  initDates.forEach(date => {
+    let current_datetime = new Date()
+    console.log(current_datetime.toString())
+    let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+    console.log(formatted_date)
+
+    dates.push(formatted_date);
+  });
+
+  console.log(dates);
+
   var trend = data.map(record => record.trend);
   var yhat_lower = data.map(record => record.yhat_lower);
   var yhat_upper = data.map(record => record.yhat_upper);
@@ -64,7 +79,7 @@ d3.json(url).then(function(data) {
   };
 
   var trace5 = {
-    fill: 'green',
+    fill: 'black',
     mode:'markers',
     name:'actual price',
     type:'scatter',
@@ -72,29 +87,54 @@ d3.json(url).then(function(data) {
     y: actual
   };
 
-  var trace6 = {
-    type: 'candlestick',
-    x: dates
+  var traceData = [trace1,trace2,trace3,trace4,trace5];
+
+  var selectorOptions = {
+    buttons: [{
+        step: 'month',
+        stepmode: 'backward',
+        count: 1,
+        label: '1m'
+    }, {
+        step: 'month',
+        stepmode: 'backward',
+        count: 6,
+        label: '6m'
+    }, {
+        step: 'year',
+        stepmode: 'todate',
+        count: 1,
+        label: 'YTD'
+    }, {
+        step: 'year',
+        stepmode: 'backward',
+        count: 1,
+        label: '1y'
+    }, {
+        step: 'all',
+    }],
   };
 
-  var traceData = [trace1,trace2,trace3,trace4,trace5, trace6];
-
   var layout = {
-    title: 'WMT Times Series Forecast', 
+    title: 'Walmart Stock Times Series Forecast', 
     xaxis: {
       title: 'Dates', 
       ticklen: 5,
-      showticklabels: false, 
+      showticklabels: true, 
       gridcolor: 'rgb(255, 255, 255)', 
       gridwidth: 2, 
-      zerolinewidth: 1
+      zerolinewidth: 1,
+      rangeselector: selectorOptions,
+      rangeslider: {},
+      type:'date'
     }, 
     yaxis: {
       title: 'Price (USD)', 
       ticklen: 5, 
       gridcolor: 'rgb(255, 255, 255)', 
       gridwidth: 2, 
-      zerolinewidth: 1
+      zerolinewidth: 1,
+      fixedrange: true
     }, 
     plot_bgcolor: 'rgb(243, 243, 243)', 
     paper_bgcolor: 'rgb(243, 243, 243)'
