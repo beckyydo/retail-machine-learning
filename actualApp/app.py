@@ -14,7 +14,6 @@ from sqlalchemy import create_engine
 from sqlalchemy import func
 import psycopg2
 import pandas as pd
-import pickle
 from joblib import dump, load
 from flask_sqlalchemy import SQLAlchemy
 from dateutil.relativedelta import relativedelta
