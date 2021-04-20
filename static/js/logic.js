@@ -64,12 +64,12 @@ d3.json(url).then(function(data) {
   };
 
   var trace5 = {
-    fill: black,
+    fill: 'green',
     mode:'markers',
     name:'actual price',
     type:'scatter',
     x: dates,
-    y: y
+    y: actual
   };
 
   var traceData = [trace1,trace2,trace3,trace4,trace5];
