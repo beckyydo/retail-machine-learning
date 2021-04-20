@@ -107,35 +107,174 @@ function diff_arrow(num, d3_element){
 
 /*METRIC*/
 d3.json("/overview/metric").then( weekdata =>{
-    console.log(weekdata)
-    var sale = weekdata.Sales
-    var week = weekdata.Week
-    var margin = weekdata.Margin
+
+    var sale = weekdata.Sales;
+    var week = weekdata.Week;
+    var margin = weekdata.Margin;
+    var ytd = weekdata.YeartoDate;
 
     /*Sales*/
-    var dollar_format = d3.format("$,.2f")
-    var sale_format = dollar_format(sale)
-    var metric_sales = d3.selectAll("#overview_sales")
+    var dollar_format = d3.format("$,.2f");
+    var sale_format = dollar_format(sale);
+    var metric_sales = d3.selectAll("#overview_sales");
     metric_sales.text(sale_format);
     
     /*Difference in sales last week*/
-    var diff_sales = d3.selectAll("#diff_sales")
-    var sales_diff = weekdata.Diff_Sales
-    diff_arrow(sales_diff,diff_sales)
+    var diff_sales = d3.selectAll("#diff_sales");
+    var sales_diff = weekdata.Diff_Sales;
+    diff_arrow(sales_diff,diff_sales);
 
     /*Margin*/
-    var metric_margin = d3.selectAll("#overview_margin")
-    metric_margin.text(margin + "%")
+    var metric_margin = d3.selectAll("#overview_margin");
+    metric_margin.text(margin + "%");
     /*Difference in sales last week*/
-    var diff_margin = d3.selectAll("#diff_margin")
-    var margin_diff = weekdata.Diff_Margin
-    diff_arrow(margin_diff,diff_margin)
+    var diff_margin = d3.selectAll("#diff_margin");
+    var margin_diff = weekdata.Diff_Margin;
+    diff_arrow(margin_diff,diff_margin);
 
-    var formatDate = d3.timeFormat("%B %d,%Y")
-    console.log(date_format)
-    var date_format = formatDate(new Date(week))
-    var metric_week = d3.selectAll("#overview_week")
-    metric_week.text(date_format)
+    var formatDate = d3.timeFormat("%B %d,%Y");
+    var date_format = formatDate(new Date(week));
+    var metric_week = d3.selectAll("#overview_week");
+    metric_week.text(date_format);
+
+    /*Year to Date*/
+    var metric_ytd = d3.selectAll("#overview_ytd");
+    var ytd_sale = dollar_format(ytd);
+    metric_ytd.text(ytd_sale);
+    var diff_ytd = d3.selectAll("#diff_ytd");
+    var ytd_diff = weekdata.Diff_YTD;
+    diff_arrow(ytd_diff,diff_ytd);
  
 });
 
+ /*Weekly Sales Chart*/
+function inital_sales(){
+    d3.json("/api/weeklysales").then( sales_data =>{
+        /*Dollar & Date Format*/
+        var dollar_format = d3.format("$,.2f");
+        var formatDate = d3.timeFormat("%b %d,%Y")
+        var sale = sales_data.map(d => dollar_format(d.Sale));
+        var week = sales_data.map(d => formatDate(new Date(d.Week)));
+
+        d3.json("/api/ytd_weeklysales").then( ytd_data =>{
+            var ytd_sale = ytd_data.map(d => dollar_format(d.YTD_Sale));
+            var trace1 = {
+                x: week,
+                y: sale,
+                name: "Current Year",
+                type: 'line',
+                line: {
+                    shape: 'spline',
+                    color: '#f0ad4e',
+                    smoothing: 1.3
+                }
+            };
+            var trace2 = {
+                x: week,
+                y: ytd_sale,
+                name: 'Last Year',
+                type: 'line',
+                line: {
+                    shape: 'spline',
+                    dash: 'dashdot',
+                    color: 'grey',
+                    smoothing: 1.3
+                }
+            };
+            var data = [trace1, trace2]
+            var layout = {
+                margin: {
+                    l:70,
+                    r:30,
+                    b:60,
+                    t:20
+                },
+                xaxis:{
+                    title: 'Date (Week)'
+                },
+                yaxis:{
+                    title: 'Sales $'
+                },
+                legend: {
+                    yanchor:'top',
+                    xanchor:'right',
+                    y: -0.09
+                }
+            }; 
+            var config = {responive: true}
+            Plotly.newPlot('weekly_sales',data,layout, config);
+        });
+    });
+};
+
+inital_sales();
+
+d3.selectAll("#sale_dropdown").on("change", ytd)
+
+function ytd(){
+    d3.json("/api/ytdsales").then( sales_data =>{
+        d3.select("#weekly_sales").html("");
+        var selection = d3.select("#sale_dropdown").node().value;
+        
+        if (selection=="4 Weeks"){
+            inital_sales();
+        } 
+        else {
+        /*Dollar & Date Format*/
+        var dollar_format = d3.format("$,.2f");
+        var formatDate = d3.timeFormat("%b-%d")
+        var sale = sales_data.map(d => dollar_format(d.Sale));
+        var week = sales_data.map(d => formatDate(new Date(d.Week)));
+
+        d3.json("/api/ly_ytdsales").then( ytd_data =>{
+            console.log(ytd_data)
+            var ytd_sale = ytd_data.map(d => dollar_format(d.YTD_Sale));
+            var trace1 = {
+                x: week,
+                y: sale,
+                name: "Current Year",
+                type: 'line',
+                line: {
+                    shape: 'spline',
+                    color: '#f0ad4e',
+                    smoothing: 1.3
+                }
+            };
+            var trace2 = {
+                x: week,
+                y: ytd_sale,
+                name: 'Last Year',
+                type: 'line',
+                line: {
+                    shape: 'spline',
+                    dash: 'dashdot',
+                    color: 'grey',
+                    smoothing: 1.3
+                }
+            };
+            var data = [trace1, trace2]
+            var layout = {
+                margin: {
+                    l:70,
+                    r:30,
+                    b:60,
+                    t:20
+                },
+                xaxis:{
+                    title: 'Date (Week)'
+                },
+                yaxis:{
+                    title: 'Sales $'
+                },
+                legend: {
+                    yanchor:'top',
+                    xanchor:'right',
+                    y: -0.2
+                }
+            }; 
+            var config = {responive: true};
+            Plotly.newPlot('weekly_sales',data,layout, config);
+        });
+        }
+    });
+};

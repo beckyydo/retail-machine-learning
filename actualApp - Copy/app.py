@@ -17,6 +17,8 @@ import pandas as pd
 import pickle
 from joblib import dump, load
 from flask_sqlalchemy import SQLAlchemy
+from dateutil.relativedelta import relativedelta
+import datetime
 
 #################################################
 # Flask Setup
@@ -42,15 +44,15 @@ market_share = Base.classes.market_share
 session = Session(engine)
 
 # Grocery List Recommendations
-# server = "grocery.cu51j1bqdgvr.us-east-2.rds.amazonaws.com"
-# database = "postgres"
-# port = "5432"
-# username = "postgres"
-# password = "postgres123"
-# conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
+server = "grocery.cu51j1bqdgvr.us-east-2.rds.amazonaws.com"
+database = "postgres"
+port = "5432"
+username = "postgres"
+password = "postgres123"
+conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
-#path = "C:/Users/16477/OneDrive/Documents/GitHub/retail-machine-learning/actualApp/data/"
-# kmeans = load("./static/data/kmeans.joblib")
+# K Means Model
+kmeans = load("./static/data/kmeans.joblib")
 
 # feature2 = pd.read_sql_table("recommendations", conn)
 # user_df = pd.read_sql_table("user_df", conn)
@@ -79,12 +81,98 @@ def overview_metric():
     margin2 = (sls_2wks.iloc[1,1]-sls_2wks.iloc[2,1])/sls_2wks.iloc[2,1]*100
     # Retrieve recent total sales
     last_sales2 = sls_2wks.iloc[1,1]
+
+    # Calculate YTD
+    curr_year = sls_2wks.iloc[0,0].year
+    year_filter = f"{curr_year}-01-01"
+    ly_start = f"{curr_year-1}-01-01"
+    ly_end = sls_2wks.iloc[0,0] - relativedelta(years=1)
+    # Pull sales from this year to current date
+    query2 = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+            .group_by(walmart.Week_Date).filter(walmart.Week_Date >= year_filter)
+    # Pull sales from last year to current date last year
+    query3 = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+            .group_by(walmart.Week_Date).filter(walmart.Week_Date >= ly_start).filter(walmart.Week_Date <= ly_end)
+
+    ytd_df = pd.read_sql(query2.statement, query2.session.bind)
+    ytd_sum = round(ytd_df['sum_1'].sum(),2)
+
+    ly_ytd =pd.read_sql(query3.statement, query3.session.bind)
+    ly_sum = round(ly_ytd['sum_1'].sum(),2)
+
     # Overview Metric Dict.
     metric = ({'Margin': round(margin,2), 'Week': last_wk, 'Sales': round(last_sales,2), 
-                'Diff_Margin': margin-margin2, 'Diff_Sales': last_sales-last_sales2})
+                'Diff_Margin': margin-margin2, 'Diff_Sales': last_sales-last_sales2, "YeartoDate":ytd_sum,
+                'Diff_YTD': ytd_sum - ly_sum})
     return jsonify(metric)
 
+#***************************************** 4 Weeks Sales *****************************************
+@app.route("/api/weeklysales")
+def weekly_sales():
+    data = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+                        .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(4)
+    week_df = pd.read_sql(data.statement, data.session.bind).sort_values(by="Week_Date")
+    weekly_df = []
+    for i in range(len(week_df)):
+        sales_dict = {'Week':week_df.iloc[i,0],'Sale':week_df.iloc[i,1]}
+        weekly_df.append(sales_dict)
+    print(weekly_df)
+    return jsonify(weekly_df)
 
+@app.route("/api/ytd_weeklysales")
+def ytd_weekly_sales():
+    query2 = session.query(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(1)
+    last_wk = pd.read_sql(query2.statement, query2.session.bind).iloc[0,0] - relativedelta(years=1)
+
+    ly_4wk = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+                            .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).filter(walmart.Week_Date <= last_wk).limit(4)
+    ly_df = pd.read_sql(ly_4wk.statement, ly_4wk.session.bind).sort_values(by="Week_Date")
+    weekly_df = []
+    for i in range(len(ly_df)):
+        sales_dict = {'YTD_Week':ly_df.iloc[i,0],'YTD_Sale':ly_df.iloc[i,1]}
+        weekly_df.append(sales_dict)
+    return jsonify(weekly_df)    
+
+#***************************************** Year to Date *****************************************            
+@app.route("/api/ytdsales")
+def ytd_sales():
+    query = session.query(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(1)
+    ty_end = pd.read_sql(query.statement, query.session.bind).iloc[0,0]
+    curr_year= ty_end.year
+    ty_start = f"{curr_year}-01-01"
+
+    query2 = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+                            .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).filter(walmart.Week_Date <= ty_end)\
+                                .filter(walmart.Week_Date >= ty_start)
+    
+    ytdsales = pd.read_sql(query2.statement, query2.session.bind).sort_values(by="Week_Date")
+
+    ytd_df = []
+    for i in range(len(ytdsales)):
+        sales_dict = {'Week': ytdsales.iloc[i,0],'Sale':ytdsales.iloc[i,1]}
+        ytd_df.append(sales_dict)
+    return jsonify(ytd_df)
+
+@app.route("/api/ly_ytdsales")
+def ly_ytd_sales():
+    query = session.query(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(1)
+    ly_end = pd.read_sql(query.statement, query.session.bind).iloc[0,0] - relativedelta(years=1)
+    curr_year =  ly_end.year
+    ly_start = f"{curr_year-1}-01-01"
+
+    query2 = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+                            .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).filter(walmart.Week_Date <= ly_end)\
+                                .filter(walmart.Week_Date >= ly_start)
+
+    ly_ytdsales = pd.read_sql(query2.statement, query2.session.bind).sort_values(by="Week_Date")
+
+    ly_ytd_df = []
+    for i in range(len(ly_ytdsales)):
+        sales_dict = {'Week': ly_ytdsales.iloc[i,0],'Sale':ly_ytdsales.iloc[i,1]}
+        ly_ytd_df.append(sales_dict)
+    return jsonify(ly_ytd_df)
+
+#************************************** HOME TEMPLATE **************************************
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -140,21 +228,22 @@ def recommendations(user_email):
     email = str(user_email)
     
     # Convert e-mail to user_id
-    user_id = int(user_df.loc[user_df['email'] == email, 'user_id'])
-    
+    #user_id = int(user_df.loc[user_df['email'] == email, 'user_id'])
+    user_id = pd.read_sql(f"SELECT user_id FROM user_df WHERE email='{email}'",conn).iloc[0,0]
+
     # Grab past order from 
-    order = orders[orders['user_id'] == user_id].sort_values('add_to_cart_order')
+    order = pd.read_sql(f"SELECT * FROM order_df WHERE user_id = {user_id} ORDER BY add_to_cart_order ASC",conn)
     # Spilt repeat orders and non-repeat orders
     repeat = order[order['reordered'] > 0]
     nonrepeat = order[order['reordered'] == 0]
     
     # Grab user past orders in kmean prediction format
-    grocery_df = pd.read_sql_table("grocery_df", conn)
-    user_order = grocery_df[grocery_df['user_id'] == user_id].drop('user_id', axis = 1)
+    user_order = pd.read_sql(f"SELECT * FROM grocery_df WHERE user_id={user_id}",conn)\
+        .drop('user_id', axis = 1)
     
     # Fit user_id on model, return cluster 
     cluster_num = kmeans.predict(user_order.to_numpy())[0]
-    top10 = cluster_top10[cluster_top10['cluster'] == cluster_num]
+    top10 = pd.read_sql(f"SELECT * FROM cluster_top10_img WHERE cluster={cluster_num}",conn)
     
     # Set starting variables
     n = 0
@@ -163,7 +252,7 @@ def recommendations(user_email):
         if (n == 3):
             break
         elif (not top10_check.empty):
-            url_list = img_product.loc[img_product['product'] == product].img_url.item()
+            url_list = pd.read_sql(f"SELECT img_url FROM product WHERE product='{product}'",conn).iloc[0,0]
             grocery_list.append({'product': product, 'img': url_list})
             n = n + 1
 
@@ -172,7 +261,7 @@ def recommendations(user_email):
         if (n == 3):
             break
         elif (not nonrepeat_check.empty):
-            url_list = img_product.loc[img_product['product'] == product].img_url.item()
+            url_list = pd.read_sql(f"SELECT img_url FROM product WHERE product='{product}'",conn).iloc[0,0]
             grocery_list.append({'product': product, 'img': url_list})
             n = n + 1
 
@@ -180,17 +269,17 @@ def recommendations(user_email):
         if (n == 3):
             break
         else:
-            url_list = img_product.loc[img_product['product'] == product].img_url.item()
+            url_list = pd.read_sql(f"SELECT img_url FROM product WHERE product='{product}'",conn).iloc[0,0]
             grocery_list.append({'product': product, 'img': url_list})
             n = n + 1
 #    return grocery_list
 
-def feature_2(user_email, user_df):
+def feature_2(user_email, grocery_list):
     email = str(user_email)
     # Convert e-mail to user_id
-    user_id = int(user_df.loc[user_df['email'] == email, 'user_id'])
+    user_id = int(pd.read_sql(f"SELECT user_id FROM user_df WHERE email='{email}'",conn).iloc[0,0])
     # Filter recommendation dataframe
-    user_df = feature2[feature2['user_id'] == user_id]
+    user_df = pd.read_sql(f"SELECT * FROM recommendations WHERE user_id={user_id}",conn)
     
     k=0
     grocery_check = [item['product'] for item in grocery_list]
@@ -198,7 +287,7 @@ def feature_2(user_email, user_df):
         if (k==3):
             break
         elif product not in grocery_check:
-            url_list = img_product.loc[img_product['product'] == product].img_url.item()
+            url_list = pd.read_sql(f"SELECT img_url FROM product WHERE product='{product}'",conn).iloc[0,0]
             feature_list.append({'product':product,'img':url_list})
             k=k+1
 #return feature_list
@@ -213,14 +302,17 @@ def grocery():
     # Retrieve e-mail from login
     user_email = request.form['user_email']
     # Call function
-    recommendations(user_email)
-    feature_2(user_email, user_df)
-    # Render Landing Page
-    return render_template("landing.html", grocery_list = grocery_list, feature_list = feature_list)
+    try:
+        recommendations(user_email)
+        feature_2(user_email, grocery_list)
+        # Render Landing Page
+        return render_template("landing.html", grocery_list = grocery_list, feature_list = feature_list)
+    except:
+        return render_template("error.html")
 
 @app.route("/cart")
 def shopping_cart():
-    return render_template('cart.html', grocery_list = grocery_list,feature_list = feature_list)
+    return render_template('cart.html', grocery_list = grocery_list, feature_list = feature_list)
 
 
 
