@@ -227,7 +227,6 @@ function ytd(){
         var week = sales_data.map(d => formatDate(new Date(d.Week)));
 
         d3.json("/api/ly_ytdsales").then( ytd_data =>{
-            console.log(ytd_data)
             var ytd_sale = ytd_data.map(d => dollar_format(d.YTD_Sale));
             var trace1 = {
                 x: week,
@@ -273,8 +272,88 @@ function ytd(){
                 }
             }; 
             var config = {responive: true};
-            Plotly.newPlot('weekly_sales',data,layout, config);
+            Plotly.newPlot('weekly_sales', data, layout, config);
         });
         }
     });
+};
+/***************************** BAR CHART *****************************/
+function init_top10stores(){
+    d3.json("/api/top10stores").then(data =>{
+        var store = data.map(d => "ID#" + d.Store);
+        var sale = data.map(d => d.Sale);
+        console.log(store)
+        console.log(store.reverse())
+
+    var data = [{
+        type:'bar',
+        x: sale,
+        y: store,
+        width:0.6,
+        orientation:'h',
+        marker: {color:'#f0ad4e'}
+    }];
+    var layout = {
+        margin: {l:100, r:30, b:60, t:20},
+        xaxis:{
+            title: 'Sales $'
+        },
+        yaxis:{
+            title: 'Store #',
+            tickfont:{
+                size:10
+            }
+        }
+    }; 
+    Plotly.newPlot('canvas-barchart', data, layout)
+    });
+};
+
+init_top10stores();
+
+
+d3.selectAll("#bar-select").on("change", ytd_top10stores)
+
+function ytd_top10stores(){
+    d3.json("/api/ytd_top10stores").then( data =>{
+
+        d3.select("#canvas-barchart").html("");
+        var selection = d3.select("#bar-select").node().value;
+        
+        if (selection == "This Week"){
+            init_top10stores();
+        } 
+        else {
+            var store = data.map(d => "ID#" + d.Store);
+            var sale = data.map(d => d.Sale);
+
+            var data = [{
+                type:'bar',
+                x: sale,
+                y: store,
+                width:0.6,
+                orientation:'h',
+                marker: {color:'#f0ad4e'}
+            }];
+            var layout = {
+                margin: {
+                    l:100,
+                    r:30,
+                    b:60,
+                    t:20
+                },
+                xaxis:{
+                    title: 'Sales $'
+                },
+                yaxis:{
+                    title: 'Store #',
+                    tickfont:{
+                        size:10
+                    }
+                }
+            }; 
+            Plotly.newPlot('canvas-barchart', data, layout)
+
+        }
+    })
 };

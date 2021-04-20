@@ -19,6 +19,7 @@ from joblib import dump, load
 from flask_sqlalchemy import SQLAlchemy
 from dateutil.relativedelta import relativedelta
 import datetime
+import numpy as np
 
 #################################################
 # Flask Setup
@@ -53,13 +54,6 @@ conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
 # K Means Model
 kmeans = load("./static/data/kmeans.joblib")
-
-# feature2 = pd.read_sql_table("recommendations", conn)
-# user_df = pd.read_sql_table("user_df", conn)
-# grocery_df = pd.read_sql_table("grocery_df", conn)
-# orders = pd.read_sql_table("order_df", conn)
-# cluster_top10 = pd.read_sql_table("cluster_top10_img", conn)
-# img_product = pd.read_sql_table("product", conn)
 
 # Main route to render index.html
 @app.route("/overview/metric")
@@ -116,7 +110,6 @@ def weekly_sales():
     for i in range(len(week_df)):
         sales_dict = {'Week':week_df.iloc[i,0],'Sale':week_df.iloc[i,1]}
         weekly_df.append(sales_dict)
-    print(weekly_df)
     return jsonify(weekly_df)
 
 @app.route("/api/ytd_weeklysales")
@@ -156,21 +149,55 @@ def ytd_sales():
 @app.route("/api/ly_ytdsales")
 def ly_ytd_sales():
     query = session.query(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(1)
-    ly_end = pd.read_sql(query.statement, query.session.bind).iloc[0,0] - relativedelta(years=1)
-    curr_year =  ly_end.year
-    ly_start = f"{curr_year-1}-01-01"
+    ty_end = pd.read_sql(query.statement, query.session.bind).iloc[0,0] 
+    ly_end = ty_end - relativedelta(years=1)
+    curr_year =  ty_end.year
+    ty_start = f"{curr_year}-01-01"
+
+    query3 = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
+                            .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).filter(walmart.Week_Date <= ty_end)\
+                                .filter(walmart.Week_Date >= ty_start)
+
+    len_ty = len(pd.read_sql(query3.statement, query3.session.bind))
 
     query2 = session.query(walmart.Week_Date, func.sum(walmart.Weekly_Sales))\
-                            .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).filter(walmart.Week_Date <= ly_end)\
-                                .filter(walmart.Week_Date >= ly_start)
+                            .group_by(walmart.Week_Date).order_by(walmart.Week_Date.desc()).filter(walmart.Week_Date <= ly_end).limit(len_ty)
 
     ly_ytdsales = pd.read_sql(query2.statement, query2.session.bind).sort_values(by="Week_Date")
 
     ly_ytd_df = []
     for i in range(len(ly_ytdsales)):
-        sales_dict = {'Week': ly_ytdsales.iloc[i,0],'Sale':ly_ytdsales.iloc[i,1]}
+        sales_dict = {'Week': ly_ytdsales.iloc[i,0],'YTD_Sale':ly_ytdsales.iloc[i,1]}
         ly_ytd_df.append(sales_dict)
     return jsonify(ly_ytd_df)
+
+@app.route("/api/top10stores")
+def ty_top10stores():
+    query1 = session.query(walmart.Store, walmart.Week_Date, walmart.Weekly_Sales)\
+                    .order_by(walmart.Week_Date.desc(), walmart.Weekly_Sales.desc()).limit(10)
+    
+    top10 = []
+    for row in query1:
+        top10_dict = {'Store': row[0],'Sale': row[2]}
+        top10.append(top10_dict)
+    top10 = sorted(top10, key=lambda k: k['Sale'], reverse=False) 
+    return jsonify(top10)
+
+@app.route("/api/ytd_top10stores")
+def ytd_top10stores():
+    query1 = session.query(walmart.Week_Date).order_by(walmart.Week_Date.desc()).limit(1)
+    ty_end = pd.read_sql(query1.statement, query1.session.bind).iloc[0,0]
+    ty_start = f"{ty_end.year}-01-01"
+
+    query2 = session.query(walmart.Store, func.sum(walmart.Weekly_Sales)).group_by(walmart.Store)\
+                        .filter(walmart.Week_Date>=ty_start).filter(walmart.Week_Date<=ty_end).limit(10)
+
+    ytd_store = []
+    for row in query2:
+        ytd_dict = {'Store': row[0], 'Sale': row[1]}
+        ytd_store.append(ytd_dict)
+    ytd_store = sorted(ytd_store, key=lambda k: k['Sale'], reverse=False) 
+    return jsonify(ytd_store)
 
 #************************************** HOME TEMPLATE **************************************
 @app.route("/")
