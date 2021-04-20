@@ -72,7 +72,12 @@ d3.json(url).then(function(data) {
     y: actual
   };
 
-  var traceData = [trace1,trace2,trace3,trace4,trace5];
+  var trace6 = {
+    type: 'candlestick',
+    x: dates
+  };
+
+  var traceData = [trace1,trace2,trace3,trace4,trace5, trace6];
 
   var layout = {
     title: 'WMT Times Series Forecast', 
