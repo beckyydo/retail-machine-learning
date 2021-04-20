@@ -98,26 +98,27 @@ def prophet_route():
     prophet_df = []
     for row in data:
         output={
-            'ds':row[0],
-            'trend':row[1],
-            'yhat_lower':row[2],
-            'yhat_upper':row[3],
-            'trend_lower':row[4],
-            'trend_upper':row[5],
-            'additive_terms':row[6],
-            'additive_terms_lower':row[7],
-            'additive_terms_upper':row[8],
-            'daily':row[9],
-            'daily_lower':row[10],
-            'daily_upper':row[11],
-            'weekly':row[12],
-            'weekly_lower':row[13],
-            'weekly_upper':row[14],
-            'yearly':row[15],
-            'yearly_lower':row[16],
-            'yearly_upper':row[17],
-            'yhat':row[18],
-            'y':row[19]
+            'ID':row[0],
+            'ds':row[1],
+            'trend':row[2],
+            'yhat_lower':row[3],
+            'yhat_upper':row[4],
+            'trend_lower':row[5],
+            'trend_upper':row[6],
+            'additive_terms':row[7],
+            'additive_terms_lower':row[8],
+            'additive_terms_upper':row[9],
+            'daily':row[10],
+            'daily_lower':row[11],
+            'daily_upper':row[12],
+            'weekly':row[13],
+            'weekly_lower':row[14],
+            'weekly_upper':row[15],
+            'yearly':row[16],
+            'yearly_lower':row[17],
+            'yearly_upper':row[18],
+            'yhat':row[19],
+            'y':row[20]
         }
         prophet_df.append(output)
 
