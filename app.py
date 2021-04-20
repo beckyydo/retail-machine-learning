@@ -73,7 +73,8 @@ def stock_route():
 
 @app.route("/api/prophet")
 def prophet_route():
-    data = session.query(prophet.ds, 
+    data = session.query(prophet.ID,
+        prophet.ds, 
         prophet.trend,
         prophet.yhat_lower,
         prophet.yhat_upper,
@@ -97,7 +98,7 @@ def prophet_route():
     prophet_df = []
     for row in data:
         output={
-             'ds':row[0],
+            'ds':row[0],
             'trend':row[1],
             'yhat_lower':row[2],
             'yhat_upper':row[3],
