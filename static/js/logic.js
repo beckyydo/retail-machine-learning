@@ -66,7 +66,7 @@ d3.json(url).then(function(data) {
   var trace5 = {
     fill: black,
     mode:'markers',
-    name:'predicted price',
+    name:'actual price',
     type:'scatter',
     x: dates,
     y: y
