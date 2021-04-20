@@ -63,7 +63,16 @@ d3.json(url).then(function(data) {
     y: trend
   };
 
-  var traceData = [trace1,trace2,trace3,trace4];
+  var trace5 = {
+    fill: black,
+    mode:'markers',
+    name:'predicted price',
+    type:'scatter',
+    x: dates,
+    y: y
+  };
+
+  var traceData = [trace1,trace2,trace3,trace4,trace5];
 
   var layout = {
     title: 'WMT Times Series Forecast', 
