@@ -1,7 +1,7 @@
 // Forecast Chart
-const forecastURL = '/api/stockforecast'
+const url = '/api/prophet'
 
-d3.json(forecastURL).then(function(data) {
+d3.json(url).then(function(data) {
   console.log(data);
 
   var dates = data.map(record => record.ds);
@@ -23,6 +23,7 @@ d3.json(forecastURL).then(function(data) {
   var yearly_lower = data.map(record => record.yearly_lower);
   var yearly_upper = data.map(record => record.yearly_upper);
   var yhat = data.map(record => record.yhat);
+  var actual = data.map(record => record.y);
 
   var trace1 = {
     fill: null,
