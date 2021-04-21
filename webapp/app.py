@@ -2,11 +2,7 @@
 # Import Dependencies
 #################################################
 import os
-from flask import (Flask,
-    render_template,
-    jsonify,
-    request,
-    redirect)
+from flask import (Flask, render_template, jsonify, request, redirect)
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -317,6 +313,16 @@ def feature_2(user_email, grocery_list):
             feature_list.append({'product':product,'img':url_list})
             k=k+1
 #return feature_list
+
+@app.route("/relogin")
+def relogin_page():
+    grocery_list.pop(3)
+    grocery_list.pop(2)
+    grocery_list.pop(1)
+    feature_list.pop(3)
+    feature_list.pop(2)
+    feature_list.pop(1)
+    return render_template("login.html")
 
 # Main route to render index.html
 @app.route("/login")
