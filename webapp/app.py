@@ -14,7 +14,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import func
 import psycopg2
 import pandas as pd
-from joblib import dump, load
+import pickle
 from flask_sqlalchemy import SQLAlchemy
 from dateutil.relativedelta import relativedelta
 import datetime
@@ -52,7 +52,7 @@ password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
 # K Means Model
-kmeans = load("webapp/static/data/kmeans.joblib")
+kmeans = pickle.load(open("./static/data/kmeansmodel.pkl", 'rb'))
 
 # Main route to render index.html
 @app.route("/overview/metric")
