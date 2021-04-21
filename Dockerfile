@@ -10,6 +10,6 @@ RUN pip install -qr /tmp/requirements.txt
 ADD ./actualApp /opt/actualApp/
 WORKDIR /opt/actualApp
 
-RUN conda install scikit-learn
+RUN conda install sklearn
 
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi
