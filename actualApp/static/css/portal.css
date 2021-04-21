@@ -30,8 +30,7 @@
 .app-card .app-card-link-mask{position:absolute;width:100%;height:100%;display:block;
     left:0;
     top:0;
-}
-    /*background: rgba(153, 153, 153, 0.3);}*/
+    background: rgba(153, 153, 153, 0.2);}
 .app-card .app-card-header{border-bottom:1px solid #e7e9ed}
 .app-card .app-card-title{font-size:1.125rem;margin-bottom:0}
 .app-card .card-header-action{font-size:.875rem}

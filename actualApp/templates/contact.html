@@ -141,7 +141,7 @@
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<!--**********************************************OVERVIEW**********************************************-->
 					    <li class="nav-item" style="background-color:#3F454C;">
-					        <a class="nav-link active" href="{{url_for('home')}}">
+					        <a class="nav-link" href="{{url_for('home')}}">
 						        <span class="nav-icon">
 									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
@@ -248,7 +248,7 @@
 						    </li>
 							<!--**********************************************CONTACT**********************************************-->
 						    <li class="nav-item" style="background-color:#3F454C;">
-						        <a class="nav-link" href="{{url_for('contact_page')}}">
+						        <a class="nav-link" href="">
 							        <span class="nav-icon">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
 											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -272,135 +272,53 @@
 	    <div class="app-content pt-3 p-md-3 p-lg-4">
 		    <div class="container-xl">
 			    
-			    <h1 class="app-page-title" style="color:white;">Overview</h1>
-			    
-				<!--**********************************************CLOSEABLE BANNER**********************************************-->
-			    <div class="app-card alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
-				    <div class="inner">
-					    <div class="app-card-body p-3 p-lg-4">
-						    <h3 class="mb-3">Welcome!</h3>
-						    <div class="row gx-5 gy-3">
-						        <div class="col-12 col-lg-10">
-							        <div>This dashboard will display various interactive visualizations and tables to help a retail 
-										company in their financial and strategic goals. For the consumer experience, you can click 
-										the grocery login in the bottom left corner. Enjoy :)
+			    <div class='container mx-auto mt-5 col-md-10 mt-100'>
+					<div class="header">
+						<div class="title">Opinions Matter</div>
+						<p><small class="text-muted">We are a homegrown, globally connected, <br /><u>Experimental</u> HUB that prides itself on its <u>Creativity</u><br /> and <u>Innovation.</u> </small></p>
+					</div>
+					<div class="row" style="justify-content: center">
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg"> </div>
+									<div class="card-title"> Angelina Frederic<br /> <small>Head of marketing at K mart</small> </div>
+									<div class="card-subtitle">
+										<p> <small class="text-muted"> I expected anything less than perfect for the team of experts. They are the best team ever! </small> </p>
 									</div>
-							    </div><!--//col-->
-							    <div class="col-12 col-lg-2">
-								    <a class="btn app-btn-primary" href="https://github.com/beckyydo/retail-machine-learning" target="_blank">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-github" viewBox="0 0 16 16">
-											<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-										</svg>
-										Github
-									</a>
-							    </div><!--//col-->
-						    </div><!--//row-->
-						    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-					    </div><!--//app-card-body-->
-					    
-				    </div><!--//inner-->
-			    </div><!--//app-card-->
+								</div>
+							</div>
+						</div>
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583319/AAA/3.jpg"> </div>
+									<div class="card-title"> Jackson Totham<br /> <small>CEO of Redbull</small> </div>
+									<div class="card-subtitle">
+										<p> <small class="text-muted"> I really enjoyed working with them, they are Group of Professionals and they know what they're Doing </small> </p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"> </div>
+									<div class="card-title"> David Gregory<br /> <small>Resident Dj at ibdc</small> </div>
+									<div class="card-subtitle">
+										<p> <small class="text-muted"> I always wanted cool videos of my concerts never knew whom to talk to but they are amazing! </small> </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ft">
+						<div class="btn btn-outline">Tell a nice word</div>
+					</div>
+				</div>
+		
 				
-				<!--**********************************************METRIC CARD**********************************************-->
-				<!--Sales Metric-->
-			    <div class="row g-4 mb-4">
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Total Sales</h4>
-							    <div class="stats-figure" id="overview_sales"></div>
-								<h6 class="stats-type mb-1" style="text-transform: capitalize;">Last Week</h6>
-							    <div class="stats-meta text-success" id ="diff_sales"></div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-				    
-					<!--Margin Metric-->
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Margin</h4>
-							    <div class="stats-figure" id="overview_margin"></div>
-								<h6 class="stats-type mb-1" style="text-transform: capitalize;">Last Week</h6>
-							    <div class="stats-meta" id="diff_margin"></div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
 
-					<!--Week Card-->
-					<div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100" style="border: 4px solid #f0ad4e;">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Week</h4>
-							    <div class="stats-figure" id="overview_week"></div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-
-				    <div class="col-6 col-lg-3">
-					    <div class="app-card app-card-stat shadow-sm h-100">
-						    <div class="app-card-body p-3 p-lg-4">
-							    <h4 class="stats-type mb-1">Year to Date</h4>
-							    <div class="stats-figure" id="overview_ytd"></div>
-								<h6 class="stats-type mb-1" style="text-transform: capitalize;">LY YTD</h6>
-							    <div class="stats-meta" id="diff_ytd"></div>
-						    </div><!--//app-card-body-->
-						    <a class="app-card-link-mask" href="#"></a>
-					    </div><!--//app-card-->
-				    </div><!--//col-->
-			    </div><!--//row-->
-
-				<!--**********************************************CHARTS**********************************************-->
-			    <div class="row g-4 mb-4">
-			        <div class="col-12 col-lg-6">
-				        <div class="app-card app-card-chart h-100 shadow-sm">
-					        <div class="app-card-header p-3">
-						        <div class="row justify-content-between align-items-center">
-							        <div class="col-auto">
-						                <h4 class="app-card-title">Sales vs. Date</h4>
-							        </div><!--//col-->
-							        <div class="col-auto">
-								        <div class="card-header-action">
-									        <select class="form-select form-select-sm ml-auto d-inline-flex w-auto" id="sale_dropdown">
-												<option value="1" selected>4 Weeks</option>
-												<option value="2">YTD</option>
-											</select>
-								        </div><!--//card-header-actions-->
-							        </div><!--//col-->
-						        </div><!--//row-->
-					        </div><!--//app-card-header-->
-					        <div class="app-card-body p-3 p-lg-4" style="padding:0px; margin:0px;">
-						        <div class="chart-container" id="weekly_sales"></div>
-					        </div><!--//app-card-body-->
-				        </div><!--//app-card-->
-			        </div><!--//col-->
-
-			        <div class="col-12 col-lg-6">
-				        <div class="app-card app-card-chart h-100 shadow-sm">
-					        <div class="app-card-header p-3">
-						        <div class="row justify-content-between align-items-center">
-							        <div class="col-auto">
-						                <h4 class="app-card-title">Top 10 Store Sales</h4>
-							        </div><!--//col-->
-							        <div class="col-auto">
-								        <div class="card-header-action">
-											<select class="form-select form-select-sm ml-auto d-inline-flex w-auto" id="bar-select">
-												<option value="1" selected>This Week</option>
-												<option value="2">YTD</option>
-											</select>
-								        </div><!--//card-header-actions-->
-							        </div><!--//col-->
-						        </div><!--//row-->
-					        </div><!--//app-card-header-->
-					        <div class="app-card-body p-3 p-lg-4">
-				                    <div id="canvas-barchart" ></div>
-					        </div><!--//app-card-body-->
-				        </div><!--//app-card-->
-			        </div><!--//col-->
-			    </div><!--//row-->
 			
 				<!--**********************************************OTHER OPTIONS**********************************************-->
 			    <div class="row g-4 mb-4">

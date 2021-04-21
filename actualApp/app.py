@@ -432,6 +432,10 @@ def stock_metric():
     print(stock_metric)
     return jsonify(stock_metric)
 
+@app.route("/contact")
+def contact_page():
+    return render("contact.html")
+
 if __name__ == "__main__":
     app.run()
 
