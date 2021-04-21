@@ -3,6 +3,7 @@ FROM heroku/miniconda
 # Grab requirements.txt.
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
+RUN pip --upgrade setuptools
 # Install dependencies
 RUN pip install -qr /tmp/requirements.txt
 
