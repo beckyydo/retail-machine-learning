@@ -52,7 +52,7 @@ password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
 # K Means Model
-kmeans = load("actualApp/static/data/kmeans.joblib")
+kmeans = load("webapp/static/data/kmeans.joblib")
 
 # Main route to render index.html
 @app.route("/overview/metric")
