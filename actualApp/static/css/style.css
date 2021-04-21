@@ -1,0 +1,256 @@
+/*Cart Page*/
+.cart-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 25px;
+  border-color: #3773da;
+  border-width: medium;
+}
+
+/*Landing Page*/
+.alert {
+  position: fixed !important;
+  z-index: 10 !important;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+/*Login Page*/
+.user_card {
+  height: 400px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #f39c12;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+.brand_logo_container {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: #60a3bc;
+  padding: 10px;
+  text-align: center;
+}
+.form_container {
+  margin-top: 100px;
+}
+.login_btn {
+  width: 100%;
+  background: #c0392b !important;
+  color: white !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+.input-group-text {
+  background: #c0392b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #c0392b !important;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* img #image-forecast {
+  margin-top: 20px;
+  margin-left: 30%;
+  margin-right: auto;
+  width: 50%;
+} */
+
+#overlay1 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#overlay2 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text {
+  position: absolute;
+  font-size: 25px;
+  color: white;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+button#view-code {
+  background-color: #f5f8fd;
+  border: none;
+}
+
+#market-share {
+  width: 100%;
+  height: 450px;
+}
+
+.well1 {
+  padding: 40px;
+  background-color: #0279e2;
+}
+
+#table-max {
+  text-align: center;
+  max-height: 330px;
+  font-size: 12px;
+  width: 380px;
+}
+
+.market-banner {
+  text-align: center;
+  background-color: #0279e2;
+  padding: 35px;
+}
+.market-banner2 {
+  text-align: center;
+  background-color: #0279e2;
+  padding: 15px;
+}
+#logo {
+  width: 40px;
+  margin-bottom: 10px;
+}
+#state-filter {
+  color: #0279e2;
+  margin-top: 10px;
+}
+
+/*Weekly Sales*/
+.tooltip {
+  position: absolute;
+  width: 155px;
+  height: 170px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #0f308a;
+  border: 0;
+  border-radius: 10px;
+}
+
+.axis-text {
+  font-family: serif;
+  font-weight: bold;
+  fill: #1a35af;
+  text-anchor: middle;
+}
+
+.active {
+  fill: #000;
+  fill: #dda509;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-family: serif;
+  font-weight: lighter;
+  fill: #1a35af;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #f1410b;
+  cursor: pointer;
+}
+
+/**STORE LOCATION**/
+#map {
+  height: 500px;
+}
+
+/**MONTHLY SALES**/
+.iframeContainer {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+}
+path .domain{
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}

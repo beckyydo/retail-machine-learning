@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">   
+	<link rel="stylesheet" href="{{ url_for('static', filename='favicon.ico') }}"> 
+    
+    <!-- FontAwesome JS-->
+	<script defer src="{{ url_for('static', filename='plugins/fontawesome/js/all.min.js') }}"></script>
+	<!-- Plotly-->
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    
+    <!-- App CSS -->  
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}">
+
+</head> 
+
+<body class="app" style="background-color:#0D1F41">   	
+    <header class="app-header fixed-top">	   	            
+        <div class="app-header-inner">  
+	        <div class="container-fluid py-2" style="background-color:#999999;">
+		        <div class="app-header-content"> 
+		            <div class="row justify-content-between align-items-center">
+			        
+				    <div class="col-auto">
+					    <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+						    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img">
+								<title>Menu</title>
+								<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+							</svg>
+					    </a>
+				    </div><!--//col-->
+		            <div class="search-mobile-trigger d-sm-none col">
+			            <i class="search-mobile-trigger-icon fas fa-search"></i>
+			        </div><!--//col-->
+		            <div class="app-search-box col" style="background-color:#999999;">
+		                <form class="app-search-form">   
+							<input type="text" placeholder="Search..." name="search" class="form-control search-input">
+							<button type="submit" class="btn search-btn btn-primary" value="Search"><i class="fas fa-search"></i></button> 
+				        </form>
+		            </div><!--//app-search-box-->
+		            
+		            <div class="app-utilities col-auto">
+			            <div class="app-utility-item app-notifications-dropdown dropdown">    
+				            <a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" title="Notifications">
+					            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell icon" fill="white" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+									<path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+								</svg>
+					            <span class="icon-badge">2</span>
+					        </a><!--//dropdown-toggle-->
+					        
+					        <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
+					            <div class="dropdown-menu-header p-3">
+						            <h5 class="dropdown-menu-title mb-0">Notifications</h5>
+						        </div><!--//dropdown-menu-title-->
+						        <div class="dropdown-menu-content">
+							       <div class="item p-3">
+								        <div class="row gx-2 justify-content-between align-items-center">
+											<div class="app-icon-holder icon-holder-mono">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+													<path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+													<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+												  </svg>
+											</div>
+									        <div class="col">
+										        <div class="info"> 
+											        <div class="desc">Reminder: Touchbase Meeting <br> @ 3:00PM-4:00PM 
+														<br><a href="" style="color:blue;">Details</a>
+													</div>
+											        <div class="meta"> 5 mins ago</div>
+										        </div>
+									        </div><!--//col--> 
+								        </div><!--//row-->
+								        <a class="link-mask" href=""></a>
+							       </div><!--//item-->
+
+							       <div class="item p-3">
+								        <div class="row gx-2 justify-content-between align-items-center">
+									        <div class="col-auto">
+										        <div class="app-icon-holder icon-holder-mono">
+											        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-line" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+														<path fill-rule="evenodd" d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+													</svg>
+										        </div>
+									        </div><!--//col-->
+									        <div class="col">
+										        <div class="info"> 
+											        <div class="desc">Your report is ready. <br>
+														<a href="" style="color:blue;">View</a></div>
+											        <div class="meta"> 3 days ago</div>
+										        </div>
+									        </div><!--//col-->
+								        </div><!--//row-->
+								        <a class="link-mask" href=""></a>
+							       </div><!--//item-->
+						        </div><!--//dropdown-menu-content-->
+						        
+						        <div class="dropdown-menu-footer p-2 text-center">
+							        <a href="notifications.html">View all</a>
+						        </div>
+															
+							</div><!--//dropdown-menu-->					        
+				        </div><!--//app-utility-item-->
+			            
+			            <div class="app-utility-item app-user-dropdown dropdown">
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+								<img src="{{ url_for('static', filename='images/user.png') }}" alt="user profile">
+							</a>
+				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+								<li><a class="dropdown-item" href="account.html">Account</a></li>
+								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="login.html">Log Out</a></li>
+							</ul>
+			            </div><!--//app-user-dropdown--> 
+		            </div><!--//app-utilities-->
+		        </div><!--//row-->
+	            </div><!--//app-header-content-->
+	        </div><!--//container-fluid-->
+        </div><!--//app-header-inner-->
+        <div id="app-sidepanel" class="app-sidepanel" style="border-color:#3F454C;"> 
+	        <div id="sidepanel-drop" class="sidepanel-drop"></div>
+	        <div class="sidepanel-inner d-flex flex-column" style="background-color:#3F454C;">
+		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+		        <div class="app-branding" style="background-color:#3F454C;">
+		            <a class="app-logo" href="index.html">
+						<img class="logo-icon mr-2" src="{{ url_for('static', filename='images/Logo.png') }}" alt="logo">
+						<span class="logo-text" style="color:white;">Dashboard</span></a>
+	
+		        </div><!--//app-branding-->  
+		        
+			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1" style="background-color:#3F454C;">
+				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+						<!--**********************************************OVERVIEW**********************************************-->
+					    <li class="nav-item" style="background-color:#3F454C;">
+					        <a class="nav-link" href="{{url_for('home')}}">
+						        <span class="nav-icon">
+									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
+										<path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+									</svg>
+						         </span>
+		                         <span class="nav-link-text">Overview</span>
+					        </a><!--//nav-link-->
+					    </li><!--//nav-item-->
+
+						<!--**********************************************FORECAST**********************************************-->
+					    <li class="nav-item" style="background-color:#3F454C;">
+					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					        <a class="nav-link" href="{{url_for('forecast')}}">
+						        <span class="nav-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cash" viewBox="0 0 16 16">
+										<path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+										<path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+									</svg>
+						        </span>
+		                        <span class="nav-link-text" style="color:white;">Forecasting</span>
+					        </a><!--//nav-link-->
+					    </li><!--//nav-item-->
+
+						<!--**********************************************STOCK**********************************************-->
+					    <li class="nav-item has-submenu" style="background-color:#3F454C;">
+					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					        <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
+						        <span class="nav-icon">
+						        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-graph-up" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+								</svg>
+						         </span>
+		                         <span class="nav-link-text" style="color:white;">Stock</span>
+		                         <span class="submenu-arrow">
+		                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi graph-up" fill="white" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+									</svg>
+	                             </span><!--//submenu-arrow-->
+					        </a><!--//nav-link-->
+					        <div id="submenu-1" class="collapse submenu submenu-1" data-parent="#menu-accordion">
+						        <ul class="submenu-list list-unstyled">
+							        <li class="submenu-item"><a class="submenu-link" href="{{url_for('stock_market')}}">Market</a></li>
+							        <li class="submenu-item"><a class="submenu-link" href="{{url_for('stock_forecast')}}">Forecast</a></li>
+						        </ul>
+					        </div>
+					    </li><!--//nav-item-->
+
+						<!--**********************************************MARKET SHARE**********************************************-->
+					    <li class="nav-item" style="background-color:#3F454C;">
+					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					        <a class="nav-link" href="{{url_for('share')}}">
+						        <span class="nav-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pie-chart" viewBox="0 0 16 16">
+										<path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0V7.5h6.482A7.001 7.001 0 0 0 8.5 1.018zM14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+									</svg>
+						        </span>
+		                        <span class="nav-link-text" style="color:white;">Market Share</span>
+					        </a><!--//nav-link-->
+					    </li><!--//nav-item-->
+
+					   
+						<!--**********************************************STORE LOCATION**********************************************-->
+					    <li class="nav-item" style="background-color:#3F454C;">
+					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+					        <a class="nav-link" href="{{url_for('store_location')}}">
+						        <span class="nav-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-shop" viewBox="0 0 16 16">
+										<path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+									</svg>
+						        </span>
+		                        <span class="nav-link-text" style="color:white;">Store Location</span>
+					        </a><!--//nav-link-->
+					    </li><!--//nav-item-->		    
+				    </ul><!--//app-menu-->
+			    </nav><!--//app-nav-->
+
+				<!--**********************************************SIDE NAVIGATION (FOOTER)**********************************************-->
+			    <div class="app-sidepanel-footer" style="border-color:#3F454C;">
+				    <nav class="app-nav app-nav-footer">
+					    <ul class="app-menu footer-menu list-unstyled">
+							<!--**********************************************GROCERY LOGIN**********************************************-->
+						    <li class="nav-item" style="background-color:#3F454C;">
+						        <a class="nav-link" href="{{url_for('login_page')}}">
+							        <span class="nav-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cart4" viewBox="0 0 16 16">
+											<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+										</svg>
+							        </span>
+			                        <span class="nav-link-text" style="color:white;">Grocery Login</span>
+						        </a>
+						    </li>
+							<!--**********************************************GITHUB**********************************************-->
+						    <li class="nav-item" style="background-color:#3F454C;">
+						        <a class="nav-link" href="https://github.com/beckyydo/retail-machine-learning" target="_blank">
+							        <span class="nav-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-github" viewBox="0 0 16 16">
+											<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+										</svg>
+							        </span>
+			                        <span class="nav-link-text" style="color:white;">Github</span>
+						        </a>
+						    </li>
+							<!--**********************************************CONTACT**********************************************-->
+						    <li class="nav-item" style="background-color:#3F454C;">
+						        <a class="nav-link" href="">
+							        <span class="nav-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+											<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+										</svg>
+							        </span>
+			                        <span class="nav-link-text" style="color:white;">Contact Us</span>
+						        </a>
+						    </li>
+					    </ul><!--//footer-menu-->
+				    </nav>
+
+			    </div><!--//app-sidepanel-footer-->
+		       
+	        </div><!--//sidepanel-inner-->
+	    </div><!--//app-sidepanel-->
+    </header><!--//app-header-->
+    
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">
+			    
+			    <div class='container mx-auto mt-5 col-md-10 mt-100'>
+					<div class="header">
+						<div class="title">Opinions Matter</div>
+						<p><small class="text-muted">We are a homegrown, globally connected, <br /><u>Experimental</u> HUB that prides itself on its <u>Creativity</u><br /> and <u>Innovation.</u> </small></p>
+					</div>
+					<div class="row" style="justify-content: center">
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg"> </div>
+									<div class="card-title"> Angelina Frederic<br /> <small>Head of marketing at K mart</small> </div>
+									<div class="card-subtitle">
+										<p> <small class="text-muted"> I expected anything less than perfect for the team of experts. They are the best team ever! </small> </p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583319/AAA/3.jpg"> </div>
+									<div class="card-title"> Jackson Totham<br /> <small>CEO of Redbull</small> </div>
+									<div class="card-subtitle">
+										<p> <small class="text-muted"> I really enjoyed working with them, they are Group of Professionals and they know what they're Doing </small> </p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"> </div>
+									<div class="card-title"> David Gregory<br /> <small>Resident Dj at ibdc</small> </div>
+									<div class="card-subtitle">
+										<p> <small class="text-muted"> I always wanted cool videos of my concerts never knew whom to talk to but they are amazing! </small> </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ft">
+						<div class="btn btn-outline">Tell a nice word</div>
+					</div>
+				</div>
+		
+				
+
+			
+				<!--**********************************************OTHER OPTIONS**********************************************-->
+			    <div class="row g-4 mb-4">
+				    <div class="col-12 col-lg-4">
+					    <div class="app-card app-card-basic d-flex flex-column align-items-start shadow-sm">
+						    <div class="app-card-header p-3 border-bottom-0">
+						        <div class="row align-items-center gx-3">
+							        <div class="col-auto">
+								        <div class="app-icon-holder">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cash" viewBox="0 0 16 16">
+												<path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+												<path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+											</svg>
+									    </div><!--//icon-holder-->
+						                
+							        </div><!--//col-->
+							        <div class="col-auto">
+								        <h4 class="app-card-title">Forecasting</h4>
+							        </div><!--//col-->
+						        </div><!--//row-->
+						    </div><!--//app-card-header-->
+						    <div class="app-card-body px-4">
+							    
+							    <div class="intro">Model to predict sales in relationship to socioeconomic variables such as temperature, 
+									fuel price, consumer price index (CPI), and unemployment rate.
+								</div>
+						    </div><!--//app-card-body-->
+						    <div class="app-card-footer p-4 mt-auto">
+							   <a class="btn app-btn-secondary" href="{{url_for('forecast')}}">View</a>
+						    </div><!--//app-card-footer-->
+						</div><!--//app-card-->
+				    </div><!--//col-->
+				    <div class="col-12 col-lg-4">
+					    <div class="app-card app-card-basic d-flex flex-column align-items-start shadow-sm">
+						    <div class="app-card-header p-3 border-bottom-0">
+						        <div class="row align-items-center gx-3">
+							        <div class="col-auto">
+								        <div class="app-icon-holder">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pie-chart" viewBox="0 0 16 16">
+												<path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0V7.5h6.482A7.001 7.001 0 0 0 8.5 1.018zM14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+											</svg>
+									    </div><!--//icon-holder-->
+						                
+							        </div><!--//col-->
+							        <div class="col-auto">
+								        <h4 class="app-card-title">Market Share</h4>
+							        </div><!--//col-->
+						        </div><!--//row-->
+						    </div><!--//app-card-header-->
+						    <div class="app-card-body px-4">
+							    
+							    <div class="intro">Map of cities and Walmart's grocery marketshare in the area.</div>
+						    </div><!--//app-card-body-->
+						    <div class="app-card-footer p-4 mt-auto">
+							   <a class="btn app-btn-secondary" href="{{url_for('share')}}">View</a>
+						    </div><!--//app-card-footer-->
+						</div><!--//app-card-->
+				    </div><!--//col-->
+				    <div class="col-12 col-lg-4">
+					    <div class="app-card app-card-basic d-flex flex-column align-items-start shadow-sm">
+						    <div class="app-card-header p-3 border-bottom-0">
+						        <div class="row align-items-center gx-3">
+							        <div class="col-auto">
+								        <div class="app-icon-holder">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-shop" viewBox="0 0 16 16">
+												<path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+											</svg>
+									    </div><!--//icon-holder-->
+						                
+							        </div><!--//col-->
+							        <div class="col-auto">
+								        <h4 class="app-card-title">Store Location</h4>
+							        </div><!--//col-->
+						        </div><!--//row-->
+						    </div><!--//app-card-header-->
+						    <div class="app-card-body px-4">
+							    
+							    <div class="intro">Map of all store location across the country and their addresses</div>
+						    </div><!--//app-card-body-->
+						    <div class="app-card-footer p-4 mt-auto">
+							   <a class="btn app-btn-secondary" href="{{url_for('store_location')}}">View</a>
+						    </div><!--//app-card-footer-->
+						</div><!--//app-card-->
+				    </div><!--//col-->
+			    </div><!--//row-->
+			    
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+	    
+		<!--**********************************************COPYRIGHT FOOTER**********************************************-->
+	    <footer class="app-footer">
+		    <div class="container text-center py-3">
+		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+           		<small class="copyright"><a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Copyright</a> 
+				<i class="fa fa-copyright" aria-hidden="true"></i>		       
+		    </div>
+	    </footer><!--//app-footer-->
+	    
+    </div><!--//app-wrapper-->    					
+
+ 
+    <!-- Javascript -->      
+	<script src="{{ url_for('static', filename='plugins/popper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+	<!-- D3/Plotly-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- Charts JS -->
+	<script src="{{ url_for('static', filename='plugins/chart.js/chart.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/index-charts.js') }}"></script>
+    
+    <!-- Page Specific JS -->
+	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html> 
+

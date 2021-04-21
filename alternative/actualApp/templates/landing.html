@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/style1.css">
+</head>
+<body style="background-color: white;">
+	<nav class="navbar navbar-expand-md" style ="background-color: #3773da;height:60px;">
+        <a href="{{url_for('login_page')}}"><img src="./static/images/house-icon.png" style="width:30px;" alt= "main-page icon"></a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--ml puts button on the right, mr puts on the left-->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{url_for('login_page')}}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{url_for('home')}}">Dashboard</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-light" href="https://github.com/beckyydo/retail-machine-learning" target="_blank">Github</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-light" href="#">Contact</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-light" href="{{url_for('shopping_cart')}}">
+                        <img src="./static/images/Shopping Cart.png" style="width:25px"> Cart
+                        <span style="font-size:10px;font-weight:bold;vertical-align:top;">3</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert" 
+    style="text-align:center;background-color:#b0d1f6;color:#3773da;z-index:5;position:fixed;
+    border-color:#3773da;border-style:solid;border-width:medium;right:0;margin-top:15px;border-radius:10px;">
+		<strong>Grocery List Generated</strong><div>
+			<a href="{{url_for('shopping_cart')}}">Go to Cart</a>
+		</div>
+		<button type="button" class="close" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+    <div>
+        <a href="#">
+            <img src="./static/images/Toggle.png" class="img-fluid" style="width:50px;position:fixed;right:0;bottom:0;
+            z-index:10;margin-bottom:25px;margin-right:25px;">    
+        </a>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <img src="./static/images/Banner_2.PNG" class="img-fluid">
+        </div>
+    </div>
+    <div class = "container-fluid" style="background-color:#3773da;padding:20px;">
+        <div class="container-fluid" style="background-color:#b0d1f6;width:95vw;">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-2" style="text-align:center;">
+                    <img src="./static/images/Thinking.png" class="img-fluid" style="padding:30px;">
+                </div>
+                <div class="col-md-2" style="text-align:center;">
+                    <img src="./static/images/coding.png" class="img-fluid" style="padding:30px;">
+                </div>
+                <div class="col-md-2" style="text-align:center;">
+                    <img src="./static/images/Analytic.png" class="img-fluid" style="padding:30px;">
+                </div>
+                <div class="col-md-2" style="text-align:center;">
+                    <img src="./static/images/Html.png" class="img-fluid" style="padding:30px;">
+                </div>
+                <div class="col-md-2" style="text-align:center;">
+                    <img src="./static/images/smartphone.png" class="img-fluid" style="padding:30px;">
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <img src = "./static/images/Kmeans_Feature1.PNG" class="img-fluid" style="width:45%;">
+            </div>
+        </div>
+        <div class ="row">
+            <div class="col-md-2">
+                <img src="./static/images/Balance.png" class="img-fluid">
+            </div>
+            <div class="col-md-2">
+                <img src="./static/images/freshproduce.png" class="img-fluid">
+            </div>
+            <div class="col-md-2">
+                <img src="./static/images/packagedproduce.png" class="img-fluid">
+            </div>
+            <div class="col-md-2">
+                <img src="./static/images/H2O.png" class="img-fluid">
+            </div>
+            <div class="col-md-2">
+                <img src="./static/images/vegevariety.png" class="img-fluid">
+            </div>
+            <div class="col-md-2">
+                <img src="./static/images/Fruit.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2" style="text-align: center;">
+                <div>
+                    <img src="./static/images/down-arrow.png" class="img-fluid" style="width:50%;padding:20px;">
+                </div>
+                <img src="./static/images/vegevariety.png" class="img-fluid">
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2" style="text-align: center;">
+                <img src="./static/images/down-arrow.png" class="img-fluid" style="width:50%;padding:20px;">
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="text-align: center;">
+                <img src="./static/images/Top10_Border.png" class="img-fluid" style="padding:35px;">
+            </div>
+            <div class="col-md-1">
+                <img src="./static/images/arrow.png" class="img-fluid" style="padding-top:160px;">
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+                <img src="./static/images/Past_Orders_Border_Circle.png" class="img-fluid" style="padding-top:80px;">
+            </div>
+            <div class="col-md-1">
+                <img src="./static/images/arrow.png" class="img-fluid" style="padding-top:160px;">
+            </div>
+            <div class="col-md-4" style="text-align: center;">
+                <img src="./static/images/Recommendations_Border.png" class="img-fluid" style="padding:35px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <img src = "./static/images/Feature_2.PNG" class="img-fluid" style="width:45%;">
+            </div>
+        </div>
+        <div class ="row">
+            <div class="col-md-4">
+                <img src="./static/images/Matrix_User.png" class="img-fluid">
+            </div>
+            <div class="col-md-1">
+                <img src="./static/images/arrow.png" class="img-fluid" style="padding-top:160px;">
+            </div>
+            <div class="col-md-4">
+                <img src="./static/images/Matrix_Product.png" class="img-fluid">
+            </div>
+            <div class="col-md-1">
+                <img src="./static/images/arrow.png" class="img-fluid" style="padding-top:160px;">
+            </div>
+            <div class="col-md-2">
+                <img src="./static/images/Feature2_Top.PNG" class="img-fluid">
+            </div>
+        </div>
+        <div class="row" style="height:70px;">
+
+        </div>
+    </div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('.alert').show()
+            }); 
+
+            $('button').click(function(){
+                $(this).parents('div').hide();
+            }); 
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+
+.DS_Store
+Notebook/SVD-Recommendation/aisles.csv
+Notebook/SVD-Recommendation/departments.csv
+*.csv
