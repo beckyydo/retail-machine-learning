@@ -112,7 +112,7 @@ d3.json("/overview/metric").then( weekdata =>{
     var week = weekdata.Week;
     var margin = weekdata.Margin;
     var ytd = weekdata.YeartoDate;
-
+    
     /*Sales*/
     var dollar_format = d3.format("$,.2f");
     var sale_format = dollar_format(sale);
@@ -253,12 +253,7 @@ function ytd(){
             };
             var data = [trace1, trace2]
             var layout = {
-                margin: {
-                    l:70,
-                    r:30,
-                    b:60,
-                    t:20
-                },
+                margin: {l:70, r:30, b:60, t:20},
                 xaxis:{
                     title: 'Date (Week)'
                 },
@@ -311,7 +306,6 @@ function init_top10stores(){
 
 init_top10stores();
 
-
 d3.selectAll("#bar-select").on("change", ytd_top10stores)
 
 function ytd_top10stores(){
@@ -326,7 +320,6 @@ function ytd_top10stores(){
         else {
             var store = data.map(d => "ID#" + d.Store);
             var sale = data.map(d => d.Sale);
-
             var data = [{
                 type:'bar',
                 x: sale,
@@ -336,12 +329,7 @@ function ytd_top10stores(){
                 marker: {color:'#f0ad4e'}
             }];
             var layout = {
-                margin: {
-                    l:100,
-                    r:30,
-                    b:60,
-                    t:20
-                },
+                margin: {l:100, r:30, b:60, t:20},
                 xaxis:{
                     title: 'Sales $'
                 },
@@ -353,7 +341,6 @@ function ytd_top10stores(){
                 }
             }; 
             Plotly.newPlot('canvas-barchart', data, layout)
-
         }
     })
 };

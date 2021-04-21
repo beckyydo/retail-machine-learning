@@ -401,9 +401,8 @@ def compare_route():
 #******************************************** Stock Service Route ********************************************
 @app.route("/api/stock")
 def stock_route():
-
     last_row = session.query(stock.Date, stock.Open, stock.High, stock.Low, stock.Close, 
-        stock.Volume, stock.Color, stock.MovingAvg).order_by(stock.Date.desc()).limit(1)
+                    stock.Volume, stock.Color, stock.MovingAvg).order_by(stock.Date.desc()).limit(1)
     year = pd.read_sql(last_row.statement, last_row.session.bind).iloc[0,0][0:4]
     start_date = f"{int(year)-1}-01-01"
     data = session.query(stock.Date, stock.Open, stock.High, stock.Low, stock.Close, 
@@ -423,6 +422,15 @@ def stock_route():
         stock_df.append(output)
         
     return jsonify(stock_df)
+
+@app.route("/api/stock_metric")
+def stock_metric():
+    data = session.query(stock.Date, stock.Open, stock.High, stock.Low, stock.Close, stock.Volume).order_by(stock.Date.desc()).limit(1)
+    df = pd.read_sql(data.statement, data.session.bind)
+    stock_metric=({'Open':round(df.iloc[0, 1],2), 'High': round(df.iloc[0, 2],2), 'Low': round(df.iloc[0, 3],2),
+                    'Close': round(df.iloc[0, 4],2), 'Volume': round(df.iloc[0, 5])})
+    print(stock_metric)
+    return jsonify(stock_metric)
 
 if __name__ == "__main__":
     app.run()
