@@ -48,7 +48,7 @@ password = "postgres123"
 conn = f"postgres://{username}:{password}@{server}:{port}/{database}"
 
 # K Means Model
-kmeans = pickle.load(open("./static/data/kmeansmodel.pkl", 'rb'))
+kmeans = pickle.load(open("actualApp/static/data/kmeansmodel.pkl", 'rb'))
 
 # Main route to render index.html
 @app.route("/overview/metric")
