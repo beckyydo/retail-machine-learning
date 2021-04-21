@@ -5,7 +5,7 @@ ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 RUN pip install setuptools
 # Install dependencies
-RUN pip install -qr /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 
 # Add our code
 ADD ./webapp /opt/webapp/
