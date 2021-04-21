@@ -16,7 +16,7 @@ import os
 import pandas as pd
 import numpy as np
 import datetime
-import requests
+import requests 
 import matplotlib.pyplot as plt
 import time
 
@@ -47,7 +47,7 @@ Base.prepare(engine, reflect=True)
 
 stock = Base.classes.stock
 prophet = Base.classes.prophet
-stockforecast = Base.classes.stockforecast
+
 session = Session(engine)
 
 
@@ -73,7 +73,8 @@ def stock_route():
 
 @app.route("/api/prophet")
 def prophet_route():
-    data = session.query(prophet.ds, 
+    data = session.query(prophet.ID,
+        prophet.ds, 
         prophet.trend,
         prophet.yhat_lower,
         prophet.yhat_upper,
@@ -97,83 +98,31 @@ def prophet_route():
     prophet_df = []
     for row in data:
         output={
-             'ds':row[0],
-            'trend':row[1],
-            'yhat_lower':row[2],
-            'yhat_upper':row[3],
-            'trend_lower':row[4],
-            'trend_upper':row[5],
-            'additive_terms':row[6],
-            'additive_terms_lower':row[7],
-            'additive_terms_upper':row[8],
-            'daily':row[9],
-            'daily_lower':row[10],
-            'daily_upper':row[11],
-            'weekly':row[12],
-            'weekly_lower':row[13],
-            'weekly_upper':row[14],
-            'yearly':row[15],
-            'yearly_lower':row[16],
-            'yearly_upper':row[17],
-            'yhat':row[18],
-            'y':row[19]
+            'ID':row[0],
+            'ds':row[1],
+            'trend':row[2],
+            'yhat_lower':row[3],
+            'yhat_upper':row[4],
+            'trend_lower':row[5],
+            'trend_upper':row[6],
+            'additive_terms':row[7],
+            'additive_terms_lower':row[8],
+            'additive_terms_upper':row[9],
+            'daily':row[10],
+            'daily_lower':row[11],
+            'daily_upper':row[12],
+            'weekly':row[13],
+            'weekly_lower':row[14],
+            'weekly_upper':row[15],
+            'yearly':row[16],
+            'yearly_lower':row[17],
+            'yearly_upper':row[18],
+            'yhat':row[19],
+            'y':row[20]
         }
         prophet_df.append(output)
 
     return jsonify(prophet_df)
-
-
-@app.route("/api/stockforecast")
-def stockforecast_route():
-    data = session.query(stockforecast.ds,
-                    stockforecast.trend,
-                    stockforecast.yhat_lower,
-                    stockforecast.yhat_upper,
-                    stockforecast.trend_lower,
-                    stockforecast.trend_upper,
-                    stockforecast.additive_terms,
-                    stockforecast.additive_terms_lower,
-                    stockforecast.additive_terms_upper,
-                    stockforecast.daily,
-                    stockforecast.daily_lower,
-                    stockforecast.daily_upper,
-                    stockforecast.weekly,
-                    stockforecast.weekly_lower,
-                    stockforecast.weekly_upper,
-                    stockforecast.yearly,
-                    stockforecast.yearly_lower,
-                    stockforecast.yearly_upper,
-                    stockforecast.yhat).all()
-
-    stockforecast_df = []
-    for row in data:
-        output = {
-            'ds':row[0],
-            'trend':row[1],
-            'yhat_lower':row[2],
-            'yhat_upper':row[3],
-            'trend_lower':row[4],
-            'trend_upper':row[5],
-            'additive_terms':row[6],
-            'additive_terms_lower':row[7],
-            'additive_terms_upper':row[8],
-            'daily':row[9],
-            'daily_lower':row[10],
-            'daily_upper':row[11],
-            'weekly':row[12],
-            'weekly_lower':row[13],
-            'weekly_upper':row[14],
-            'yearly':row[15],
-            'yearly_lower':row[16],
-            'yearly_upper':row[17],
-            'multiplicative_terms':row[18],
-            'multiplicative_terms_lower':row[19],
-            'multiplicative_terms_upper':row[20],
-            'yhat':row[21]
-        }
-        stockforecast_df.append(output)
-
-    return jsonify(stockforecast_df)
 
 
 if __name__ == "__main__":
