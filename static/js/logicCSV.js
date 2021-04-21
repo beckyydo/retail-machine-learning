@@ -1,12 +1,72 @@
-d3.csv("/data/stockpredictions.csv", function(data) {
-    console.log(data);
-})
+var xField = 'Date';
+var yfield = 'Adj Close';
 
-var dates = []
-dates.forEach(function(dataPoint) {
-    dates.push(dataPoint.ds);
-    console.log(dates);
+var selectorOptions = {
+    buttons: [{
+        step: 'month',
+        stepmode: 'backward',
+        count: 1,
+        label: '1m'
+    }, {
+        step: 'month',
+        stepmode: 'backward',
+        count: 6,
+        label: '6m'
+    }, {
+        step: 'year',
+        stepmode: 'todate',
+        count: 1,
+        label: 'YTD'
+    }, {
+        step: 'year',
+        stepmode: 'backward',
+        count: 1,
+        label: '1y'
+    }, {
+        step: 'all',
+    }],
+};
+
+d3.csv("/prophet_data.csv", function(data) {
+    console.log(data);
+
+    var data2 = prepData(data);
+    var layout = {
+        title: 'Time series with range slider and selectors',
+        xaxis: {
+            rangeselector: selectorOptions,
+            rangeslider: {}
+        },
+        yaxis: {
+            fixedrange: true
+        }
+    };
+
+    Plotly.newPlot('plot-forecast', data2, layout);
 });
+
+function prepData(data2) {
+    var x = [];
+    var y = [];
+
+    data2.forEach(function(datum, i) {
+
+        x.push(new Date(datum[xField]));
+        y.push(datum[yField]);
+    });
+
+    return [{
+        mode: 'lines',
+        x: x,
+        y: y
+    }];
+}
+
+// var dates = []
+// dates.forEach(function(dataPoint) {
+//     dates.push(dataPoint.ds);
+//     console.log(dates);
+// });
 
 // var actualPrice = data.trend
 
