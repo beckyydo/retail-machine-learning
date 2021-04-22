@@ -379,6 +379,11 @@ def feature_2(user_email, grocery_list):
             k=k+1
 #return feature_list
 
+# Main route to render index.html
+@app.route("/login")
+def login_page():
+    return render_template("login.html")
+
 @app.route("/relogin")
 def relogin_page():
     grocery_list.pop(3)
@@ -389,11 +394,6 @@ def relogin_page():
     feature_list.pop(1)
     return render_template("login.html")
 
-# Main route to render index.html
-@app.route("/login")
-def login_page():
-    return render_template("login.html")
-
 @app.route("/recommendations", methods = ['POST'])
 def grocery():
     # Retrieve e-mail from login
@@ -401,7 +401,9 @@ def grocery():
     # Call function
     try:
         recommendations(user_email)
+        print(grocery_list)
         feature_2(user_email, grocery_list)
+        print(feature_list)
         # Render Landing Page
         return render_template("landing.html", grocery_list = grocery_list, feature_list = feature_list)
     except:
