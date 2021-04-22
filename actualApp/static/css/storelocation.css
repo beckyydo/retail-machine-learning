@@ -1,8 +1,8 @@
 /* remove default margin and padding from body */
-body {
+/* body {
   padding: 0;
   margin: 0;
-}
+} */
 
 /* set map, body, and html to 100% of the screen size */
 
@@ -10,10 +10,10 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: auto;
 }
 
-span {
+/* span {
   padding: 10px;
 }
 
@@ -27,4 +27,4 @@ a {
   text-decoration: none;
   color: #2dc4b2;
   text-align: center;
-}
+} */
