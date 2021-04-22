@@ -17,6 +17,57 @@
     <!-- App CSS -->  
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}">
 
+	    <!-- Favicon -->
+    <link rel="shortcut icon" href="#" />
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Leaflet Script -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!-- Leaflet Plugin Cluster -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css"
+    />
+    <!-- Leaflet-providers -->
+    <script src="/static/js/leaflet-providers.js"></script>
+    <!-- Mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <!-- Leaflet fullscreen plugin -->
+    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"
+      rel="stylesheet"
+    />
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/static/css/storelocation.css" />
 </head> 
 
 <body class="app" style="background-color:#0D1F41">   	
@@ -425,9 +476,16 @@
     <!-- Charts JS -->
 	<script src="{{ url_for('static', filename='plugins/chart.js/chart.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/index-charts.js') }}"></script>
+
+	<!-- Marker Cluster JS -->
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"
+    ></script>
     
     <!-- Page Specific JS -->
 	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/storelocation.js') }}"></script>
 
 </body>
 </html> 

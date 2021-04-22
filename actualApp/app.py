@@ -35,6 +35,7 @@ comparison = Base.classes.comparison
 predictions = Base.classes.predictions
 stock = Base.classes.stock
 prophet = Base.classes.prophet
+store = Base.classes.store
 # stockforecast = Base.classes.stockforecast
 
 session = Session(engine)
@@ -293,6 +294,17 @@ def share():
 def store_location():
     return render_template("store.html") 
 
+@app.route("/api/store")
+def store_route():
+    locationData = session.query(
+        store.address1, store.city, store.latitude, store.longitude).all()
+    session.close()
+    location = []
+    for row in locationData:
+        locationDict = {
+            'Address': row[0], 'City': row[1], 'Latitude': row[2], 'Longitude': row[3]}
+        location.append(locationDict)
+    return jsonify(location)
 
 
 # **************************************** Grocery List Recommendation Service Route ****************************************
