@@ -1,4 +1,4 @@
-# Retail Machine Learning Proposal
+# Retail Machine Learning
 
 ## Team Members
 
