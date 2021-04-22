@@ -7,10 +7,13 @@
 /* set map, body, and html to 100% of the screen size */
 
 #map {
+  margin: 0;
+  padding: 0;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: auto;
+  width: 100%;
+  height: 800%;
 }
 
 /* span {

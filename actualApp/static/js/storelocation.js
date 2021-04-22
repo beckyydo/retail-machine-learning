@@ -70,7 +70,7 @@ function createMap(data) {
 
     var myMap = L.map("map", {
         center: [43.198510, -112.359900],
-        zoom: 4,
+        zoom: 3,
         layers: [streetmap],
         fullscreenControl: true
     });
