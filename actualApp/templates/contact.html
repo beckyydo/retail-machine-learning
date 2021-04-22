@@ -18,6 +18,7 @@
     
     <!-- App CSS -->  
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/portal.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
 
 </head> 
 
@@ -65,7 +66,7 @@
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 											<div class="app-icon-holder icon-holder-mono">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16" style="margin-top: 15px;">
 													<path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
 													<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
 												  </svg>
@@ -143,12 +144,12 @@
 					    <li class="nav-item" style="background-color:#3F454C;">
 					        <a class="nav-link" href="{{url_for('home')}}">
 						        <span class="nav-icon">
-									<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
-										<path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-									</svg>
+						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="white" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
+									<path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+								</svg>
 						         </span>
-		                         <span class="nav-link-text">Overview</span>
+		                         <span class="nav-link-text" style="color:white;">Overview</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
 
@@ -248,14 +249,14 @@
 						    </li>
 							<!--**********************************************CONTACT**********************************************-->
 						    <li class="nav-item" style="background-color:#3F454C;">
-						        <a class="nav-link" href="">
+						        <a class="nav-link active" href="">
 							        <span class="nav-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f0ad4e" class="bi bi-person-circle" viewBox="0 0 16 16">
 											<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 											<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 										</svg>
 							        </span>
-			                        <span class="nav-link-text" style="color:white;">Contact Us</span>
+			                        <span class="nav-link-text" style="color:#f0ad4e;">Contact Us</span>
 						        </a>
 						    </li>
 					    </ul><!--//footer-menu-->
@@ -269,56 +270,111 @@
     
     <div class="app-wrapper">
 	    
-	    <div class="app-content pt-3 p-md-3 p-lg-4">
+	    <div class="app-content pt-2 p-md-3 p-lg-4" style="padding:0px !important;">
 		    <div class="container-xl">
 			    
 			    <div class='container mx-auto mt-5 col-md-10 mt-100'>
-					<div class="header">
-						<div class="title">Opinions Matter</div>
-						<p><small class="text-muted">We are a homegrown, globally connected, <br /><u>Experimental</u> HUB that prides itself on its <u>Creativity</u><br /> and <u>Innovation.</u> </small></p>
+					<div class="header" style="color:#f0ad4e; font-size:35px; padding:25px;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#f0ad4e" class="bi bi-award-fill" viewBox="0 0 16 16">
+							<path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+							<path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+						</svg>Our Team: DataMart
 					</div>
 					<div class="row" style="justify-content: center">
-						<div class="card col-md-3 mt-100">
+						<div class="card col-md-3" style="margin-top:80px;">
 							<div class="card-content">
 								<div class="card-body p-0">
-									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg"> </div>
-									<div class="card-title"> Angelina Frederic<br /> <small>Head of marketing at K mart</small> </div>
+									<div class="profile"> <img src="{{ url_for('static', filename='img/hanieh.jpg') }}" style="border: 2px solid #f0ad4e; width:80px; height:80px;"> </div>
+									<div class="card-title"> Hanieh Babaee<br /> </div>
 									<div class="card-subtitle">
-										<p> <small class="text-muted"> I expected anything less than perfect for the team of experts. They are the best team ever! </small> </p>
+										<div class="row" style="margin-top:80px;">
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://github.com/haniehbabaee" role="button" target = "_blank" style="width:100%;">Github</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://www.linkedin.com/in/haniehbabaee/" role="button" target = "_blank">Linkedin</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="card col-md-3 mt-100">
+						<div class="card col-md-3" style="margin-top:80px;">
 							<div class="card-content">
 								<div class="card-body p-0">
-									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583319/AAA/3.jpg"> </div>
-									<div class="card-title"> Jackson Totham<br /> <small>CEO of Redbull</small> </div>
+									<div class="profile"> <img src="{{ url_for('static', filename='img/hanieh.jpg') }}" style="border: 2px solid #f0ad4e; width:80px; height:80px;"> </div>
+									<div class="card-title"> May Lacdao<br /> </div>
 									<div class="card-subtitle">
-										<p> <small class="text-muted"> I really enjoyed working with them, they are Group of Professionals and they know what they're Doing </small> </p>
+										<div class="row" style="margin-top:80px;">
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://github.com/maylacdao" role="button" target = "_blank" style="width:100%;">Github</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://www.linkedin.com/in/maylacdao/" role="button" target = "_blank">Linkedin</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="card col-md-3 mt-100">
+						<div class="card col-md-3" style="margin-top:80px;">
 							<div class="card-content">
 								<div class="card-body p-0">
-									<div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"> </div>
-									<div class="card-title"> David Gregory<br /> <small>Resident Dj at ibdc</small> </div>
+									<div class="profile"> <img src="{{ url_for('static', filename='img/rebecca.jpg') }}" style="border: 2px solid #f0ad4e; width:80px; height:80px;"> </div>
+									<div class="card-title"> Rebecca Pham<br /></div>
 									<div class="card-subtitle">
-										<p> <small class="text-muted"> I always wanted cool videos of my concerts never knew whom to talk to but they are amazing! </small> </p>
+										<div class="row" style="margin-top:80px;">
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://github.com/beckyydo" role="button" target = "_blank" style="width:100%;">Github</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://www.linkedin.com/in/rebecca-pham-2a4170116/" role="button" target = "_blank">Linkedin</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="ft">
-						<div class="btn btn-outline">Tell a nice word</div>
+					<div class="row" style="justify-content: center; padding-bottom:30px;">
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"><img src="{{ url_for('static', filename='img/hanieh.jpg') }}" style="border: 2px solid #f0ad4e; width:80px; height:80px;"> </div>
+									<div class="card-title"> Ronald Clarke<br /></div>
+									<div class="card-subtitle">
+										<div class="row" style="margin-top:80px;">
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://github.com/RonaldClarke" role="button" target = "_blank" style="width:100%;">Github</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="#" role="button" target = "_blank">Linkedin</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card col-md-3 mt-100">
+							<div class="card-content">
+								<div class="card-body p-0">
+									<div class="profile"><img src="{{ url_for('static', filename='img/liz.jpg') }}" style="border: 2px solid #f0ad4e; width:80px; height:80px;"> </div>
+									<div class="card-title"> Elizabeth Salas Martinez<br /> </div>
+									<div class="card-subtitle">
+										<div class="row" style="margin-top:80px;">
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://github.com/lizsalasmtz" role="button" target = "_blank" style="width:100%;">Github</a>
+											</div>
+											<div class="col-6">
+												<a class="btn btn-primary btn-outline-secondary" href="https://www.linkedin.com/in/elizabeth-salas-144a8821/" role="button" target = "_blank">Linkedin</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-		
-				
-
+				</div>		
 			
 				<!--**********************************************OTHER OPTIONS**********************************************-->
 			    <div class="row g-4 mb-4">

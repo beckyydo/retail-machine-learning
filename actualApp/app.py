@@ -487,7 +487,7 @@ def stock_metric():
 
 @app.route("/contact")
 def contact_page():
-    return render("contact.html")
+    return render_template("contact.html")
 
 if __name__ == "__main__":
     app.run()
