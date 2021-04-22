@@ -24,18 +24,12 @@ Members: May, Hanieh
 
 Data: https://www.kaggle.com/aayushkandpal/walmart-inc-stock-data-19722020-latest
 
-A. Facebook Prophet (May)
+Facebook Prophet (May)
 
 - run stock price vs date
 - run stock volume vs date
 - run (stock price vs volume) vs date
 - graph stock data, prediction (line, area graph)
-
-B. Reddit WMT Name Count (Hanieh)
-
-- webscrape reddit, chrome driver search WMT, sort by new, inspect (3 months), count
-- regression on count and stock price or volume to see if there’s a relationship
-- exploratory analysis doing line graph of the count against the stock graph and see if there’s patterns
 
 ### Grocery Basket Customer Recommendations
 
