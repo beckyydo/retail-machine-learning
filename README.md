@@ -22,11 +22,9 @@ For this project, we decided to build on our two previous projects (ETL Project 
 
 ### Stock Price Prediction
 
-Members: May, Hanieh
-
 Data: https://www.kaggle.com/aayushkandpal/walmart-inc-stock-data-19722020-latest
 
-Facebook Prophet (May)
+Facebook Prophet 
 
 - run stock price vs date
 - run stock volume vs date
@@ -39,14 +37,14 @@ Data: https://www.kaggle.com/psparks/instacart-market-basket-analysis
 
 A. Grocery List Recommendation:
 
-- Load csv file, build a clustering/classification model (Rebecca)
-- Webscrape/API google images, use chrome driver searching the word/food item and just taking the copy link address of the first search results, adding the csv file (Rebecca)
-- HTML, search a member number and the product suggestion will load (Rebecca)
+- Load csv file, build a clustering/classification model 
+- Webscrape/API google images, use chrome driver searching the word/food item and just taking the copy link address of the first search results, adding the csv file 
+- HTML, search a member number and the product suggestion will load 
 
 B. Other Product Recommendations:
 
 - Additional Feature: “People Who Bought... Also bought...”
-- Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions (Liz)
+- Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions 
 
 ![Grocery Login](Notebook/Images/Screenshot_2.PNG)
 ![Grocery Landing](Notebook/Images/Screenshot_3.PNG)
@@ -55,8 +53,6 @@ B. Other Product Recommendations:
 ### Sales Forecasting
 
 Data: https://www.kaggle.com/naresh31/walmart-recruiting-store-sales-forecasting
-
-Member: Ron
 
 A. Sales vs. SocioEconomic Target
 
