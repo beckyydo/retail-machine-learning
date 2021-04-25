@@ -48,9 +48,9 @@ B. Other Product Recommendations:
 - Additional Feature: “People Who Bought... Also bought...”
 - Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions (Liz)
 
-![Home Desktop Layout](images/Repo/Screenshot_2.PNG)
-![Home Desktop Layout](images/Repo/Screenshot_3.PNG)
-![Home Desktop Layout](images/Repo/Screenshot_4.PNG)
+![Grocery Login](Notebook/Images/Screenshot_2.PNG)
+![Grocery Landing](Notebook/Images/Screenshot_3.PNG)
+![Grocery Cart](Notebook/Images/Screenshot_4.PNG)
 
 ### Sales Forecasting
 
