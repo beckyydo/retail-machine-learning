@@ -18,7 +18,7 @@ For this project, we decided to build on our two previous projects (ETL Project 
 
 ![Dashboard](Notebook/Images/Screenshot_1.PNG)
 
-## Projects
+## Sections
 
 ### Stock Price Prediction
 
