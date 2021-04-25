@@ -16,6 +16,8 @@ For this project, we decided to build on our two previous projects (ETL Project 
 2. Create a grocery recommendation system
 3. Forecast sales
 
+![Dashboard](Notebook/Images/Screenshot_1.PNG)
+
 ## Projects
 
 ### Stock Price Prediction
@@ -45,6 +47,10 @@ B. Other Product Recommendations:
 
 - Additional Feature: “People Who Bought... Also bought...”
 - Getting a unique list of product bought, getting the next top count item that were bought with it, max 3 suggestions (Liz)
+
+![Home Desktop Layout](images/Repo/Screenshot_2.PNG)
+![Home Desktop Layout](images/Repo/Screenshot_3.PNG)
+![Home Desktop Layout](images/Repo/Screenshot_4.PNG)
 
 ### Sales Forecasting
 
