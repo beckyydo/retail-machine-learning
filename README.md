@@ -8,6 +8,8 @@
 - Hanieh Babaee
 - Ronald Clarke
 
+Deploy: https://retail-ml.herokuapp.com/
+
 ## Objective
 
 For this project, we decided to build on our two previous projects (ETL Project and Project 2). We will be incorporating machine learning algorithms to:
