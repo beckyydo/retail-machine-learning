@@ -33,6 +33,8 @@ Facebook Prophet
 - run (stock price vs volume) vs date
 - graph stock data, prediction (line, area graph)
 
+![Stock FB Prophet](Notebook/Images/Screenshot_5.PNG)
+
 ### Grocery Basket Customer Recommendations
 
 Data: https://www.kaggle.com/psparks/instacart-market-basket-analysis
