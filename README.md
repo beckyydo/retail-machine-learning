@@ -68,3 +68,6 @@ B. Facebook Prophet Sales vs Date
 
 - If there’s no relationship above, you can use facebook prophet
 - Graph a line/area graph with the sales and predictions
+
+
+![Sales Forecast](Notebook/Images/Screenshot_6.PNG)
