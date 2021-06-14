@@ -386,12 +386,10 @@ def login_page():
 
 @app.route("/relogin")
 def relogin_page():
-    grocery_list.pop(2)
-    grocery_list.pop(1)
-    grocery_list.pop(0)
-    feature_list.pop(2)
-    feature_list.pop(1)
-    feature_list.pop(0)
+    for i in range(len(grocery_list)):
+        grocery_list.pop(i)
+    for k in range(len(feature_list)):
+        feature_list.pop(k)
     return render_template("login.html")
 
 @app.route("/recommendations", methods = ['POST'])
