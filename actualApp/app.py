@@ -386,9 +386,9 @@ def login_page():
 
 @app.route("/relogin")
 def relogin_page():
-    for i in range(len(grocery_list)):
+    for i in range(len(grocery_list)-1,-1,-1):
         grocery_list.pop(i)
-    for k in range(len(feature_list)):
+    for k in range(len(feature_list)-1,-1,-1):
         feature_list.pop(k)
     return render_template("login.html")
 
